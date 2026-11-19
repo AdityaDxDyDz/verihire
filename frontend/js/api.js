@@ -138,6 +138,7 @@ export function createApi({ transport, getToken, onUnauthorized }) {
     // backend returns {items: [...]} (older fixtures were a bare array): the views always get an array
     listJDs: async () => { const r = await call("GET", "/job-descriptions"); return Array.isArray(r) ? r : (r?.items ?? []); },
     getJD: (id) => call("GET", `/job-descriptions/${enc(id)}`),
+    deleteJD: (id) => call("DELETE", `/job-descriptions/${enc(id)}`),
     updateJD: (id, title, spec) => call("PUT", `/job-descriptions/${enc(id)}`, { json: { title: title || null, spec } }),
 
     search: (body) => call("POST", "/search", { json: body }),

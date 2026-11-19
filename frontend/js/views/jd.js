@@ -4,6 +4,7 @@ import { chipInput } from "../components/chipinput.js";
 import { jdTextProblem, sameJson, JD_MAX_CHARS } from "../validate.js";
 import { EDU_LABELS, fmtDate, displaySkill } from "../format.js";
 import { buildHash } from "../router.js";
+import { icon } from "../icons.js";
 
 const eduSelect = (id, value) => {
   const s = h("select", { class: "select", id }, EDU_LABELS.map((l, i) => h("option", { value: String(i), selected: Number(value ?? 0) === i }, i === 0 ? "No requirement" : l)));
@@ -25,11 +26,31 @@ export function jdView(ctx, route) {
     if (!st.list) return mount(listHost, h("div", { style: { padding: "12px" } }, skeletonRows(3, 40)));
     mount(listHost,
       h("a", { class: "item", href: buildHash("jd"), "aria-current": String(!id) }, h("div", { class: "t" }, "+ New job description"), h("div", { class: "m" }, "Paste text to start")),
-      st.list.map((j) => h("a", { class: "item", href: buildHash("jdEdit", { id: j.id }), "aria-current": String(j.id === id) }, h("div", { class: "t" }, j.title || "Untitled role"), h("div", { class: "m" }, `Updated ${fmtDate(j.updated_at)}`))));
+      st.list.length > 5 ? h("div", { class: "jd-filter" }, h("input", { class: "input", type: "search", placeholder: "Filter by title", "aria-label": "Filter job descriptions by title", value: st.q ?? "", onInput: (e) => { st.q = e.target.value; drawList(); listHost.querySelector(".jd-filter input")?.focus(); } })) : null,
+      st.list.filter((j) => !st.q || (j.title || "").toLowerCase().includes(st.q.toLowerCase())).map((j) => h("div", { class: "jd-row", "aria-current": String(j.id === id) },
+        h("a", { class: "item", href: buildHash("jdEdit", { id: j.id }), "aria-current": String(j.id === id) },
+          h("div", { class: "t" }, j.title || "Untitled role"),
+          h("div", { class: "m" }, `${(j.required_skills ?? j.spec?.required_skills ?? []).length} required skills · Updated ${fmtDate(j.updated_at)}`)),
+        h("div", { class: "jd-row-actions" },
+          j.last_search_id ? h("a", { class: "btn ghost icon sm", href: buildHash("results", { id: j.last_search_id }), title: `Latest results for ${j.title || "this role"}`, "aria-label": `Latest results for ${j.title || "this role"}` }, icon("search", { size: 14 })) : null,
+          button({ icon: "trash", size: "sm", variant: "ghost", title: `Delete ${j.title || "this job description"}`, onClick: () => removeJd(j) })))));
   }
   async function loadList() {
     try { st.list = await ctx.api.listJDs(); st.listError = null; } catch (e) { st.listError = e; }
     if (alive) drawList();
+  }
+
+  async function removeJd(jd) {
+    const ok = await ctx.confirm({ title: "Delete this job description?", message: `"${jd.title || "Untitled role"}" will be removed together with its skill-gap analyses and interview invitations. Candidates who were invited can no longer use their link. Past search results stay available.`, confirmLabel: "Delete job description", danger: true });
+    if (!ok) return;
+    try {
+      await ctx.api.deleteJD(jd.id);
+      ctx.toast.show("Job description deleted.", { tone: "ok" });
+      for (const [k, v] of ctx.cache) if (v?.jd_id === jd.id) ctx.cache.delete(k); // stale searches of that JD
+      if (jd.id === id) { ctx.navigate("jd"); return; }
+      st.list = st.list?.filter((x) => x.id !== jd.id) ?? null;
+      drawList();
+    } catch (err) { ctx.reportError(err, "Could not delete that job description."); }
   }
 
   // ---- composer (new JD) ---------------------------------------------------------------------------------
@@ -124,7 +145,11 @@ export function jdView(ctx, route) {
     const empty = !spec.required_skills.length;
     const editor = h("div", { class: "jd-edit" },
       h("div", { class: "sheet pad form-grid" },
-        h("h2", null, "What we understood"),
+        h("div", { class: "row", style: { justifyContent: "space-between" } },
+          h("h2", null, "What we understood"),
+          h("div", { class: "row", style: { gap: "6px" } },
+            h("a", { class: "btn sm", href: buildHash("interviews", { id: jd.id }) }, icon("eye", { size: 14 }), "Interviews"),
+            button({ label: "Delete", icon: "trash", size: "sm", variant: "danger", title: "Delete this job description", onClick: () => removeJd(jd) }))),
         empty ? banner("warn", "No required skills were found. Add the skills this role needs so ranking has something to check.") : null,
         field({ label: "Role title", id: "e-title", control: title }),
         field({ label: "Required skills", id: req.id, hint: "A resume that lacks these is marked down.", control: req.el }),

@@ -1,6 +1,7 @@
 // Tiny hash router. parseHash/buildHash are pure (unit-tested); Router wires them to window.location.
 
 const ROUTES = [
+  { name: "home", pattern: "/home" },
   { name: "login", pattern: "/login" },
   { name: "library", pattern: "/library" },
   { name: "jd", pattern: "/jd" },
@@ -12,7 +13,7 @@ const ROUTES = [
   { name: "interview", pattern: "/interview/:token" }, // candidate: public, no login
 ];
 
-export const DEFAULT_PATH = "/library";
+export const DEFAULT_PATH = "/home";
 
 function splitPath(path) {
   return path.split("/").filter(Boolean);

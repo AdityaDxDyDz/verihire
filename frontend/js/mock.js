@@ -363,6 +363,11 @@ export function createMockTransport({ fixtures, now = () => Date.now(), sleep, l
       const jd = jds.get(m[1]);
       if (!jd) return fail(404, "not_found", "Job description not found");
       if (method === "GET") return json(jd);
+      if (method === "DELETE") {
+        jds.delete(m[1]);
+        lastSearchByJd.delete(m[1]);
+        return new Response(null, { status: 204 });
+      }
       if (method === "PUT") {
         jd.title = body?.title ?? body?.spec?.title ?? jd.title;
         jd.spec = { ...body.spec, raw_text: jd.spec.raw_text };

@@ -154,6 +154,12 @@ Full tables: `ml/data_rank/results/RESULTS.md`, `…/serving_like/RESULTS.md`, `
 
 ## Frontend (Kadam) — merged in v1.3
 
+Pages: **Home** (`#/home`, the default: product overview when signed out; dashboard with library counts, recent job
+descriptions and interview replies when signed in) · **Library** (upload, status filters, search, per-row and bulk
+delete, retry one or all failed files, PDF viewer) · **Job & search** · **Results** (sort, filter, compare 2–4, CSV,
+feedback, *Request interview times*) · **Interviews** (`#/interviews/<jd>`: delivery status and candidate replies,
+resend) · public **candidate reply page** (`#/interview/<token>`, no login).
+
 Served by the backend from `frontend/` (same origin, no CORS); `FRONTEND_DIR` overrides the folder. The fixtures in
 `docs/contracts/fixtures/` (copied into `frontend/fixtures/`) are validated against the backend models on every run, so
 the UI and API cannot drift silently. Regenerate them with `python scripts/make_fixtures.py`. Mock-only UI work:

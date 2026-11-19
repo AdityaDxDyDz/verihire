@@ -20,7 +20,7 @@ with sync_playwright() as p:
     page = b.new_page(viewport={"width": 1360, "height": 860})
     page.on("console", lambda m: errors.append(m.text) if m.type == "error" and "fonts.g" not in m.text and "ERR_" not in m.text else None)
     page.on("pageerror", lambda e: errors.append(str(e)))
-    page.goto(f"{BASE}/index.html?mock=1&fast=1#/")
+    page.goto(f"{BASE}/index.html?mock=1&fast=1#/login")
     page.wait_for_selector(".login")
     shot(page, "01-login")
     page.get_by_role("button", name="Continue").first.click() if page.get_by_role("button", name="Continue").count() else page.locator(".login-form button").first.click()
@@ -56,7 +56,7 @@ with sync_playwright() as p:
     shot(page, "08-compare")
     m = b.new_page(viewport={"width": 390, "height": 800})
     m.on("pageerror", lambda e: errors.append(str(e)))
-    m.goto(f"{BASE}/index.html?mock=1&fast=1#/")
+    m.goto(f"{BASE}/index.html?mock=1&fast=1#/login")
     m.wait_for_selector(".login"); m.locator(".login-form button").first.click(); m.wait_for_selector(".dt")
     m.screenshot(path=f"{OUT}/09-mobile-library.png")
     assert m.evaluate("document.documentElement.scrollWidth <= innerWidth + 1"), "horizontal overflow on mobile"

@@ -186,7 +186,7 @@ def main() -> int:
             )
 
             # 1. login (dev mode: email only)
-            page.goto(f"{base}/#/")
+            page.goto(f"{base}/#/login")
             page.wait_for_selector(".login")
             page.fill("#email", email)
             page.get_by_role("button", name="Continue").click()
@@ -273,7 +273,7 @@ def main() -> int:
             page.keyboard.press("Escape")
 
             # 7. original PDF opens
-            page.goto(f"{base}/#/")
+            page.goto(f"{base}/#/library")
             page.wait_for_selector("table.dt tbody tr")
             ready_row = page.locator("table.dt tbody tr", has_text="Ready").first
             ready_row.get_by_role("button").filter(has=page.locator("svg")).first.click()

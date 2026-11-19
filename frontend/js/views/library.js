@@ -12,7 +12,7 @@ const PAGE_SIZE = 20;
 const POLL_MS = 2500;
 
 export function libraryView(ctx) {
-  const st = { filter: "all", q: "", page: 1, data: null, error: null, job: null, uploading: null, rejected: [], pollErrors: 0 };
+  const st = { filter: "all", q: "", page: 1, data: null, error: null, job: null, uploading: null, rejected: [], pollErrors: 0, selected: new Set(), bulkBusy: false };
   let alive = true;
   let timer = null;
 
@@ -155,9 +155,20 @@ export function libraryView(ctx) {
       }));
       return mount(pagerHost);
     }
+    for (const id of [...st.selected]) if (!items.some((d) => d.id === id)) st.selected.delete(id); // selection is per page
+    const allPicked = items.length > 0 && items.every((d) => st.selected.has(d.id));
+    const attention = (counts.failed ?? 0) + (counts.needs_ocr ?? 0);
+    const bulkBar = h("div", { class: "bulk-bar" },
+      h("label", { class: "row small", style: { gap: "6px" } },
+        h("input", { type: "checkbox", checked: allPicked, indeterminate: !allPicked && st.selected.size > 0, "aria-label": "Select every resume on this page", onChange: (e) => { for (const d of items) e.target.checked ? st.selected.add(d.id) : st.selected.delete(d.id); drawTable(); } }),
+        st.selected.size ? `${st.selected.size} selected` : "Select all on this page"),
+      h("span", { class: "spacer" }),
+      attention ? button({ label: `Retry failed (${attention})`, icon: "refresh", size: "sm", disabled: st.bulkBusy, onClick: retryAllFailed }) : null,
+      button({ label: `Delete selected${st.selected.size ? ` (${st.selected.size})` : ""}`, icon: "trash", size: "sm", variant: "danger", disabled: !st.selected.size || st.bulkBusy, onClick: removeSelected }));
     const rows = items.map((d) => {
-      const canRetry = d.status === "failed";
-      return h("tr", null,
+      const canRetry = d.status === "failed" || d.status === "needs_ocr";
+      return h("tr", { class: st.selected.has(d.id) ? "selected" : "" },
+        h("td", null, h("input", { type: "checkbox", checked: st.selected.has(d.id), "aria-label": `Select ${d.filename}`, onChange: (e) => { e.target.checked ? st.selected.add(d.id) : st.selected.delete(d.id); drawTable(); } })),
         h("td", null, h("div", { class: "doc-name" }, d.filename), d.error ? h("div", { class: "doc-err" }, d.error) : null, d.suspicious_hidden_text ? h("div", { style: { marginTop: "4px" } }, chip("Hidden text found", "warn", { iconName: "alert", title: "This PDF contains hidden text, such as white or tiny text." })) : null),
         h("td", null, statusChip(d.status)),
         h("td", { class: "num" }, d.page_count ?? "–"),
@@ -170,8 +181,8 @@ export function libraryView(ctx) {
           canRetry ? button({ icon: "refresh", size: "sm", variant: "ghost", title: `Try ${d.filename} again`, onClick: () => retry(d) }) : null,
           button({ icon: "trash", size: "sm", variant: "ghost", title: `Delete ${d.filename}`, onClick: () => remove(d) }))));
     });
-    mount(tableHost, h("div", { class: "table-wrap" }, h("table", { class: "dt" },
-      h("thead", null, h("tr", null, ["File", "Status", "Pages", "Experience", "Education", "Skills", "Added", ""].map((t, i) => h("th", { class: i === 2 ? "num" : "", scope: "col" }, t || h("span", { class: "sr-only" }, "Actions"))))),
+    mount(tableHost, bulkBar, h("div", { class: "table-wrap" }, h("table", { class: "dt" },
+      h("thead", null, h("tr", null, h("th", { scope: "col" }, h("span", { class: "sr-only" }, "Select")), ["File", "Status", "Pages", "Experience", "Education", "Skills", "Added", ""].map((t, i) => h("th", { class: i === 2 ? "num" : "", scope: "col" }, t || h("span", { class: "sr-only" }, "Actions"))))),
       h("tbody", null, rows))));
     const from = (st.data.page - 1) * st.data.page_size + 1;
     const to = Math.min(total, from + items.length - 1);
@@ -223,6 +234,40 @@ export function libraryView(ctx) {
       await load();
     } catch (err) {
       ctx.reportError(err, "Could not delete that resume.");
+    }
+  }
+
+  async function removeSelected() {
+    const ids = [...st.selected];
+    if (!ids.length) return;
+    const ok = await confirmDialog({ title: `Delete ${ids.length} resume${ids.length === 1 ? "" : "s"}?`, message: "The selected resumes and everything extracted from them will be permanently removed.", confirmLabel: "Delete", danger: true });
+    if (!ok) return;
+    st.bulkBusy = true; drawTable();
+    const results = await Promise.allSettled(ids.map((id) => ctx.api.deleteDocument(id)));
+    const failed = results.filter((r) => r.status === "rejected").length;
+    st.selected.clear();
+    st.bulkBusy = false;
+    ctx.toast.show(failed ? `Deleted ${ids.length - failed}; ${failed} could not be deleted.` : `Deleted ${ids.length} resume${ids.length === 1 ? "" : "s"}.`, { tone: failed ? "warn" : "ok" });
+    await load();
+  }
+
+  async function retryAllFailed() {
+    st.bulkBusy = true; drawTable();
+    try {
+      const lists = await Promise.all(["failed", "needs_ocr"].map((s) => ctx.api.listDocuments({ status: s, page: 1, page_size: 100 })));
+      const ids = lists.flatMap((l) => l.items.map((d) => d.id));
+      if (!ids.length) { ctx.toast.show("Nothing to retry."); return; }
+      const { job_id } = await ctx.api.retryDocuments(ids);
+      st.job = { id: job_id, status: "running", total: ids.length, done: 0, failed: 0, documents: [] };
+      await refreshJob();
+      ctx.toast.show(`Trying ${ids.length} file${ids.length === 1 ? "" : "s"} again.`);
+      drawJob();
+    } catch (err) {
+      ctx.reportError(err, "Could not retry the failed files.");
+    } finally {
+      st.bulkBusy = false;
+      await load();
+      schedule();
     }
   }
 

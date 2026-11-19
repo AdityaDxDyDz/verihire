@@ -58,7 +58,7 @@ export function resultsView(ctx, route) {
     const required = r.matched_required.length + r.missing_required.length;
     const snippet = r.top_chunks?.[0];
     return h("tr", { class: picked ? "selected" : "" },
-      h("td", null, h("input", { type: "checkbox", checked: picked, "aria-label": `Select ${r.label} to compare`, onChange: (e) => { e.target.checked ? st.selected.add(r.candidate_id) : st.selected.delete(r.candidate_id); draw(); } })),
+      h("td", null, h("input", { type: "checkbox", checked: picked, "aria-label": `Select ${r.label}`, onChange: (e) => { e.target.checked ? st.selected.add(r.candidate_id) : st.selected.delete(r.candidate_id); draw(); } })),
       h("td", { class: "rank-no" }, r.rank),
       h("td", { class: "cand-cell" },
         h("a", { class: "cand-link", href: buildHash("candidate", { id: st.data.search_id, cid: r.candidate_id }) }, r.label),
@@ -107,7 +107,9 @@ export function resultsView(ctx, route) {
           button({ label: "Export CSV", icon: "download", onClick: exportCsv }),
           d.jd_id ? linkButton({ label: "Interviews", icon: "eye", href: buildHash("interviews", { id: d.jd_id }), title: "Invitations sent and candidate replies" }) : null,
           d.jd_id ? button({ label: `Request interview times${st.selected.size ? ` (${st.selected.size})` : ""}`, icon: "sparkle", disabled: !st.selected.size, title: st.selected.size ? "E-mail the selected candidates and ask for their available times" : "Tick candidates to invite them", onClick: requestInterviews }) : null,
-          linkButton({ label: `Compare${st.selected.size ? ` (${st.selected.size})` : ""}`, icon: "compare", variant: "primary", href: canCompare() ? buildHash("compare", { id: d.search_id }, { ids: [...st.selected].join(",") }) : "#", title: canCompare() ? "Compare selected candidates" : "Select 2 to 4 candidates to compare" }))),
+          canCompare()
+            ? linkButton({ label: `Compare (${st.selected.size})`, icon: "compare", variant: "primary", href: buildHash("compare", { id: d.search_id }, { ids: [...st.selected].join(",") }), title: "Compare selected candidates" })
+            : button({ label: `Compare${st.selected.size ? ` (${st.selected.size})` : ""}`, icon: "compare", disabled: true, title: "Select 2 to 4 candidates to compare" }))),
     ];
     for (const w of d.warnings ?? []) parts.push(banner("warn", w));
     if (d.embedder?.startsWith("stub") || d.reranker_version?.startsWith("stub")) parts.push(banner("info", "Ranking is running on placeholder models, so order may not be meaningful yet."));
@@ -115,7 +117,10 @@ export function resultsView(ctx, route) {
     parts.push(h("div", { class: "results-bar" },
       h("label", { class: "small", for: "sort" }, "Sort by"),
       h("select", { class: "select", id: "sort", style: { width: "auto" }, onChange: (e) => { st.sort = e.target.value; draw(); } }, Object.entries(SORTS).map(([k, v]) => h("option", { value: k, selected: st.sort === k }, v.label))),
-      h("label", { class: "switch" }, h("input", { type: "checkbox", checked: st.onlyFull, onChange: (e) => { st.onlyFull = e.target.checked; draw(); } }), h("span", { class: "track", "aria-hidden": "true" }), "Only those with every required skill")));
+      h("label", { class: "switch" }, h("input", { type: "checkbox", checked: st.onlyFull, onChange: (e) => { st.onlyFull = e.target.checked; draw(); } }), h("span", { class: "track", "aria-hidden": "true" }), "Only those with every required skill"),
+      h("span", { class: "spacer" }),
+      list.length ? button({ label: `Select top ${Math.min(5, list.length)}`, size: "sm", title: "Tick the first rows in the current order", onClick: () => { st.selected = new Set(list.slice(0, 5).map((r) => r.candidate_id)); draw(); } }) : null,
+      st.selected.size ? button({ label: `Clear selection (${st.selected.size})`, size: "sm", variant: "ghost", onClick: () => { st.selected.clear(); draw(); } }) : null));
     parts.push(list.length ? h("div", { class: "table-wrap" }, h("table", { class: "dt" },
       h("thead", null, h("tr", null, [["", "Compare"], ["#", "Rank"], ["Candidate"], ["Score"], ["Required skills"], ["Experience"], ["Best passage"], ["Rate"]].map(([t, sr]) => h("th", { scope: "col" }, sr ? h("span", { class: "sr-only" }, sr) : null, sr ? null : t, sr && t ? h("span", { "aria-hidden": "true" }, t) : null)))),
       h("tbody", null, list.map(row)))) : emptyState({ title: d.results.length ? "No one has every required skill" : "No candidates matched", body: d.results.length ? "Turn off the filter to see everyone." : "Upload more resumes or loosen the filters on the job description page.", action: d.results.length ? button({ label: "Show everyone", onClick: () => { st.onlyFull = false; draw(); } }) : linkButton({ label: "Back to job description", href: buildHash("jdEdit", { id: d.jd_id ?? "x" }) }) }));

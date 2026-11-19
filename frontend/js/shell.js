@@ -4,13 +4,13 @@ import { icon, logoMark } from "./icons.js";
 import { button } from "./components/ui.js";
 import { buildHash } from "./router.js";
 
-const NAV = [["library", "Library", "library"], ["jd", "Job & search", "jd"], ["results", "Results", null]];
+const NAV = [["home", "Home", "home"], ["library", "Library", "library"], ["jd", "Job & search", "jd"], ["results", "Results", null]];
 
 export function createShell(root, { auth, config, mock, onSignOut, onTheme }) {
   const nav = h("nav", { class: "nav", "aria-label": "Main" });
   const tools = h("div", { class: "topbar-tools" });
   const bar = h("header", { class: "topbar" }, h("div", { class: "topbar-inner" },
-    h("a", { class: "brand", href: buildHash("library"), "aria-label": "VeriHire home" }, logoMark(26), h("span", { class: "brand-word" }, "VeriHire")), nav, tools));
+    h("a", { class: "brand", href: buildHash("home"), "aria-label": "VeriHire home" }, logoMark(26), h("span", { class: "brand-word" }, "VeriHire")), nav, tools));
   mount(root, bar);
   let status = mock ? { tone: "warn", text: "Demo data" } : null;
 
@@ -24,7 +24,8 @@ export function createShell(root, { auth, config, mock, onSignOut, onTheme }) {
       status ? h("span", { class: `chip ${status.tone}`, title: mock ? "Running on built-in sample data. No server is involved." : "Backend status" }, status.text) : null,
       authed && auth.getSession()?.email ? h("span", { class: "user-email" }, auth.getSession().email) : null,
       button({ icon: "moon", variant: "ghost", title: "Switch light or dark theme", onClick: onTheme }),
-      authed ? button({ icon: "logout", variant: "ghost", title: "Sign out", onClick: onSignOut }) : null);
+      authed ? button({ icon: "logout", variant: "ghost", title: "Sign out", onClick: onSignOut })
+        : route?.name !== "login" ? h("a", { class: "btn primary sm", href: buildHash("login") }, "Sign in") : null);
   }
   return { draw, setStatus(s) { status = s; } };
 }

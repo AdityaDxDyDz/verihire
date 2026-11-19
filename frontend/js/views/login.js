@@ -4,7 +4,7 @@ import { button, banner, field } from "../components/ui.js";
 import { renderText } from "../components/evidence.js";
 import { AuthError } from "../auth.js";
 
-const SAMPLE = "Built and maintained a billing module using FastAPI, serving 42k users.";
+const SAMPLE = "Built and maintained a billing module using FastAPI.";
 
 export function loginView(ctx) {
   const mode = ctx.auth.mode;

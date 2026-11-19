@@ -2,10 +2,10 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { parseHash, buildHash } from "../js/router.js";
 
-test("empty hash goes to the library", () => {
-  assert.equal(parseHash("").name, "library");
-  assert.equal(parseHash("#").name, "library");
-  assert.equal(parseHash("#/").name, "library");
+test("empty hash goes to the homepage", () => {
+  assert.equal(parseHash("").name, "home");
+  assert.equal(parseHash("#").name, "home");
+  assert.equal(parseHash("#/").name, "home");
 });
 
 test("static and parameterised routes parse", () => {

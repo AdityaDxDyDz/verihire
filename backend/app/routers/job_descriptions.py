@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import logging
 
-from fastapi import APIRouter, Depends, File, Form, UploadFile
+from fastapi import APIRouter, Depends, File, Form, Response, UploadFile
 
 from docint.contracts import ExtractionError
 from docint.pipeline import extract_uploaded_text
@@ -74,3 +74,10 @@ async def get(jd_id: str, user: User = Depends(current_user), db: Database = Dep
 async def update(jd_id: str, body: JobDescriptionUpdate, user: User = Depends(current_user),
                  db: Database = Depends(get_db)):
     return await svc.update(db, user.id, jd_id, body.title, body.spec)
+
+
+@router.delete("/job-descriptions/{jd_id}", status_code=204, response_class=Response,
+               summary="Delete a JD with its analyses and interview invitations (audited)")
+async def delete(jd_id: str, user: User = Depends(current_user), db: Database = Depends(get_db)):
+    await svc.delete(db, user.id, jd_id)
+    return Response(status_code=204)

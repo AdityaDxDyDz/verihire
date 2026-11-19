@@ -84,7 +84,7 @@ export function candidateDrawer(ctx, { search, item, onClose }) {
   }
 
   function analysisSection() {
-    if (st.analysing) return h("div", { class: "analyse-cta", role: "status" }, spinner(), h("p", null, "Reading the resume against each requirement. This usually takes 10 to 30 seconds. ", h("span", { "data-elapsed": "" }, "0 s")));
+    if (st.analysing) return h("div", { class: "analyse-cta", role: "status" }, spinner(), h("p", null, "Reading the resume against each requirement. This can take a little while. ", h("span", { "data-elapsed": "" }, "0 s")));
     if (!st.analysis) {
       return h("div", null,
         st.error ? banner("bad", st.error) : null,

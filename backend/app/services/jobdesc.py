@@ -10,6 +10,7 @@ from docint.contracts import JobSpec
 from ..adapters.ml import MLAdapter
 from ..db import Database
 from ..errors import AppError, not_found, parse_uuid
+from .audit import audit
 
 
 def normalise_spec(spec: JobSpec, raw_text: str | None = None) -> JobSpec:
@@ -89,6 +90,14 @@ async def update(db: Database, owner_id: str, jd_id: str, title: str | None, spe
         "update job_descriptions set title = %s, spec = %s::jsonb, updated_at = now() "
         "where id = %s and owner_id = %s returning *", (new_title, spec.model_dump_json(), row["id"], owner_id))
     return _out(row)
+
+
+async def delete(db: Database, owner_id: str, jd_id: str) -> None:
+    """Delete a JD. Cascades: analyses, interview invitations and replies. Past search runs are kept with jd_id = null."""
+    row = await get_row(db, owner_id, jd_id)
+    async with db.transaction() as conn:
+        await conn.execute("delete from job_descriptions where id = %s and owner_id = %s", (row["id"], owner_id))
+        await audit(db, owner_id, "jd_delete", "job_description", str(row["id"]), {"title": row["title"]}, conn=conn)
 
 
 def spec_from_row(row: dict) -> JobSpec:
