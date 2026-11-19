@@ -115,3 +115,13 @@ def test_non_tech_domain_skills_v133():
             "workday", "lesson planning", "classroom management", "patient care", "electronic health records", "cpr",
             "menu planning", "haccp", "autocad", "primavera", "adobe photoshop"} <= found
     assert find_skills("Accounting for 30% of revenue, our sales team grew and customers were happy.") == []
+
+
+def test_it_operations_skills_v137():
+    from docint.rank.skillmatch import find_skills
+
+    found = set(find_skills("Administered Windows Server 2016 and Active Directory; VMware vSphere; Cisco switches; "
+                            "DNS/DHCP; ITIL; help desk tickets; SharePoint and Exchange Server; TCP/IP"))
+    assert {"windows server", "active directory", "vmware", "cisco", "dns", "dhcp", "itil", "help desk",
+            "sharepoint", "microsoft exchange", "network administration"} <= found
+    assert find_skills("We will exchange ideas and support the team across our network of partners.") == []

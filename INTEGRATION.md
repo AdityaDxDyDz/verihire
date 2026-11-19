@@ -169,3 +169,6 @@ Dry-run category check: 78 % → 90 % after the dictionary change (Accountant 30
   committed numbers unchanged.
 * Startup on a database without tables now stops with a plain message (run `scripts/migrate.py --local-shim` or set
   `AUTO_MIGRATE=true`) instead of `relation "documents" does not exist`; `migrate.py` reads `DATABASE_URL` from `.env`.
+* v1.3.7: dictionary + 21 IT-operations skills (Windows Server, Active Directory, VMware, Hyper-V, Cisco, CCNA, network
+  administration, DNS, DHCP, firewalls, VPN, ITIL, help desk, SharePoint, Exchange, SCCM, Intune, backup/DR,
+  CompTIA A+, ERP, Salesforce administration) - LiveCareer's INFORMATION-TECHNOLOGY resumes are mostly IT operations.

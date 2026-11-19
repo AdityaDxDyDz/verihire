@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "description": "Shared VeriHire skills dictionary. Single source for skills.py. v1.3.3: domain skills for non-tech roles (finance, HR, sales, healthcare, teaching, hospitality, construction, design, legal).",
+  "description": "Shared VeriHire skills dictionary. Single source for skills.py. v1.3.3: domain skills for non-tech roles (finance, HR, sales, healthcare, teaching, hospitality, construction, design, legal); v1.3.7: IT operations skills (Windows Server, Active Directory, VMware, Cisco, ITIL, ...).",
   "schema": "skills: object mapping canonical lowercase skill name -> list of lowercase aliases. Matching ignores case and treats space/hyphen differences as equivalent. A term must not map to two skills. Short/ambiguous terms (go, r, c) and common-word terms (react, excel, spark...) get extra context/case rules in skills.py.",
   "skills": {
     "python": [
@@ -1097,6 +1097,75 @@
     "litigation": [],
     "customer service": [
       "customer support"
-    ]
+    ],
+    "windows server": [
+      "windows server 2012",
+      "windows server 2016",
+      "windows server 2019",
+      "windows server 2022"
+    ],
+    "active directory": [
+      "ms active directory",
+      "group policy"
+    ],
+    "vmware": [
+      "vsphere",
+      "esxi",
+      "vmware vsphere"
+    ],
+    "hyper-v": [
+      "hyper v"
+    ],
+    "cisco": [
+      "cisco ios",
+      "cisco routers",
+      "cisco switches"
+    ],
+    "ccna": [],
+    "network administration": [
+      "network administrator",
+      "tcp/ip",
+      "lan/wan"
+    ],
+    "dns": [],
+    "dhcp": [],
+    "firewall configuration": [
+      "firewalls",
+      "firewall management"
+    ],
+    "vpn": [],
+    "itil": [
+      "itil v3",
+      "itil v4"
+    ],
+    "help desk": [
+      "helpdesk",
+      "service desk",
+      "technical support"
+    ],
+    "sharepoint": [
+      "microsoft sharepoint"
+    ],
+    "microsoft exchange": [
+      "exchange server",
+      "ms exchange"
+    ],
+    "sccm": [
+      "system center configuration manager"
+    ],
+    "intune": [
+      "microsoft intune"
+    ],
+    "backup and recovery": [
+      "disaster recovery"
+    ],
+    "comptia a+": [
+      "a+ certification",
+      "comptia a plus"
+    ],
+    "erp": [
+      "erp systems"
+    ],
+    "salesforce administration": []
   }
 }
