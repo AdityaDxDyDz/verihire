@@ -7,7 +7,7 @@ from docint.rank.skillmatch import find_skills
 
 PREFERRED = re.compile(r"nice to have|preferred|bonus|good to have|a plus|optional|desirable", re.I)
 REQUIRED = re.compile(r"requirements?|must have|required|qualifications|what you.?ll need|you have", re.I)
-RESPONS = re.compile(r"responsibilit|what you.?ll do|the role|duties", re.I)
+RESPONS = re.compile(r"responsibilit|what you.?ll do|duties", re.I)
 # "3+ years", "2-5 years", "3 to 5 yrs" -> the MINIMUM (first number)
 YEARS = re.compile(r"(\d+(?:\.\d+)?)(?:\s*(?:-|\u2013|to)\s*\d+(?:\.\d+)?)?\s*\+?\s*(?:years?|yrs?)", re.I)
 EDU = [(4, re.compile(r"ph\.?d|doctorate", re.I)), (3, re.compile(r"master|m\.?tech|m\.?sc|\bmba\b", re.I)),
@@ -16,10 +16,24 @@ EDU = [(4, re.compile(r"ph\.?d|doctorate", re.I)), (3, re.compile(r"master|m\.?t
 
 HEADING_WORDS = (r"(?:key |minimum |basic |preferred |desired |required )?(?:requirements?|qualifications?|skills"
                  r"(?: required)?|responsibilities|duties|nice to have|good to have|preferred|bonus|must have|"
-                 r"what you.?ll (?:do|need)|you have|the role)")
+                 r"what you.?ll (?:do|need)|you have|the role)(?:\s*&\s*(?:skills?\s*&?\s*)?qualifications?)?")
 INLINE_HEADING = re.compile(rf"^(?P<h>{HEADING_WORDS})\s*:\s*(?P<rest>\S.*)$", re.I)
 SPLIT_HEADING = re.compile(rf"\s+(?=(?:{HEADING_WORDS})\s*:)", re.I)
 SENTENCE = re.compile(r"(?<=[.!?;])\s+(?=[A-Z0-9(\-*\u2022])")
+
+
+def _heading_mode(line: str) -> str | None:
+    """Classify common section labels with or without punctuation and prefixes."""
+    label = re.sub(r"[^a-z0-9]+", " ", line.casefold()).strip()
+    if not label or len(label.split()) > 8:
+        return None
+    if PREFERRED.search(label):
+        return "preferred"
+    if RESPONS.search(label):
+        return "resp"
+    if REQUIRED.search(label) or re.search(r"\bskills\b", label):
+        return "required"
+    return None
 
 
 def _lines(text: str) -> list[str]:
@@ -59,7 +73,8 @@ def rule_based_job_spec(text: str) -> dict:
     years = None
     edu = 0
     title_seen = False
-    has_headings = any(l and not l.startswith(("-", "*", "•")) and len(l) < 60 and l.endswith(":") for l in lines)
+    has_headings = any(l and not l.startswith(("-", "*", "•", "�")) and len(l) < 80
+                       and _heading_mode(l.rstrip(":")) is not None for l in lines)
     in_body = not has_headings  # with headings, intro text before the first one is not mined for skills
     for ln in lines:
         if not ln:
@@ -68,20 +83,18 @@ def rule_based_job_spec(text: str) -> dict:
             title_seen = True
             if title is not None:
                 continue
-        is_bullet = ln.startswith(("-", "*", "•"))
-        if not is_bullet and len(ln) < 60 and ln.endswith(":"):
+        is_bullet = ln.startswith(("-", "*", "•", "�", "▪", "·"))
+        if not is_bullet and len(ln) < 80:
+            heading_mode = _heading_mode(ln.rstrip(":"))
+        else:
+            heading_mode = None
+        if heading_mode is not None:
             in_body = True
-            # a heading line
-            if PREFERRED.search(ln):
-                mode = "preferred"
-            elif RESPONS.search(ln):
-                mode = "resp"
-            elif REQUIRED.search(ln):
-                mode = "required"
+            mode = heading_mode
             continue
         if not in_body:
             continue
-        body = ln.lstrip("-*• ").strip()
+        body = ln.lstrip("-*•▪�· \t").strip()
         if mode == "resp":
             resp.append(body)
             continue

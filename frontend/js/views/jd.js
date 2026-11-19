@@ -17,7 +17,7 @@ export function jdView(ctx, route) {
   const listHost = h("div", { class: "sheet jd-list" });
   const mainHost = h("div");
   const el = h("div", null,
-    h("div", { class: "page-head" }, h("div", null, h("h1", null, "Job description"), h("p", { class: "sub" }, "Paste a job description. We pull out the skills, years of experience and education it asks for. Check them, adjust anything that is off, then search your library."))),
+    h("div", { class: "page-head" }, h("div", null, h("h1", null, "Job description"), h("p", { class: "sub" }, "Upload a PDF, DOCX, or TXT job description, or paste its text. We extract the role, skills, experience, and education for you to review."))),
     h("div", { class: "jd-layout" }, h("div", null, h("h2", { class: "sr-only" }, "Saved job descriptions"), listHost), mainHost));
 
   function drawList() {
@@ -35,23 +35,31 @@ export function jdView(ctx, route) {
   // ---- composer (new JD) ---------------------------------------------------------------------------------
   function drawComposer() {
     const title = h("input", { class: "input", id: "jd-title", placeholder: "e.g. Backend Engineer", maxlength: "120" });
+    const file = h("input", { class: "input", id: "jd-file", type: "file", accept: ".pdf,.docx,.txt,application/pdf,text/plain,application/vnd.openxmlformats-officedocument.wordprocessingml.document" });
     const text = h("textarea", { class: "textarea", id: "jd-text", placeholder: "Paste the full job description here…", style: { minHeight: "300px" } });
     const msg = h("div", { "aria-live": "polite" });
     const go = button({ label: "Extract requirements", icon: "sparkle", variant: "primary", type: "submit" });
     const form = h("form", { class: "sheet pad form-grid", novalidate: true, onSubmit: async (e) => {
       e.preventDefault();
-      const problem = jdTextProblem(text.value);
-      if (problem) { mount(msg, banner("warn", problem)); text.focus(); return; }
+      const selectedFile = file.files?.[0] ?? null;
+      if (!selectedFile) {
+        const problem = jdTextProblem(text.value);
+        if (problem) { mount(msg, banner("warn", problem)); text.focus(); return; }
+      }
       go.disabled = true; mount(msg, h("span", { class: "muted" }, spinner(), " Reading the job description…"));
       try {
-        const jd = await ctx.api.createJD(text.value, title.value.trim());
+        const jd = selectedFile
+          ? await ctx.api.uploadJD(selectedFile, title.value.trim())
+          : await ctx.api.createJD(text.value, title.value.trim());
         ctx.toast.show("Requirements extracted. Please check them.", { tone: "ok" });
         st.list = null; loadList();
         ctx.navigate("jdEdit", { id: jd.id });
       } catch (err) { go.disabled = false; mount(msg); ctx.reportError(err, "Could not read that job description."); }
     } },
       field({ label: "Role title (optional)", id: "jd-title", control: title }),
-      field({ label: "Job description", id: "jd-text", hint: `Plain text, up to ${JD_MAX_CHARS.toLocaleString("en-US")} characters.`, control: text }),
+      field({ label: "Upload JD file", id: "jd-file", hint: "PDF, DOCX, or TXT · up to 10 MB · text is extracted before parsing.", control: file }),
+      h("div", { class: "muted small", style: { textAlign: "center" } }, "or paste text below"),
+      field({ label: "Job description text", id: "jd-text", hint: `Up to ${JD_MAX_CHARS.toLocaleString("en-US")} characters.`, control: text }),
       msg, h("div", null, go));
     mount(mainHost, form);
     return { el: form, title: "Job description" };

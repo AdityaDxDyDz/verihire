@@ -1,0 +1,12 @@
+numpy>=1.26
+pandas>=2.0
+scikit-learn>=1.4
+xgboost>=2.0
+pydantic>=2.5
+anthropic>=0.40   # optional: only needed with a real LLM key
+pytest>=8.0
+lightgbm>=4.0   # only for the model study (docint.rank.benchmark / fresh_test)
+openpyxl>=3.1           # import_kaggle.py: job / resume datasets shipped as .xlsx
+fastembed==0.9.1
+numpy==2.5.4
+pymupdf==2.1

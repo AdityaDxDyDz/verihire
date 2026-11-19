@@ -402,6 +402,23 @@ export function createMockTransport({ fixtures, now = () => Date.now(), sleep, l
       return handle(method, path, query, body ? JSON.parse(body) : undefined);
     },
     async upload({ path, form, onProgress }) {
+      if (path === "/job-descriptions/upload") {
+        const file = form.get("file");
+        if (!file) return fail(422, "missing_file", "Choose a job description file.");
+        if (!/\.txt$/i.test(file.name)) return fail(501, "mock_file_type_unsupported", "PDF and DOCX extraction needs the local API server; TXT uploads work in mock mode.");
+        if (!file.size) return fail(422, "empty", "The selected file is empty.");
+        if (file.size > 10 * 1024 * 1024) return fail(413, "file_too_large", "The file must be 10 MB or smaller.");
+        const text = (await file.text()).replace(/\r\n?/g, "\n").replace(/[\t\f\v ]+/g, " ").replace(/ *\n */g, "\n").trim();
+        if (text.length < 40) return fail(422, "validation_error", "The file must contain at least 40 characters of job description text.");
+        if (text.length > 20000) return fail(413, "jd_text_too_long", "Extracted text exceeds 20,000 characters.");
+        await wait(lat.parse);
+        const spec = parseJd(text, knownSkills);
+        const nowIso = new Date(now()).toISOString();
+        const title = form.get("title") || spec.title;
+        const jd = { id: uuid(), title, spec: { ...spec, title, raw_text: text }, created_at: nowIso, updated_at: nowIso };
+        jds.set(jd.id, jd);
+        return json(jd, 201);
+      }
       if (path !== "/documents/upload") return fail(404, "not_found", `No mock route for POST ${path}`);
       if (failures.upload) return fail(Number(failures.upload), "payload_too_large", "The upload is too large.");
       const files = form.getAll("files");

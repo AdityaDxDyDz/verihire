@@ -129,6 +129,12 @@ export function createApi({ transport, getToken, onUnauthorized }) {
     deleteDocument: (docId) => call("DELETE", `/documents/${enc(docId)}`),
 
     createJD: (text, title) => call("POST", "/job-descriptions", { json: { title: title || null, text } }),
+    uploadJD: (file, title) => {
+      const form = new FormData();
+      form.append("file", file, file.name);
+      if (title) form.append("title", title);
+      return call("POST", "/job-descriptions/upload", { form });
+    },
     // backend returns {items: [...]} (older fixtures were a bare array): the views always get an array
     listJDs: async () => { const r = await call("GET", "/job-descriptions"); return Array.isArray(r) ? r : (r?.items ?? []); },
     getJD: (id) => call("GET", `/job-descriptions/${enc(id)}`),
