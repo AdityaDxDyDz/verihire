@@ -185,3 +185,29 @@ def test_config_js_is_generated_from_settings(client_factory, settings_factory, 
                          SUPABASE_SERVICE_KEY="SECRET-SERVICE-KEY")
     body = client_factory(s).get("/config.js").text
     assert '"mode": "supabase"' in body and "anon-pub" in body and "SECRET-SERVICE-KEY" not in body
+
+
+def test_unmigrated_database_fails_with_a_plain_message(settings_factory, db_url):
+    """A fresh Postgres without AUTO_MIGRATE used to crash with `relation "documents" does not exist`."""
+    import uuid as _uuid
+
+    import psycopg
+    import pytest
+    from fastapi.testclient import TestClient
+    from psycopg.conninfo import conninfo_to_dict, make_conninfo
+
+    from app.eventloop import selector_loop
+    from app.main import create_app
+
+    name = f"verihire_empty_{_uuid.uuid4().hex[:8]}"
+    with psycopg.connect(db_url, autocommit=True) as conn:
+        conn.execute(f'create database "{name}"')
+    try:
+        empty = make_conninfo(**{**conninfo_to_dict(db_url), "dbname": name})
+        app = create_app(settings_factory(DATABASE_URL=empty, AUTO_MIGRATE=False))
+        with pytest.raises(RuntimeError, match="migrate.py"):
+            with TestClient(app, backend_options={"loop_factory": selector_loop}):
+                pass
+    finally:
+        with psycopg.connect(db_url, autocommit=True) as conn:
+            conn.execute(f'drop database if exists "{name}" with (force)')

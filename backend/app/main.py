@@ -63,6 +63,13 @@ def create_app(settings: Settings | None = None, *, ml: MLAdapter | None = None,
         st.ml = ml or await asyncio.to_thread(MLAdapter.load, settings.ML_MODE, settings.EMBEDDING_DIM)
         st.db = Database(settings.DATABASE_URL, settings.DB_POOL_MIN, settings.DB_POOL_MAX)
         await st.db.open()
+        row = await st.db.fetch_one("select to_regclass('public.documents') is not null as ok")
+        if not (row and row["ok"]):
+            await st.db.close()
+            raise RuntimeError(
+                "The database has no VeriHire tables yet. Create them once with "
+                "`python scripts/migrate.py --local-shim` (local / Docker Postgres) or set AUTO_MIGRATE=true in .env "
+                "(safe: idempotent), then start the server again.")
         st.storage = storage or build_storage(settings)
         st.auth = authenticator or Authenticator(settings)
         st.llm_limiter = RateLimiter(settings.LLM_RATE_LIMIT_PER_MIN)

@@ -122,15 +122,28 @@ def migrate(url: str, *, local_shim: bool = False, supabase_storage: bool = Fals
     return done
 
 
+def env_file_value(key: str) -> str | None:
+    """Read KEY from the repo's .env (the server reads it too), so `python scripts/migrate.py` needs no extra flag."""
+    path = Path(__file__).resolve().parent.parent / ".env"
+    if not path.exists():
+        return None
+    for line in path.read_text(encoding="utf-8", errors="replace").splitlines():
+        k, sep, v = line.partition("=")
+        if sep and k.strip() == key:
+            v = v.split(" #", 1)[0].split("\t#", 1)[0].strip().strip("'\"")
+            return v or None
+    return None
+
+
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    p.add_argument("--database-url", default=os.environ.get("DATABASE_URL"))
+    p.add_argument("--database-url", default=os.environ.get("DATABASE_URL") or env_file_value("DATABASE_URL"))
     p.add_argument("--local-shim", action="store_true", help="create anon/authenticated roles (local only)")
     p.add_argument("--supabase-storage", action="store_true", help="create the private resumes bucket")
     p.add_argument("--status", action="store_true", help="show migration status and exit")
     a = p.parse_args(argv)
     if not a.database_url:
-        p.error("set DATABASE_URL or pass --database-url")
+        p.error("set DATABASE_URL (environment or .env) or pass --database-url")
     try:
         if a.status:
             for name, st in status(a.database_url):

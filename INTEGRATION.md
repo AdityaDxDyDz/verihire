@@ -167,3 +167,5 @@ Dry-run category check: 78 % → 90 % after the dictionary change (Accountant 30
   composes a normal JD from the fields (skills under "Requirements", responsibilities and keywords not mined).
 * Track C JD rules: a year range ("2-5 years", "3 to 5 yrs") now gives the minimum (was the upper number). Test added;
   committed numbers unchanged.
+* Startup on a database without tables now stops with a plain message (run `scripts/migrate.py --local-shim` or set
+  `AUTO_MIGRATE=true`) instead of `relation "documents" does not exist`; `migrate.py` reads `DATABASE_URL` from `.env`.
