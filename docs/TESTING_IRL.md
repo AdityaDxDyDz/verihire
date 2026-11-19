@@ -16,6 +16,18 @@ python -c "import sys; sys.path.insert(0,'ml'); from docint.embed import get_emb
 ```
 Node.js 18+ is optional (only for the frontend unit tests).
 
+## 0b. Check what it reads from YOUR resume (no server needed)
+
+```bat
+python scripts\inspect_resume.py C:\path\to\my_resume.pdf --show-pii
+python scripts\inspect_resume.py C:\path\to\my_resume.pdf --jd my_jd.txt --show-text
+python scripts\inspect_resume.py data\resumes --limit 200        # a folder: most common problems + missed skills
+```
+Shows sections, personal details found (removed before indexing), years, education, titles, certifications, every
+skill, and checks marked `[!!]` (e.g. "date ranges present but 0 years", "listed skill not in the dictionary",
+"heading not recognised"). Folder mode lists the skills / headings most often missed: add them to
+`ml/docint/ingest/skills_dict.json` / the chunker's section list - that is how parsing gets more robust.
+
 ## A. Automated — everything
 
 ```powershell

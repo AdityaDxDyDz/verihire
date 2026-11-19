@@ -59,10 +59,12 @@ _MONTHS = {"jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6,
 _MON = (r"(?:jan(?:uary)?|feb(?:ruary)?|mar(?:ch)?|apr(?:il)?|may|june?|july?|aug(?:ust)?|"
         r"sep(?:t(?:ember)?)?|oct(?:ober)?|nov(?:ember)?|dec(?:ember)?)")
 _TOKEN = (r"(?:" + _MON + r"\.?[ \t]*,?[ \t]*'?\d{4}"
+          r"|" + _MON + r"\.?[ \t]*['\u2019]\d{2}(?!\d)"  # Jun'24 / Jun ’24 (student resumes); apostrophe required
           r"|\d{1,2}[ \t]*[/.][ \t]*\d{4}"
           r"|(?:19|20)\d{2}-(?:0[1-9]|1[0-2])"
           r"|(?:19|20)\d{2})")
-_SEP = r"[ \t]*(?:[-\u2013\u2014]+|\bto\b|\buntil\b|\btill\b)[ \t]*"
+# U+00B7: PDFs whose font lacks an en-dash glyph extract "Jun 2024 · Aug 2024" (both sides must still be dates)
+_SEP = r"[ \t]*(?:[-\u2013\u2014\u00b7]+|\bto\b|\buntil\b|\btill\b)[ \t]*"
 _RANGE_RE = re.compile(
     r"(?<![\w/.])(?P<s>" + _TOKEN + r")" + _SEP
     + r"(?P<e>" + _TOKEN + r"|present|current|ongoing|now|date)(?![\w/])", re.IGNORECASE)
@@ -79,6 +81,10 @@ def _parse_token(token: str) -> Optional[tuple[int, bool]]:
     if m:
         month = _MONTHS.get(m.group(1)[:3])
         return (int(m.group(2)) * 12 + month - 1, True) if month else None
+    m = re.fullmatch(r"([a-z]+)\.?[ \t]*['\u2019](\d{2})", t)
+    if m:
+        month = _MONTHS.get(m.group(1)[:3])
+        return ((2000 + int(m.group(2))) * 12 + month - 1, True) if month else None
     m = re.fullmatch(r"(\d{1,2})[ \t]*[/.][ \t]*(\d{4})", t)
     if m:
         month = int(m.group(1))
@@ -172,6 +178,12 @@ _EDU_PATTERNS: tuple[tuple[int, "re.Pattern[str]"], ...] = (
     (2, re.compile(r"\bB\.E\b\.?|\bBE\s+(?:in|\()")),
     (2, re.compile(r"\bB\.S\b\.?|\bBS\s+(?:in|\()")),
     (1, re.compile(r"\bdiploma\b", re.I)),
+    # v1.4.2: US formats (LiveCareer): B.A., M.S./M.A., MS/MA in, Associate degrees, law / medicine / pharmacy
+    (4, re.compile(r"\bM\.D\b\.?|\bPharm\.?\s?D\b|\bdoctor\s+of\s+(?:medicine|pharmacy)\b", re.I)),
+    (3, re.compile(r"\bJ\.D\b\.?|\bjuris\s+doctor\b|\bLL\.?M\b", re.I)),
+    (3, re.compile(r"\bM\.[SA]\b\.?|\bM[SA]\s+(?:in|of|\()|\bMSc?\s*[:,]")),
+    (2, re.compile(r"\bB\.A\b\.?|\bBA\s+(?:in|of|\()|\bLL\.?B\b|\bB\.?B\.?A\b")),
+    (1, re.compile(r"\bassociate(?:'s|s)?\s+(?:degree|of\s+(?:applied\s+)?(?:arts|science))|\bA\.A\.S\b|\bAAS\b", re.I)),
 )
 _FIELD_PATTERNS: tuple[tuple[str, "re.Pattern[str]"], ...] = tuple(
     (name, re.compile(pat, re.I)) for name, pat in (

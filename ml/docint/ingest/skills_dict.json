@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "description": "Shared VeriHire skills dictionary. Single source for skills.py. v1.3.3: domain skills for non-tech roles (finance, HR, sales, healthcare, teaching, hospitality, construction, design, legal); v1.3.7: IT operations skills (Windows Server, Active Directory, VMware, Cisco, ITIL, ...).",
+  "description": "Shared VeriHire skills dictionary. Single source for skills.py. v1.3.3: domain skills for non-tech roles (finance, HR, sales, healthcare, teaching, hospitality, construction, design, legal); v1.3.7: IT operations skills (Windows Server, Active Directory, VMware, Cisco, ITIL, ...); v1.4.2: business skills (list-only generic words, see skills._LIST_ONLY).",
   "schema": "skills: object mapping canonical lowercase skill name -> list of lowercase aliases. Matching ignores case and treats space/hyphen differences as equivalent. A term must not map to two skills. Short/ambiguous terms (go, r, c) and common-word terms (react, excel, spark...) get extra context/case rules in skills.py.",
   "skills": {
     "python": [
@@ -521,7 +521,8 @@
     ],
     "forecasting": [
       "demand forecasting",
-      "sales forecasting"
+      "sales forecasting",
+      "financial forecasting"
     ],
     "data visualization": [
       "data visualisation",
@@ -584,7 +585,10 @@
     "microsoft office": [
       "ms office",
       "office 365",
-      "microsoft 365"
+      "microsoft 365",
+      "office",
+      "ms office suite",
+      "microsoft office suite"
     ],
     "powerpoint": [
       "ms powerpoint",
@@ -914,7 +918,8 @@
     ],
     "tally erp": [
       "tally prime",
-      "tally erp 9"
+      "tally erp 9",
+      "tally"
     ],
     "gaap": [
       "us gaap"
@@ -928,7 +933,10 @@
     "general ledger": [],
     "bank reconciliation": [
       "account reconciliation",
-      "reconciliations"
+      "reconciliations",
+      "reconciling",
+      "reconciliation",
+      "account reconciliations"
     ],
     "payroll": [
       "payroll processing"
@@ -936,17 +944,24 @@
     "taxation": [
       "tax preparation",
       "income tax",
-      "tax filing"
+      "tax filing",
+      "tax",
+      "taxes",
+      "tax returns"
     ],
     "financial reporting": [
-      "financial statements"
+      "financial statements",
+      "financial reports",
+      "financial statement preparation"
     ],
     "financial analysis": [],
     "financial modeling": [
       "financial modelling"
     ],
     "budgeting": [
-      "budget planning"
+      "budget planning",
+      "budget",
+      "budgets"
     ],
     "auditing": [
       "internal audit",
@@ -1055,7 +1070,9 @@
     "servsafe": [],
     "food preparation": [],
     "inventory management": [
-      "stock management"
+      "stock management",
+      "inventory",
+      "inventory control"
     ],
     "autocad": [
       "auto cad"
@@ -1166,6 +1183,71 @@
     "erp": [
       "erp systems"
     ],
-    "salesforce administration": []
+    "salesforce administration": [],
+    "microsoft word": [
+      "ms word",
+      "word"
+    ],
+    "microsoft outlook": [
+      "ms outlook",
+      "outlook"
+    ],
+    "microsoft access": [
+      "ms access",
+      "access"
+    ],
+    "accounting": [],
+    "sales": [],
+    "billing": [
+      "medical billing"
+    ],
+    "scheduling": [
+      "appointment scheduling"
+    ],
+    "contract management": [
+      "contracts",
+      "contract negotiation"
+    ],
+    "month-end close": [
+      "month end close",
+      "month-end closing",
+      "month end closing",
+      "closing"
+    ],
+    "balance sheet preparation": [
+      "balance sheet",
+      "balance sheets"
+    ],
+    "fixed asset accounting": [
+      "fixed assets",
+      "fixed asset management"
+    ],
+    "data entry": [],
+    "invoicing": [],
+    "purchasing": [
+      "procurement"
+    ],
+    "negotiation": [
+      "negotiations"
+    ],
+    "marketing": [],
+    "training": [
+      "staff training",
+      "employee training"
+    ],
+    "logistics": [
+      "supply chain logistics"
+    ],
+    "project management": [
+      "project planning"
+    ],
+    "fundraising": [],
+    "insurance": [],
+    "cash management": [
+      "cash flow management"
+    ],
+    "cost accounting": [],
+    "variance analysis": [],
+    "peachtree": []
   }
 }

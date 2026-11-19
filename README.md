@@ -161,6 +161,14 @@ open `frontend/index.html?mock=1` from any static server. Deployment: `docs/DEPL
 (production needs `APP_ENV=production AUTH_MODE=supabase STORAGE_MODE=supabase ML_MODE=real`, Supabase keys, a 32+ char
 `APP_SECRET`, the pooler `DATABASE_URL`, and the BGE model baked into the image).
 
+## Check what VeriHire reads from a resume
+
+`python scripts/inspect_resume.py my_resume.pdf [--jd jd.txt] [--show-pii] [--show-text]` runs the real pipeline and
+prints everything extracted plus likely misses; on a folder it ranks the skills / headings most often missed.
+Limits that remain: scanned (image-only) PDFs need OCR (not supported); unusual layouts (text in images, heavy
+tables, multi-column templates whose columns interleave) can mis-order text; skills absent from the dictionary are
+missed (add them); non-English resumes are not supported.
+
 ## Interview-availability e-mails (v1.4, backend)
 
 Recruiters can e-mail shortlisted candidates asking for their preferred interview date and time; candidates without an

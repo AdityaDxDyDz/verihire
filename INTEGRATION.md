@@ -179,3 +179,16 @@ New: `POST/GET /api/v1/outreach/interview-requests`, `GET /api/v1/outreach/batch
 `db/migrations/004_outreach.sql`, 11 tests, 5 validated example responses. Candidates without an e-mail are skipped
 quietly; recruiters see masked addresses only; audit rows for sends and replies. Production must set `EMAIL_MODE`
 to `smtp` or `disabled`. Contract + UI plan: `docs/components/outreach.md`.
+
+## 12. v1.4.1 — resume parsing robustness
+* `scripts/inspect_resume.py`: shows everything extracted from one resume (or a folder: most common problems,
+  most-missed skills and headings) with `[!!]` checks; `--jd` shows the match against a job description.
+* Track B profile parser: short years `Jun'24 - Aug'24` / `Jun ’24`, and `·` as a date separator (PDFs whose font
+  lacks an en-dash). Chunker: ~30 more common section headings (Coding Profiles, Skill Set, Academic Details,
+  Industrial Training, Declaration, ...). Skills: `tally` alias; `tally` / `workday` treated as common words (need
+  capitals in prose). Tests added; gold targets and committed numbers unchanged.
+* v1.4.2 (from `inspect_resume.py` on 200 LiveCareer resumes): LiveCareer headings (Highlights, Skill Highlights,
+  Core Qualifications -> skills; Accomplishments, Additional Information, Affiliations -> other); generic business
+  words (accounting, sales, billing, budget, tax, Word/Outlook/Access, ...) count as skills ONLY as list items
+  (`skills._LIST_ONLY`), never in prose; +25 business skills / aliases; US degree formats (B.A., M.S./M.A.,
+  Associate, J.D., M.D., Pharm.D, LL.B/LL.M). Tests added; gold targets and committed numbers unchanged.

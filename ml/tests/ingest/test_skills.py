@@ -125,3 +125,26 @@ def test_it_operations_skills_v137():
     assert {"windows server", "active directory", "vmware", "cisco", "dns", "dhcp", "itil", "help desk",
             "sharepoint", "microsoft exchange", "network administration"} <= found
     assert find_skills("We will exchange ideas and support the team across our network of partners.") == []
+
+
+def test_tally_and_workday_are_case_sensitive_common_words():
+    from docint.rank.skillmatch import find_skills
+
+    assert "tally erp" in find_skills("Skills: Tally, GST filing, Excel")
+    assert find_skills("We will tally the results.") == []
+    assert find_skills("We meet every workday morning.") == []
+    assert "workday" in find_skills("HRIS: Workday, BambooHR")
+
+
+def test_generic_business_words_count_only_as_list_items_v142():
+    from docint.rank.skillmatch import find_skills
+
+    listed = set(find_skills("Skills: Accounting, Billing, Payroll, Microsoft Word, Outlook, Access, Data entry"))
+    assert {"accounting", "billing", "payroll", "microsoft word", "microsoft outlook", "microsoft access",
+            "data entry"} <= listed
+    assert {"accounting", "financial reporting", "month-end close"} <= set(
+        find_skills("• Accounting\n• Financial reports\n• Month-end closing"))
+    for prose in ("Accounting for 30% of revenue, our sales grew and we had access to the office.",
+                  "Responsible for billing and closing the books.", "Prepared the annual budget for the office."):
+        assert find_skills(prose) == [], prose
+    assert {"payroll", "bookkeeping", "recruitment"} <= set(find_skills("Managed payroll and bookkeeping; led recruitment."))

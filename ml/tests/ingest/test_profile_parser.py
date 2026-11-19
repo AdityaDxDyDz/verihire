@@ -127,3 +127,25 @@ def test_summary_length_cap():
     long = "SUMMARY\n" + " ".join(["Analytical"] * 100)
     summary = parse_profile([mk("summary", long)], as_of=AS_OF).summary
     assert summary and len(summary) <= 303
+
+
+def test_short_years_and_dot_separator_v138():
+    from datetime import date
+
+    from docint.ingest.profile_parser import _years_experience as y
+
+    d = date(2026, 11, 19)
+    assert y("Intern Jun'24 - Aug'24", d) == 0.2
+    assert y("Intern Jun ’24 – Aug ’24", d) == 0.2
+    assert y("Intern Jun 2024 · Aug 2024", d) == 0.2
+    assert y("Met on June 24 - 26 people", d) is None  # no apostrophe: not a date
+
+
+def test_us_degree_formats_v142():
+    from docint.ingest.profile_parser import _education_level as e
+
+    cases = {"Bachelor of Arts : Accounting , 2008": 2, "B.A. in Economics": 2, "M.S. in Accounting": 3,
+             "MS in Finance": 3, "Associate of Applied Science : Business": 1, "A.A.S. Nursing": 1,
+             "J.D. , Law": 3, "Juris Doctor": 3, "High School Diploma": 1}
+    for text, level in cases.items():
+        assert e(text) == level, text

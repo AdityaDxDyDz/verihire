@@ -33,7 +33,7 @@ _AFTER_OK = ",;|/)\u2022\n"
 _CASE_SENSITIVE = frozenset({
     "react", "spark", "swift", "excel", "rust", "ruby", "julia", "dart", "oracle", "unity",
     "express", "sas", "sap", "ml", "ai", "ros", "rag", "hive", "athena", "bootstrap",
-    "confluence", "ionic", "electron", "angular", "sass", "groovy", "snowflake",
+    "confluence", "ionic", "electron", "angular", "sass", "groovy", "snowflake", "tally", "workday",
 })
 
 
@@ -153,6 +153,30 @@ def _lowercase_list_item_ok(text: str, start: int, end: int) -> bool:
     return sum(line.count(sep) for sep in ",;|\u2022") >= 1
 
 
+# v1.4.2: generic business words are skills ONLY as an item of a list ("Skills: Accounting, Billing, Payroll" or one
+# item per bullet line) - never in prose ("accounting for 30% of revenue", "sales grew", "access to data").
+_LIST_ONLY = frozenset({
+    "accounting", "sales", "billing", "budget", "budgets", "inventory", "tax", "taxes", "scheduling", "contracts",
+    "closing", "word", "outlook", "access", "office", "reconciling", "reconciliation", "purchasing", "negotiation",
+    "negotiations", "marketing", "merchandising", "training", "teaching", "tutoring", "nursing", "cooking", "baking",
+    "catering", "editing", "photography", "logistics", "insurance", "banking", "invoicing", "forecasting",
+    "fundraising",
+})
+
+
+_LIST_ONLY_NORM = frozenset(re.sub(r"[\s\-]+", "", t) for t in _LIST_ONLY)
+
+
+def _list_item_ok(text: str, start: int, end: int) -> bool:
+    """Stands alone as a list item: between separators on a line with another item, or alone on a (bullet) line."""
+    if _lowercase_list_item_ok(text, start, end):
+        return True
+    line_start = text.rfind("\n", 0, start) + 1
+    line_end = text.find("\n", end)
+    line = text[line_start: line_end if line_end != -1 else len(text)]
+    return line.strip(" \t-*\u2022\u00b7\u25aa\u25cf:;,.").lower() == text[start:end].lower()
+
+
 def extract_skills(text: str, skills_path: Optional[Path] = None) -> list[str]:
     """Return unique canonical skills in order of first appearance."""
     if not isinstance(text, str):
@@ -170,6 +194,9 @@ def extract_skills(text: str, skills_path: Optional[Path] = None) -> list[str]:
                 continue
             if not (_strict_context_ok(text, match.start(), match.end())
                     or (key == "go" and _prose_go_ok(text, match.start(), match.end()))):
+                continue
+        elif key in _LIST_ONLY_NORM:
+            if not _list_item_ok(text, match.start(), match.end()):
                 continue
         elif key in _CASE_SENSITIVE and surface == surface.lower():
             if not _lowercase_list_item_ok(text, match.start(), match.end()):
