@@ -1,0 +1,878 @@
+{
+  "search_id": "9c69b516-7806-572d-918b-ac0e563ecc52",
+  "jd_id": "47a5ace6-a614-5f83-a6b7-193395ec3fc5",
+  "created_at": "2026-11-07T09:30:00+00:00",
+  "blind": true,
+  "results": [
+    {
+      "candidate_id": "b0f5a745-fc74-5d00-a281-70fd4d912e1d",
+      "document_id": "a318619a-7583-5bec-9837-3ffeba30b41f",
+      "label": "Candidate #76619D",
+      "match_score": 92.7,
+      "rank": 1,
+      "years_experience": 9.0,
+      "education_level": 2,
+      "titles": [
+        "Principal Engineer"
+      ],
+      "top_skills": [
+        "python",
+        "django",
+        "fastapi",
+        "postgresql",
+        "docker",
+        "aws",
+        "kafka",
+        "redis",
+        "rest"
+      ],
+      "matched_required": [
+        "python",
+        "fastapi",
+        "postgresql",
+        "docker",
+        "rest"
+      ],
+      "missing_required": [],
+      "matched_preferred": [
+        "redis",
+        "aws",
+        "kafka"
+      ],
+      "missing_preferred": [],
+      "suspicious_hidden_text": false,
+      "top_chunks": [
+        {
+          "chunk_id": "7dc537d3-a9eb-570a-915d-53862f6c0766",
+          "page_no": 2,
+          "section": "skills",
+          "text_scrubbed": "Python, Django, FastAPI, PostgreSQL, Docker, AWS, Kafka, Redis, REST APIs"
+        },
+        {
+          "chunk_id": "24c48e3c-695a-5399-aca1-183c826074f3",
+          "page_no": 1,
+          "section": "experience",
+          "text_scrubbed": "Principal Engineer - Lumen Data   2022 - Present\n- Built and maintained an onboarding workflow using Python, serving 12k users.\n- Built and maintained customer-facing services using Django, serving 8k users.\n- Built and maintained data pipelines using FastAPI, serving 88k users.\n- Built and maintained an admin portal using PostgreSQL, serving 16k users."
+        },
+        {
+          "chunk_id": "5c2662ed-ca9a-50bf-be32-b5d64435e760",
+          "page_no": 1,
+          "section": "experience",
+          "text_scrubbed": "Associate Principal Engineer - Redwood Digital   2017 - 2022\n- Built and maintained an admin portal using Docker, serving 46k users.\n- Built and maintained internal tooling using AWS, serving 71k users.\n- Built and maintained an onboarding workflow using Kafka, serving 35k users."
+        }
+      ],
+      "explanation": {
+        "feature_contributions": {
+          "required_skill_coverage": 15.0,
+          "rrf_sum_top3": 6.31,
+          "skills_in_experience_ratio": 4.17,
+          "preferred_skill_coverage": 5.0,
+          "years_gap": 5.0,
+          "experience_section_hit": 4.0,
+          "title_match": 0.7,
+          "edu_gap": 2.5
+        },
+        "feature_values": {
+          "required_skill_coverage": 1.0,
+          "rrf_sum_top3": 0.0902,
+          "skills_in_experience_ratio": 0.7778,
+          "preferred_skill_coverage": 1.0,
+          "years_gap": 1.0,
+          "experience_section_hit": 1.0,
+          "title_match": 0.6,
+          "edu_gap": 1.0
+        },
+        "cross_encoder_score": null
+      },
+      "retrieval": {
+        "rrf_sum_top3": 0.0902,
+        "n_chunks_hit": 5
+      }
+    },
+    {
+      "candidate_id": "95e42bf9-4ed6-5603-b0fb-cd46e658fcdb",
+      "document_id": "c11bd803-49fa-5680-8c1c-a25a0b51c3cd",
+      "label": "Candidate #8420AC",
+      "match_score": 91.5,
+      "rank": 2,
+      "years_experience": 7.0,
+      "education_level": 3,
+      "titles": [
+        "Senior Backend Engineer"
+      ],
+      "top_skills": [
+        "python",
+        "fastapi",
+        "postgresql",
+        "docker",
+        "rest",
+        "redis",
+        "aws",
+        "git"
+      ],
+      "matched_required": [
+        "python",
+        "fastapi",
+        "postgresql",
+        "docker",
+        "rest"
+      ],
+      "missing_required": [],
+      "matched_preferred": [
+        "redis",
+        "aws"
+      ],
+      "missing_preferred": [
+        "kafka"
+      ],
+      "suspicious_hidden_text": false,
+      "top_chunks": [
+        {
+          "chunk_id": "92209b91-0036-5a97-9367-ee4fbc6cee0c",
+          "page_no": 2,
+          "section": "skills",
+          "text_scrubbed": "Python, FastAPI, PostgreSQL, Docker, REST APIs, Redis, AWS, Git"
+        },
+        {
+          "chunk_id": "c3d07e7a-10fc-5008-80d9-92e268b0acd1",
+          "page_no": 1,
+          "section": "experience",
+          "text_scrubbed": "Senior Backend Engineer - Mosaic Cloud   2023 - Present\n- Built and maintained customer-facing services using Python, serving 52k users.\n- Built and maintained an onboarding workflow using FastAPI, serving 10k users.\n- Built and maintained reporting dashboards using PostgreSQL, serving 23k users.\n- Built and maintained a search feature using Docker, serving 57k users."
+        },
+        {
+          "chunk_id": "74184d9f-c44a-5c1d-a9e5-5e85af11e7e7",
+          "page_no": 1,
+          "section": "summary",
+          "text_scrubbed": "Senior Backend Engineer with 7 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software."
+        }
+      ],
+      "explanation": {
+        "feature_contributions": {
+          "required_skill_coverage": 15.0,
+          "rrf_sum_top3": 5.23,
+          "skills_in_experience_ratio": 5.62,
+          "preferred_skill_coverage": 1.67,
+          "years_gap": 4.0,
+          "experience_section_hit": 4.0,
+          "title_match": 3.5,
+          "edu_gap": 2.5
+        },
+        "feature_values": {
+          "required_skill_coverage": 1.0,
+          "rrf_sum_top3": 0.0832,
+          "skills_in_experience_ratio": 0.875,
+          "preferred_skill_coverage": 0.6667,
+          "years_gap": 0.9,
+          "experience_section_hit": 1.0,
+          "title_match": 1.0,
+          "edu_gap": 1.0
+        },
+        "cross_encoder_score": null
+      },
+      "retrieval": {
+        "rrf_sum_top3": 0.0832,
+        "n_chunks_hit": 3
+      }
+    },
+    {
+      "candidate_id": "a8b0c7ab-24be-50f8-acb6-e2b6c7c3d66a",
+      "document_id": "5f135899-d1f9-568d-9a07-b41e9c960121",
+      "label": "Candidate #61F35D",
+      "match_score": 90.3,
+      "rank": 3,
+      "years_experience": 6.0,
+      "education_level": 3,
+      "titles": [
+        "API Engineer"
+      ],
+      "top_skills": [
+        "python",
+        "fastapi",
+        "postgresql",
+        "docker",
+        "rest",
+        "aws",
+        "redis"
+      ],
+      "matched_required": [
+        "python",
+        "fastapi",
+        "postgresql",
+        "docker",
+        "rest"
+      ],
+      "missing_required": [],
+      "matched_preferred": [
+        "redis",
+        "aws"
+      ],
+      "missing_preferred": [
+        "kafka"
+      ],
+      "suspicious_hidden_text": false,
+      "top_chunks": [
+        {
+          "chunk_id": "1a07d85c-d9b2-5905-9a26-b8f85c20ea48",
+          "page_no": 1,
+          "section": "skills",
+          "text_scrubbed": "Python, FastAPI, PostgreSQL, Docker, REST APIs, AWS, Redis"
+        },
+        {
+          "chunk_id": "cba20652-ed50-5424-a629-7eef6985444b",
+          "page_no": 1,
+          "section": "summary",
+          "text_scrubbed": "API Engineer with 6 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software."
+        },
+        {
+          "chunk_id": "e9a16ce1-d24e-5db8-9724-b21900c69db6",
+          "page_no": 1,
+          "section": "experience",
+          "text_scrubbed": "API Engineer - Kestrel Soft   2023 - Present\n- Built and maintained a search feature using Python, serving 46k users.\n- Built and maintained a search feature using FastAPI, serving 23k users.\n- Built and maintained customer-facing services using PostgreSQL, serving 46k users."
+        }
+      ],
+      "explanation": {
+        "feature_contributions": {
+          "required_skill_coverage": 15.0,
+          "rrf_sum_top3": 5.23,
+          "skills_in_experience_ratio": 5.36,
+          "preferred_skill_coverage": 1.67,
+          "years_gap": 3.0,
+          "experience_section_hit": 4.0,
+          "title_match": 3.5,
+          "edu_gap": 2.5
+        },
+        "feature_values": {
+          "required_skill_coverage": 1.0,
+          "rrf_sum_top3": 0.0832,
+          "skills_in_experience_ratio": 0.8571,
+          "preferred_skill_coverage": 0.6667,
+          "years_gap": 0.8,
+          "experience_section_hit": 1.0,
+          "title_match": 1.0,
+          "edu_gap": 1.0
+        },
+        "cross_encoder_score": null
+      },
+      "retrieval": {
+        "rrf_sum_top3": 0.0832,
+        "n_chunks_hit": 4
+      }
+    },
+    {
+      "candidate_id": "9aa4526e-44da-55a6-8dfd-74c24a7d1d6c",
+      "document_id": "8f9bd93d-f152-5677-9d4d-f2f25d2b0ac3",
+      "label": "Candidate #962403",
+      "match_score": 77.9,
+      "rank": 4,
+      "years_experience": 4.0,
+      "education_level": 2,
+      "titles": [
+        "Python Developer"
+      ],
+      "top_skills": [
+        "python",
+        "fastapi",
+        "postgresql",
+        "rest",
+        "git",
+        "kafka"
+      ],
+      "matched_required": [
+        "python",
+        "fastapi",
+        "postgresql",
+        "rest"
+      ],
+      "missing_required": [
+        "docker"
+      ],
+      "matched_preferred": [
+        "kafka"
+      ],
+      "missing_preferred": [
+        "redis",
+        "aws"
+      ],
+      "suspicious_hidden_text": false,
+      "top_chunks": [
+        {
+          "chunk_id": "e3931b33-3f32-52b3-9ec1-b38a56ba6aee",
+          "page_no": 1,
+          "section": "skills",
+          "text_scrubbed": "Python, FastAPI, PostgreSQL, REST APIs, Git, Kafka"
+        },
+        {
+          "chunk_id": "9d4ff59d-27e2-5d78-a3dd-5245fba456d7",
+          "page_no": 1,
+          "section": "summary",
+          "text_scrubbed": "Python Developer with 4 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software."
+        },
+        {
+          "chunk_id": "387381e8-da2f-5362-a7d3-42269f357b2c",
+          "page_no": 1,
+          "section": "experience",
+          "text_scrubbed": "Python Developer - Lumen Data   2024 - Present\n- Built and maintained a notification system using Python, serving 30k users.\n- Built and maintained data pipelines using FastAPI, serving 18k users.\n- Built and maintained a billing module using PostgreSQL, serving 63k users."
+        }
+      ],
+      "explanation": {
+        "feature_contributions": {
+          "required_skill_coverage": 9.0,
+          "rrf_sum_top3": 2.05,
+          "skills_in_experience_ratio": 7.5,
+          "preferred_skill_coverage": -1.67,
+          "years_gap": 1.0,
+          "experience_section_hit": 4.0,
+          "title_match": 3.5,
+          "edu_gap": 2.5
+        },
+        "feature_values": {
+          "required_skill_coverage": 0.8,
+          "rrf_sum_top3": 0.0624,
+          "skills_in_experience_ratio": 1.0,
+          "preferred_skill_coverage": 0.3333,
+          "years_gap": 0.6,
+          "experience_section_hit": 1.0,
+          "title_match": 1.0,
+          "edu_gap": 1.0
+        },
+        "cross_encoder_score": null
+      },
+      "retrieval": {
+        "rrf_sum_top3": 0.0624,
+        "n_chunks_hit": 5
+      }
+    },
+    {
+      "candidate_id": "f1b8ed5b-12fc-59d0-bc98-4dad32ad57c0",
+      "document_id": "d3b515bd-afe8-553d-8032-bb1e69f96301",
+      "label": "Candidate #CABADC",
+      "match_score": 76.7,
+      "rank": 5,
+      "years_experience": 5.0,
+      "education_level": 2,
+      "titles": [
+        "Backend Engineer"
+      ],
+      "top_skills": [
+        "python",
+        "django",
+        "postgresql",
+        "docker",
+        "rest",
+        "redis",
+        "git"
+      ],
+      "matched_required": [
+        "python",
+        "postgresql",
+        "docker",
+        "rest"
+      ],
+      "missing_required": [
+        "fastapi"
+      ],
+      "matched_preferred": [
+        "redis"
+      ],
+      "missing_preferred": [
+        "aws",
+        "kafka"
+      ],
+      "suspicious_hidden_text": false,
+      "top_chunks": [
+        {
+          "chunk_id": "f50712ee-7f62-5f3d-9ca4-b872c683a39c",
+          "page_no": 1,
+          "section": "skills",
+          "text_scrubbed": "Python, Django, PostgreSQL, Docker, REST APIs, Redis, Git"
+        },
+        {
+          "chunk_id": "0bc9fc71-439c-5947-b395-07d8f86e5272",
+          "page_no": 1,
+          "section": "experience",
+          "text_scrubbed": "Associate Backend Engineer - Ardent Analytics   2021 - 2024\n- Built and maintained an admin portal using Docker, serving 85k users.\n- Built and maintained a notification system using REST APIs, serving 75k users.\n- Built and maintained an analytics platform using Redis, serving 79k users."
+        },
+        {
+          "chunk_id": "52ee011e-96ab-513d-b0df-bf83381f9bbc",
+          "page_no": 1,
+          "section": "summary",
+          "text_scrubbed": "Backend Engineer with 5 years of experience delivering production systems with Python, Django, PostgreSQL. Focused on reliable, well-tested software."
+        }
+      ],
+      "explanation": {
+        "feature_contributions": {
+          "required_skill_coverage": 9.0,
+          "rrf_sum_top3": 2.05,
+          "skills_in_experience_ratio": 5.36,
+          "preferred_skill_coverage": -1.67,
+          "years_gap": 2.0,
+          "experience_section_hit": 4.0,
+          "title_match": 3.5,
+          "edu_gap": 2.5
+        },
+        "feature_values": {
+          "required_skill_coverage": 0.8,
+          "rrf_sum_top3": 0.0624,
+          "skills_in_experience_ratio": 0.8571,
+          "preferred_skill_coverage": 0.3333,
+          "years_gap": 0.7,
+          "experience_section_hit": 1.0,
+          "title_match": 1.0,
+          "edu_gap": 1.0
+        },
+        "cross_encoder_score": null
+      },
+      "retrieval": {
+        "rrf_sum_top3": 0.0624,
+        "n_chunks_hit": 4
+      }
+    },
+    {
+      "candidate_id": "00b0db55-7815-5a9b-b48f-158922435089",
+      "document_id": "6c3b5572-c491-5f21-8ec7-a1dbedbf06d2",
+      "label": "Candidate #3EEC75",
+      "match_score": 71.6,
+      "rank": 6,
+      "years_experience": 8.0,
+      "education_level": 3,
+      "titles": [
+        "Backend Engineer"
+      ],
+      "top_skills": [
+        "java",
+        "spring boot",
+        "postgresql",
+        "microservices",
+        "rest",
+        "kafka",
+        "docker"
+      ],
+      "matched_required": [
+        "postgresql",
+        "docker",
+        "rest"
+      ],
+      "missing_required": [
+        "python",
+        "fastapi"
+      ],
+      "matched_preferred": [
+        "kafka"
+      ],
+      "missing_preferred": [
+        "redis",
+        "aws"
+      ],
+      "suspicious_hidden_text": false,
+      "top_chunks": [
+        {
+          "chunk_id": "099a534d-28d6-53f3-a09e-62a74a01c4de",
+          "page_no": 2,
+          "section": "skills",
+          "text_scrubbed": "Java, Spring Boot, PostgreSQL, Microservices, REST APIs, Kafka, Docker"
+        },
+        {
+          "chunk_id": "bf5da579-1115-5aee-bb38-1cdb3c4246bf",
+          "page_no": 1,
+          "section": "experience",
+          "text_scrubbed": "Associate Backend Engineer - Kestrel Soft   2018 - 2022\n- Built and maintained an analytics platform using Microservices, serving 39k users.\n- Built and maintained a notification system using REST APIs, serving 51k users.\n- Built and maintained a billing module using Kafka, serving 35k users."
+        },
+        {
+          "chunk_id": "bb4b85e0-d0f0-59ef-8f59-5132a2425117",
+          "page_no": 1,
+          "section": "summary",
+          "text_scrubbed": "Backend Engineer with 8 years of experience delivering production systems with Java, Spring Boot, PostgreSQL. Focused on reliable, well-tested software."
+        }
+      ],
+      "explanation": {
+        "feature_contributions": {
+          "required_skill_coverage": 3.0,
+          "rrf_sum_top3": -0.08,
+          "skills_in_experience_ratio": 5.36,
+          "preferred_skill_coverage": -1.67,
+          "years_gap": 5.0,
+          "experience_section_hit": 4.0,
+          "title_match": 3.5,
+          "edu_gap": 2.5
+        },
+        "feature_values": {
+          "required_skill_coverage": 0.6,
+          "rrf_sum_top3": 0.0485,
+          "skills_in_experience_ratio": 0.8571,
+          "preferred_skill_coverage": 0.3333,
+          "years_gap": 1.0,
+          "experience_section_hit": 1.0,
+          "title_match": 1.0,
+          "edu_gap": 1.0
+        },
+        "cross_encoder_score": null
+      },
+      "retrieval": {
+        "rrf_sum_top3": 0.0485,
+        "n_chunks_hit": 4
+      }
+    },
+    {
+      "candidate_id": "c65f0d6f-4548-56c4-89c8-dc773783ea25",
+      "document_id": "a7b8e503-9538-51e6-a390-2b0625818eff",
+      "label": "Candidate #FDEC86",
+      "match_score": 64.4,
+      "rank": 7,
+      "years_experience": 3.0,
+      "education_level": 2,
+      "titles": [
+        "Backend Developer"
+      ],
+      "top_skills": [
+        "python",
+        "django",
+        "mysql",
+        "rest",
+        "docker"
+      ],
+      "matched_required": [
+        "python",
+        "docker",
+        "rest"
+      ],
+      "missing_required": [
+        "fastapi",
+        "postgresql"
+      ],
+      "matched_preferred": [],
+      "missing_preferred": [
+        "redis",
+        "aws",
+        "kafka"
+      ],
+      "suspicious_hidden_text": false,
+      "top_chunks": [
+        {
+          "chunk_id": "e2aa87a8-ca0f-5426-bfa2-b82ee1fe1fe1",
+          "page_no": 1,
+          "section": "skills",
+          "text_scrubbed": "Python, Django, MySQL, REST APIs, Docker"
+        },
+        {
+          "chunk_id": "b391d275-c63d-55b5-8026-9271f1f95860",
+          "page_no": 1,
+          "section": "experience",
+          "text_scrubbed": "Associate Backend Developer - Northwind Labs   2023 - 2025\n- Built and maintained a notification system using MySQL, serving 88k users.\n- Built and maintained an admin portal using REST APIs, serving 81k users.\n- Built and maintained data pipelines using Docker, serving 61k users."
+        },
+        {
+          "chunk_id": "423efc49-b624-590f-a975-339bef5dde51",
+          "page_no": 1,
+          "section": "summary",
+          "text_scrubbed": "Backend Developer with 3 years of experience delivering production systems with Python, Django, MySQL. Focused on reliable, well-tested software."
+        }
+      ],
+      "explanation": {
+        "feature_contributions": {
+          "required_skill_coverage": 3.0,
+          "rrf_sum_top3": -1.13,
+          "skills_in_experience_ratio": 7.5,
+          "preferred_skill_coverage": -5.0,
+          "years_gap": 0.0,
+          "experience_section_hit": 4.0,
+          "title_match": 3.5,
+          "edu_gap": 2.5
+        },
+        "feature_values": {
+          "required_skill_coverage": 0.6,
+          "rrf_sum_top3": 0.0416,
+          "skills_in_experience_ratio": 1.0,
+          "preferred_skill_coverage": 0.0,
+          "years_gap": 0.5,
+          "experience_section_hit": 1.0,
+          "title_match": 1.0,
+          "edu_gap": 1.0
+        },
+        "cross_encoder_score": null
+      },
+      "retrieval": {
+        "rrf_sum_top3": 0.0416,
+        "n_chunks_hit": 5
+      }
+    },
+    {
+      "candidate_id": "febe3f29-6aa5-5c67-9dc3-fc45149d575d",
+      "document_id": "a1c3fb27-3190-5f7c-a73c-dcd156eb3174",
+      "label": "Candidate #F88604",
+      "match_score": 63.4,
+      "rank": 8,
+      "years_experience": 2.0,
+      "education_level": 2,
+      "titles": [
+        "Junior Backend Developer"
+      ],
+      "top_skills": [
+        "python",
+        "fastapi",
+        "postgresql",
+        "git"
+      ],
+      "matched_required": [
+        "python",
+        "fastapi",
+        "postgresql"
+      ],
+      "missing_required": [
+        "docker",
+        "rest"
+      ],
+      "matched_preferred": [],
+      "missing_preferred": [
+        "redis",
+        "aws",
+        "kafka"
+      ],
+      "suspicious_hidden_text": false,
+      "top_chunks": [
+        {
+          "chunk_id": "b2373776-4af4-58ac-b6e0-4440bbb0b16d",
+          "page_no": 1,
+          "section": "summary",
+          "text_scrubbed": "Junior Backend Developer with 2 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software."
+        },
+        {
+          "chunk_id": "8cfca9ed-4609-5156-8266-2252f9e8c1f0",
+          "page_no": 1,
+          "section": "skills",
+          "text_scrubbed": "Python, FastAPI, PostgreSQL, Git"
+        },
+        {
+          "chunk_id": "169620c9-8884-5e65-8d9f-05c9d9e3cbc8",
+          "page_no": 1,
+          "section": "experience",
+          "text_scrubbed": "Junior Backend Developer - Quantum Loop   2025 - Present\n- Built and maintained reporting dashboards using Python, serving 11k users.\n- Built and maintained a search feature using FastAPI, serving 63k users."
+        }
+      ],
+      "explanation": {
+        "feature_contributions": {
+          "required_skill_coverage": 3.0,
+          "rrf_sum_top3": -1.13,
+          "skills_in_experience_ratio": 7.5,
+          "preferred_skill_coverage": -5.0,
+          "years_gap": -1.0,
+          "experience_section_hit": 4.0,
+          "title_match": 3.5,
+          "edu_gap": 2.5
+        },
+        "feature_values": {
+          "required_skill_coverage": 0.6,
+          "rrf_sum_top3": 0.0416,
+          "skills_in_experience_ratio": 1.0,
+          "preferred_skill_coverage": 0.0,
+          "years_gap": 0.4,
+          "experience_section_hit": 1.0,
+          "title_match": 1.0,
+          "edu_gap": 1.0
+        },
+        "cross_encoder_score": null
+      },
+      "retrieval": {
+        "rrf_sum_top3": 0.0416,
+        "n_chunks_hit": 3
+      }
+    },
+    {
+      "candidate_id": "448bd318-1859-56c0-8850-1020872bd4b9",
+      "document_id": "2e5f9cce-0072-5351-b28d-5f623f86130a",
+      "label": "Candidate #F2B584",
+      "match_score": 61.6,
+      "rank": 9,
+      "years_experience": 3.0,
+      "education_level": 2,
+      "titles": [
+        "Software Engineer"
+      ],
+      "top_skills": [
+        "python",
+        "flask",
+        "mysql",
+        "docker",
+        "rest",
+        "git"
+      ],
+      "matched_required": [
+        "python",
+        "docker",
+        "rest"
+      ],
+      "missing_required": [
+        "fastapi",
+        "postgresql"
+      ],
+      "matched_preferred": [],
+      "missing_preferred": [
+        "redis",
+        "aws",
+        "kafka"
+      ],
+      "suspicious_hidden_text": false,
+      "top_chunks": [
+        {
+          "chunk_id": "f89efade-a360-5e7c-8cf6-3e7ff33044a7",
+          "page_no": 1,
+          "section": "skills",
+          "text_scrubbed": "Python, Flask, MySQL, Docker, REST APIs, Git"
+        },
+        {
+          "chunk_id": "6e30576b-432b-5a51-88e8-5510e77a2f56",
+          "page_no": 1,
+          "section": "experience",
+          "text_scrubbed": "Associate Software Engineer - Lumen Data   2023 - 2025\n- Built and maintained a notification system using Docker, serving 5k users.\n- Built and maintained an onboarding workflow using REST APIs, serving 10k users.\n- Built and maintained reporting dashboards using Git, serving 66k users."
+        },
+        {
+          "chunk_id": "992e2ba1-f0b1-5b37-9155-5f2db351c0e4",
+          "page_no": 1,
+          "section": "summary",
+          "text_scrubbed": "Software Engineer with 3 years of experience delivering production systems with Python, Flask, MySQL. Focused on reliable, well-tested software."
+        }
+      ],
+      "explanation": {
+        "feature_contributions": {
+          "required_skill_coverage": 3.0,
+          "rrf_sum_top3": -1.13,
+          "skills_in_experience_ratio": 7.5,
+          "preferred_skill_coverage": -5.0,
+          "years_gap": 0.0,
+          "experience_section_hit": 4.0,
+          "title_match": 0.7,
+          "edu_gap": 2.5
+        },
+        "feature_values": {
+          "required_skill_coverage": 0.6,
+          "rrf_sum_top3": 0.0416,
+          "skills_in_experience_ratio": 1.0,
+          "preferred_skill_coverage": 0.0,
+          "years_gap": 0.5,
+          "experience_section_hit": 1.0,
+          "title_match": 0.6,
+          "edu_gap": 1.0
+        },
+        "cross_encoder_score": null
+      },
+      "retrieval": {
+        "rrf_sum_top3": 0.0416,
+        "n_chunks_hit": 3
+      }
+    },
+    {
+      "candidate_id": "fc82dd14-c130-5c6d-a4eb-690212d3b46d",
+      "document_id": "a33850b5-6273-5064-ab2c-e7302181fffd",
+      "label": "Candidate #963408",
+      "match_score": 57.6,
+      "rank": 10,
+      "years_experience": 4.0,
+      "education_level": 3,
+      "titles": [
+        "Data Scientist"
+      ],
+      "top_skills": [
+        "python",
+        "pandas",
+        "numpy",
+        "scikit-learn",
+        "sql",
+        "postgresql",
+        "docker"
+      ],
+      "matched_required": [
+        "python",
+        "postgresql",
+        "docker"
+      ],
+      "missing_required": [
+        "fastapi",
+        "rest"
+      ],
+      "matched_preferred": [],
+      "missing_preferred": [
+        "redis",
+        "aws",
+        "kafka"
+      ],
+      "suspicious_hidden_text": false,
+      "top_chunks": [
+        {
+          "chunk_id": "780afde1-97d8-5e77-986e-1ef17797f2a8",
+          "page_no": 1,
+          "section": "skills",
+          "text_scrubbed": "Python, Pandas, Numpy, scikit-learn, SQL, PostgreSQL, Docker"
+        },
+        {
+          "chunk_id": "fe35792e-ee6a-510a-8af4-2d96fef89abd",
+          "page_no": 1,
+          "section": "summary",
+          "text_scrubbed": "Data Scientist with 4 years of experience delivering production systems with Python, Pandas, Numpy. Focused on reliable, well-tested software."
+        },
+        {
+          "chunk_id": "a58ef34e-5937-5637-a659-93167999a435",
+          "page_no": 1,
+          "section": "experience",
+          "text_scrubbed": "Data Scientist - Redwood Digital   2024 - Present\n- Built and maintained a search feature using Python, serving 54k users.\n- Built and maintained an admin portal using Pandas, serving 83k users.\n- Built and maintained a billing module using Numpy, serving 47k users."
+        }
+      ],
+      "explanation": {
+        "feature_contributions": {
+          "required_skill_coverage": 3.0,
+          "rrf_sum_top3": -1.13,
+          "skills_in_experience_ratio": 5.36,
+          "preferred_skill_coverage": -5.0,
+          "years_gap": 1.0,
+          "experience_section_hit": 4.0,
+          "title_match": -2.1,
+          "edu_gap": 2.5
+        },
+        "feature_values": {
+          "required_skill_coverage": 0.6,
+          "rrf_sum_top3": 0.0416,
+          "skills_in_experience_ratio": 0.8571,
+          "preferred_skill_coverage": 0.0,
+          "years_gap": 0.6,
+          "experience_section_hit": 1.0,
+          "title_match": 0.2,
+          "edu_gap": 1.0
+        },
+        "cross_encoder_score": null
+      },
+      "retrieval": {
+        "rrf_sum_top3": 0.0416,
+        "n_chunks_hit": 5
+      }
+    }
+  ],
+  "timings": {
+    "query_build_ms": 4.2,
+    "retrieval_ms": 38.5,
+    "rerank_ms": 11.9,
+    "total_ms": 61.3
+  },
+  "warnings": [],
+  "reranker_version": "fixture-rerank-1",
+  "embedder": "fixture-embedder-384",
+  "job_spec": {
+    "title": "Backend Engineer (Python)",
+    "raw_text": "Backend Engineer (Python)\nWe are hiring a backend engineer to build and scale our document intelligence APIs.\n- Design REST APIs and background workers\n- Own PostgreSQL schemas and query performance\n- Containerise and deploy services\nRequirements: 3+ years of experience. Strong Python, FastAPI or Django, PostgreSQL, Docker and REST.\nPreferred: Redis, AWS, Kafka. Bachelor degree in computer science.",
+    "required_skills": [
+      "python",
+      "fastapi",
+      "postgresql",
+      "docker",
+      "rest"
+    ],
+    "preferred_skills": [
+      "redis",
+      "aws",
+      "kafka"
+    ],
+    "min_years": 3.0,
+    "min_education": 2,
+    "responsibilities": [
+      "Design REST APIs and background workers",
+      "Own PostgreSQL schemas and query performance",
+      "Containerise and deploy services"
+    ]
+  }
+}

@@ -1,0 +1,762 @@
+{
+  "95e42bf9-4ed6-5603-b0fb-cd46e658fcdb": [
+    {
+      "chunk_id": "621bb73c-b758-512c-b5d1-811ec3ee672d",
+      "section": "other",
+      "page_no": 1,
+      "text": "[NAME]\nSenior Backend Engineer\n[EMAIL] | [PHONE] | [URL]"
+    },
+    {
+      "chunk_id": "74184d9f-c44a-5c1d-a9e5-5e85af11e7e7",
+      "section": "summary",
+      "page_no": 1,
+      "text": "Senior Backend Engineer with 7 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software."
+    },
+    {
+      "chunk_id": "c3d07e7a-10fc-5008-80d9-92e268b0acd1",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Senior Backend Engineer - Mosaic Cloud   2023 - Present\n- Built and maintained customer-facing services using Python, serving 52k users.\n- Built and maintained an onboarding workflow using FastAPI, serving 10k users.\n- Built and maintained reporting dashboards using PostgreSQL, serving 23k users.\n- Built and maintained a search feature using Docker, serving 57k users."
+    },
+    {
+      "chunk_id": "2ff1c5a0-cb83-52cd-9bb4-347b0ce42782",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Associate Senior Backend Engineer - Tidal Software   2019 - 2023\n- Built and maintained data pipelines using REST APIs, serving 30k users.\n- Built and maintained an analytics platform using Redis, serving 48k users.\n- Built and maintained reporting dashboards using AWS, serving 27k users."
+    },
+    {
+      "chunk_id": "92209b91-0036-5a97-9367-ee4fbc6cee0c",
+      "section": "skills",
+      "page_no": 2,
+      "text": "Python, FastAPI, PostgreSQL, Docker, REST APIs, Redis, AWS, Git"
+    },
+    {
+      "chunk_id": "4d244e36-62fa-55cb-a661-0e88bfbce6cb",
+      "section": "education",
+      "page_no": 2,
+      "text": "M.Tech in Computer Science, Greenfield University, 2015"
+    }
+  ],
+  "f1b8ed5b-12fc-59d0-bc98-4dad32ad57c0": [
+    {
+      "chunk_id": "1aeca283-bbe7-5dc3-a2db-9c48c7866fb8",
+      "section": "other",
+      "page_no": 1,
+      "text": "[NAME]\nBackend Engineer\n[EMAIL] | [PHONE] | [URL]"
+    },
+    {
+      "chunk_id": "52ee011e-96ab-513d-b0df-bf83381f9bbc",
+      "section": "summary",
+      "page_no": 1,
+      "text": "Backend Engineer with 5 years of experience delivering production systems with Python, Django, PostgreSQL. Focused on reliable, well-tested software."
+    },
+    {
+      "chunk_id": "c5955958-c063-5b20-8d4f-7f4dc93a57a4",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Backend Engineer - Northwind Labs   2024 - Present\n- Built and maintained customer-facing services using Python, serving 73k users.\n- Built and maintained a notification system using Django, serving 22k users.\n- Built and maintained a notification system using PostgreSQL, serving 49k users."
+    },
+    {
+      "chunk_id": "0bc9fc71-439c-5947-b395-07d8f86e5272",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Associate Backend Engineer - Ardent Analytics   2021 - 2024\n- Built and maintained an admin portal using Docker, serving 85k users.\n- Built and maintained a notification system using REST APIs, serving 75k users.\n- Built and maintained an analytics platform using Redis, serving 79k users."
+    },
+    {
+      "chunk_id": "f50712ee-7f62-5f3d-9ca4-b872c683a39c",
+      "section": "skills",
+      "page_no": 1,
+      "text": "Python, Django, PostgreSQL, Docker, REST APIs, Redis, Git"
+    },
+    {
+      "chunk_id": "d733202a-ab6c-5dca-8731-413ad2c40f68",
+      "section": "education",
+      "page_no": 1,
+      "text": "B.Tech in Computer Science, KIIT University, 2017"
+    }
+  ],
+  "9aa4526e-44da-55a6-8dfd-74c24a7d1d6c": [
+    {
+      "chunk_id": "54215d59-ead2-5e80-96d3-c6ea3befdb6e",
+      "section": "other",
+      "page_no": 1,
+      "text": "[NAME]\nPython Developer\n[EMAIL] | [PHONE] | [URL]"
+    },
+    {
+      "chunk_id": "9d4ff59d-27e2-5d78-a3dd-5245fba456d7",
+      "section": "summary",
+      "page_no": 1,
+      "text": "Python Developer with 4 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software."
+    },
+    {
+      "chunk_id": "387381e8-da2f-5362-a7d3-42269f357b2c",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Python Developer - Lumen Data   2024 - Present\n- Built and maintained a notification system using Python, serving 30k users.\n- Built and maintained data pipelines using FastAPI, serving 18k users.\n- Built and maintained a billing module using PostgreSQL, serving 63k users."
+    },
+    {
+      "chunk_id": "9a597482-5216-53ca-8fbc-b19ff535be2e",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Associate Python Developer - Orbit Commerce   2022 - 2024\n- Built and maintained data pipelines using REST APIs, serving 82k users.\n- Built and maintained an admin portal using Git, serving 81k users.\n- Built and maintained customer-facing services using Kafka, serving 57k users."
+    },
+    {
+      "chunk_id": "e3931b33-3f32-52b3-9ec1-b38a56ba6aee",
+      "section": "skills",
+      "page_no": 1,
+      "text": "Python, FastAPI, PostgreSQL, REST APIs, Git, Kafka"
+    },
+    {
+      "chunk_id": "92160223-2637-569d-86ba-f0e13525bdeb",
+      "section": "education",
+      "page_no": 1,
+      "text": "B.Tech in Computer Science, KIIT University, 2018"
+    }
+  ],
+  "448bd318-1859-56c0-8850-1020872bd4b9": [
+    {
+      "chunk_id": "d3577810-bea2-5c72-a07e-4ea11c5fcc87",
+      "section": "other",
+      "page_no": 1,
+      "text": "[NAME]\nSoftware Engineer\n[EMAIL] | [PHONE] | [URL]"
+    },
+    {
+      "chunk_id": "992e2ba1-f0b1-5b37-9155-5f2db351c0e4",
+      "section": "summary",
+      "page_no": 1,
+      "text": "Software Engineer with 3 years of experience delivering production systems with Python, Flask, MySQL. Focused on reliable, well-tested software."
+    },
+    {
+      "chunk_id": "9dea6390-1d56-5e29-8bd3-89bb047bb3c8",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Software Engineer - Redwood Digital   2025 - Present\n- Built and maintained an onboarding workflow using Python, serving 30k users.\n- Built and maintained reporting dashboards using Flask, serving 59k users.\n- Built and maintained a search feature using MySQL, serving 60k users."
+    },
+    {
+      "chunk_id": "6e30576b-432b-5a51-88e8-5510e77a2f56",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Associate Software Engineer - Lumen Data   2023 - 2025\n- Built and maintained a notification system using Docker, serving 5k users.\n- Built and maintained an onboarding workflow using REST APIs, serving 10k users.\n- Built and maintained reporting dashboards using Git, serving 66k users."
+    },
+    {
+      "chunk_id": "f89efade-a360-5e7c-8cf6-3e7ff33044a7",
+      "section": "skills",
+      "page_no": 1,
+      "text": "Python, Flask, MySQL, Docker, REST APIs, Git"
+    },
+    {
+      "chunk_id": "34d8c6e2-98f5-586d-877f-a2954574b780",
+      "section": "education",
+      "page_no": 1,
+      "text": "B.Tech in Computer Science, Riverbend College of Engineering, 2019"
+    }
+  ],
+  "f0845dea-228f-517f-9a26-23c1b5f582a0": [
+    {
+      "chunk_id": "3e983dff-d0a9-539b-b8f3-1fd944273b8a",
+      "section": "other",
+      "page_no": 1,
+      "text": "[NAME]\nJava Developer\n[EMAIL] | [PHONE] | [URL]"
+    },
+    {
+      "chunk_id": "bbc89605-da90-5106-b03b-454611210206",
+      "section": "summary",
+      "page_no": 1,
+      "text": "Java Developer with 6 years of experience delivering production systems with Java, Spring Boot, MySQL. Focused on reliable, well-tested software."
+    },
+    {
+      "chunk_id": "d0fe6fb3-074a-5759-a818-3c70c229b053",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Java Developer - Mosaic Cloud   2023 - Present\n- Built and maintained an admin portal using Java, serving 71k users.\n- Built and maintained a search feature using Spring Boot, serving 83k users.\n- Built and maintained an analytics platform using MySQL, serving 28k users."
+    },
+    {
+      "chunk_id": "c7d93035-c51c-51cc-b8d2-bb02cf9b441e",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Associate Java Developer - Bluepine Systems   2020 - 2023\n- Built and maintained an onboarding workflow using Microservices, serving 85k users.\n- Built and maintained internal tooling using REST APIs, serving 21k users.\n- Built and maintained an admin portal using Docker, serving 49k users."
+    },
+    {
+      "chunk_id": "925a7b2d-a809-5063-9dbd-03b6a15dc1da",
+      "section": "skills",
+      "page_no": 1,
+      "text": "Java, Spring Boot, MySQL, Microservices, REST APIs, Docker, Kafka"
+    },
+    {
+      "chunk_id": "c9ca2478-d437-520c-8e8a-78413ebf8f32",
+      "section": "education",
+      "page_no": 1,
+      "text": "B.Tech in Computer Science, KIIT University, 2016"
+    }
+  ],
+  "fc82dd14-c130-5c6d-a4eb-690212d3b46d": [
+    {
+      "chunk_id": "93ee053c-fc95-5a03-8d49-89fde59748ce",
+      "section": "other",
+      "page_no": 1,
+      "text": "[NAME]\nData Scientist\n[EMAIL] | [PHONE] | [URL]"
+    },
+    {
+      "chunk_id": "fe35792e-ee6a-510a-8af4-2d96fef89abd",
+      "section": "summary",
+      "page_no": 1,
+      "text": "Data Scientist with 4 years of experience delivering production systems with Python, Pandas, Numpy. Focused on reliable, well-tested software."
+    },
+    {
+      "chunk_id": "a58ef34e-5937-5637-a659-93167999a435",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Data Scientist - Redwood Digital   2024 - Present\n- Built and maintained a search feature using Python, serving 54k users.\n- Built and maintained an admin portal using Pandas, serving 83k users.\n- Built and maintained a billing module using Numpy, serving 47k users."
+    },
+    {
+      "chunk_id": "260f5dd3-9de5-560a-abdd-a09aef94a63b",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Associate Data Scientist - Mosaic Cloud   2022 - 2024\n- Built and maintained a search feature using scikit-learn, serving 86k users.\n- Built and maintained data pipelines using SQL, serving 64k users.\n- Built and maintained customer-facing services using PostgreSQL, serving 75k users."
+    },
+    {
+      "chunk_id": "780afde1-97d8-5e77-986e-1ef17797f2a8",
+      "section": "skills",
+      "page_no": 1,
+      "text": "Python, Pandas, Numpy, scikit-learn, SQL, PostgreSQL, Docker"
+    },
+    {
+      "chunk_id": "ddfda55e-ac7d-519b-873e-f0ffb1f7258b",
+      "section": "education",
+      "page_no": 1,
+      "text": "M.Tech in Computer Science, Greenfield University, 2018"
+    }
+  ],
+  "b135aaf0-7c9f-51fa-b87f-f515bc24ff70": [
+    {
+      "chunk_id": "09c45715-575a-5296-9883-1d74f1923a37",
+      "section": "other",
+      "page_no": 1,
+      "text": "[NAME]\nDevOps Engineer\n[EMAIL] | [PHONE] | [URL]"
+    },
+    {
+      "chunk_id": "9b648088-c2a0-52b5-bcbf-95aeebd1b7f4",
+      "section": "summary",
+      "page_no": 1,
+      "text": "DevOps Engineer with 5 years of experience delivering production systems with Docker, Kubernetes, AWS. Focused on reliable, well-tested software."
+    },
+    {
+      "chunk_id": "ced29ac6-873e-5882-bfb1-ed7ba5c7b4c3",
+      "section": "experience",
+      "page_no": 1,
+      "text": "DevOps Engineer - Kestrel Soft   2024 - Present\n- Built and maintained an analytics platform using Docker, serving 58k users.\n- Built and maintained internal tooling using Kubernetes, serving 28k users.\n- Built and maintained an admin portal using AWS, serving 43k users."
+    },
+    {
+      "chunk_id": "8aa391ae-07ac-5377-9261-3f6ab39b509c",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Associate DevOps Engineer - Northwind Labs   2021 - 2024\n- Built and maintained internal tooling using Terraform, serving 28k users.\n- Built and maintained a search feature using Linux, serving 41k users.\n- Built and maintained data pipelines using CI/CD, serving 77k users."
+    },
+    {
+      "chunk_id": "9634fe09-a634-5fae-a147-9c808a61efcd",
+      "section": "skills",
+      "page_no": 1,
+      "text": "Docker, Kubernetes, AWS, Terraform, Linux, CI/CD, Python"
+    },
+    {
+      "chunk_id": "5cc31330-7316-5e00-aa16-78c67b91348c",
+      "section": "education",
+      "page_no": 1,
+      "text": "B.Tech in Computer Science, KIIT University, 2017"
+    }
+  ],
+  "196b095e-f8a7-5ebf-a6cc-378016a95207": [
+    {
+      "chunk_id": "2201b58f-8d20-5297-82d6-1818c0db3bb5",
+      "section": "other",
+      "page_no": 1,
+      "text": "[NAME]\nFrontend Developer\n[EMAIL] | [PHONE] | [URL]"
+    },
+    {
+      "chunk_id": "e8ada1a1-7008-5660-a598-a460d212f346",
+      "section": "summary",
+      "page_no": 1,
+      "text": "Frontend Developer with 3 years of experience delivering production systems with JavaScript, TypeScript, React. Focused on reliable, well-tested software."
+    },
+    {
+      "chunk_id": "1374ece8-bec1-5d2f-b488-8f447e9d680d",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Frontend Developer - Northwind Labs   2025 - Present\n- Built and maintained data pipelines using JavaScript, serving 41k users.\n- Built and maintained data pipelines using TypeScript, serving 30k users.\n- Built and maintained a search feature using React, serving 9k users."
+    },
+    {
+      "chunk_id": "b8315b7b-13a3-52a5-a021-04e666aaa23a",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Associate Frontend Developer - Orbit Commerce   2023 - 2025\n- Built and maintained an analytics platform using HTML, serving 73k users.\n- Built and maintained internal tooling using CSS, serving 59k users.\n- Built and maintained an admin portal using Node.js, serving 38k users."
+    },
+    {
+      "chunk_id": "747f8e40-f9c7-5c54-9843-78ff8cfd2df2",
+      "section": "skills",
+      "page_no": 1,
+      "text": "JavaScript, TypeScript, React, HTML, CSS, Node.js, Git"
+    },
+    {
+      "chunk_id": "f7977ce8-7ca7-5bda-b4d3-cb5bbcc0192c",
+      "section": "education",
+      "page_no": 1,
+      "text": "B.Tech in Computer Science, KIIT University, 2019"
+    }
+  ],
+  "b0f5a745-fc74-5d00-a281-70fd4d912e1d": [
+    {
+      "chunk_id": "f2a554cf-be4d-5ff3-87f1-13a183cae115",
+      "section": "other",
+      "page_no": 1,
+      "text": "[NAME]\nPrincipal Engineer\n[EMAIL] | [PHONE] | [URL]"
+    },
+    {
+      "chunk_id": "52c94345-5263-55f1-8270-170fbb5a1520",
+      "section": "summary",
+      "page_no": 1,
+      "text": "Principal Engineer with 9 years of experience delivering production systems with Python, Django, FastAPI. Focused on reliable, well-tested software."
+    },
+    {
+      "chunk_id": "24c48e3c-695a-5399-aca1-183c826074f3",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Principal Engineer - Lumen Data   2022 - Present\n- Built and maintained an onboarding workflow using Python, serving 12k users.\n- Built and maintained customer-facing services using Django, serving 8k users.\n- Built and maintained data pipelines using FastAPI, serving 88k users.\n- Built and maintained an admin portal using PostgreSQL, serving 16k users."
+    },
+    {
+      "chunk_id": "5c2662ed-ca9a-50bf-be32-b5d64435e760",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Associate Principal Engineer - Redwood Digital   2017 - 2022\n- Built and maintained an admin portal using Docker, serving 46k users.\n- Built and maintained internal tooling using AWS, serving 71k users.\n- Built and maintained an onboarding workflow using Kafka, serving 35k users."
+    },
+    {
+      "chunk_id": "7dc537d3-a9eb-570a-915d-53862f6c0766",
+      "section": "skills",
+      "page_no": 2,
+      "text": "Python, Django, FastAPI, PostgreSQL, Docker, AWS, Kafka, Redis, REST APIs"
+    },
+    {
+      "chunk_id": "4eea284a-3268-5aa8-96f5-0dda764d8d35",
+      "section": "education",
+      "page_no": 2,
+      "text": "B.Tech in Computer Science, Pune Institute of Technology, 2013"
+    }
+  ],
+  "febe3f29-6aa5-5c67-9dc3-fc45149d575d": [
+    {
+      "chunk_id": "4032163d-402c-586c-8450-18f5866b6b83",
+      "section": "other",
+      "page_no": 1,
+      "text": "[NAME]\nJunior Backend Developer\n[EMAIL] | [PHONE] | [URL]"
+    },
+    {
+      "chunk_id": "b2373776-4af4-58ac-b6e0-4440bbb0b16d",
+      "section": "summary",
+      "page_no": 1,
+      "text": "Junior Backend Developer with 2 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software."
+    },
+    {
+      "chunk_id": "169620c9-8884-5e65-8d9f-05c9d9e3cbc8",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Junior Backend Developer - Quantum Loop   2025 - Present\n- Built and maintained reporting dashboards using Python, serving 11k users.\n- Built and maintained a search feature using FastAPI, serving 63k users."
+    },
+    {
+      "chunk_id": "b8c0b83b-f250-587a-aba7-b8814a03c269",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Associate Junior Backend Developer - Northwind Labs   2024 - 2025\n- Built and maintained data pipelines using PostgreSQL, serving 66k users.\n- Built and maintained an analytics platform using Git, serving 29k users."
+    },
+    {
+      "chunk_id": "8cfca9ed-4609-5156-8266-2252f9e8c1f0",
+      "section": "skills",
+      "page_no": 1,
+      "text": "Python, FastAPI, PostgreSQL, Git"
+    },
+    {
+      "chunk_id": "22ecff27-1bdf-57de-9c82-2ec061b599d6",
+      "section": "education",
+      "page_no": 1,
+      "text": "B.Tech in Computer Science, Greenfield University, 2020"
+    }
+  ],
+  "98dc7c75-7a1a-5459-a59e-e772b63d8b84": [
+    {
+      "chunk_id": "07632e9f-54fc-5f7c-b898-efe83a6e04f1",
+      "section": "other",
+      "page_no": 1,
+      "text": "[NAME]\nML Engineer\n[EMAIL] | [PHONE] | [URL]"
+    },
+    {
+      "chunk_id": "c17e1bb6-1e30-5cc5-a502-d3d4edd64b3a",
+      "section": "summary",
+      "page_no": 1,
+      "text": "ML Engineer with 6 years of experience delivering production systems with Python, PyTorch, TensorFlow. Focused on reliable, well-tested software."
+    },
+    {
+      "chunk_id": "2592a256-079e-5d07-bf4e-0bf84aacc0b4",
+      "section": "experience",
+      "page_no": 1,
+      "text": "ML Engineer - Tidal Software   2023 - Present\n- Built and maintained an analytics platform using Python, serving 70k users.\n- Built and maintained customer-facing services using PyTorch, serving 54k users.\n- Built and maintained a notification system using TensorFlow, serving 54k users."
+    },
+    {
+      "chunk_id": "87f4b57d-5ae2-530b-99c0-6c24ed93b0cb",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Associate ML Engineer - Orbit Commerce   2020 - 2023\n- Built and maintained data pipelines using SQL, serving 20k users.\n- Built and maintained a notification system using machine learning, serving 28k users.\n- Built and maintained customer-facing services using Airflow, serving 67k users."
+    },
+    {
+      "chunk_id": "49bfbd60-e27c-5af1-b6cc-97dbd4958f0c",
+      "section": "skills",
+      "page_no": 1,
+      "text": "Python, PyTorch, TensorFlow, SQL, machine learning, Airflow"
+    },
+    {
+      "chunk_id": "fae7086e-8857-5c4c-8378-6491fdebc1ab",
+      "section": "education",
+      "page_no": 1,
+      "text": "PhD in Computer Science, Greenfield University, 2016"
+    }
+  ],
+  "cf1d2014-4202-5d56-9f8a-5042d644b135": [
+    {
+      "chunk_id": "29fae2a3-9a61-5824-81e8-a4c3f7378cff",
+      "section": "other",
+      "page_no": 1,
+      "text": "[NAME]\nQA Engineer\n[EMAIL] | [PHONE] | [URL]"
+    },
+    {
+      "chunk_id": "7c03e40b-18bd-5b5c-b828-e3e60cde46de",
+      "section": "summary",
+      "page_no": 1,
+      "text": "QA Engineer with 4 years of experience delivering production systems with Selenium, Pytest, Java. Focused on reliable, well-tested software."
+    },
+    {
+      "chunk_id": "ee111134-748c-56bb-a90e-7e01cecdccdc",
+      "section": "experience",
+      "page_no": 1,
+      "text": "QA Engineer - Kestrel Soft   2024 - Present\n- Built and maintained internal tooling using Selenium, serving 55k users.\n- Built and maintained data pipelines using Pytest, serving 86k users.\n- Built and maintained reporting dashboards using Java, serving 53k users."
+    },
+    {
+      "chunk_id": "f7051493-2d7d-5aa7-aea3-e40cce5ca3b9",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Associate QA Engineer - Helio Works   2022 - 2024\n- Built and maintained reporting dashboards using Jira, serving 66k users.\n- Built and maintained a billing module using Agile, serving 24k users.\n- Built and maintained customer-facing services using Python, serving 61k users."
+    },
+    {
+      "chunk_id": "49ce5235-acf2-576e-bb4c-b80fc5656820",
+      "section": "skills",
+      "page_no": 1,
+      "text": "Selenium, Pytest, Java, Jira, Agile, Python"
+    },
+    {
+      "chunk_id": "e929b9d1-5687-576f-a4c3-6c1eac98ce8d",
+      "section": "education",
+      "page_no": 1,
+      "text": "B.Tech in Computer Science, Greenfield University, 2018"
+    }
+  ],
+  "0b8d7eaa-9a67-5165-a7b6-fa87f2f23eab": [
+    {
+      "chunk_id": "c88ee871-8255-59e8-a7fc-a72a13a8b8e8",
+      "section": "other",
+      "page_no": 1,
+      "text": "[NAME]\nUI Engineer\n[EMAIL] | [PHONE] | [URL]"
+    },
+    {
+      "chunk_id": "cc9c2b4b-0f8a-5873-ad94-150a81f8ce8f",
+      "section": "summary",
+      "page_no": 1,
+      "text": "UI Engineer with 5 years of experience delivering production systems with JavaScript, React, TypeScript. Focused on reliable, well-tested software."
+    },
+    {
+      "chunk_id": "d79ae3b4-a42f-5f55-89b3-d212496a726a",
+      "section": "experience",
+      "page_no": 1,
+      "text": "UI Engineer - Kestrel Soft   2024 - Present\n- Built and maintained data pipelines using JavaScript, serving 53k users.\n- Built and maintained an analytics platform using React, serving 79k users.\n- Built and maintained internal tooling using TypeScript, serving 46k users."
+    },
+    {
+      "chunk_id": "5852e854-b351-5652-a285-1d8d4ec8cfc4",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Associate UI Engineer - Quantum Loop   2021 - 2024\n- Built and maintained a billing module using GraphQL, serving 85k users.\n- Built and maintained a notification system using Node.js, serving 70k users.\n- Built and maintained an admin portal using CSS, serving 27k users."
+    },
+    {
+      "chunk_id": "2a29e5fd-965a-56cd-8f08-9c61ab4f7208",
+      "section": "skills",
+      "page_no": 1,
+      "text": "JavaScript, React, TypeScript, GraphQL, Node.js, CSS"
+    },
+    {
+      "chunk_id": "bcfe6dac-983a-5353-8fec-1dd446d632e8",
+      "section": "education",
+      "page_no": 1,
+      "text": "M.Tech in Computer Science, Pune Institute of Technology, 2017"
+    }
+  ],
+  "f463b13f-2dcc-598a-90dd-f7339a067fe5": [
+    {
+      "chunk_id": "88bf88b5-40c2-5eaa-bd2d-c81a62ec391b",
+      "section": "other",
+      "page_no": 1,
+      "text": "[NAME]\nSite Reliability Engineer\n[EMAIL] | [PHONE] | [URL]"
+    },
+    {
+      "chunk_id": "3e056b4b-9478-5aaa-aeb1-9283b3c17b63",
+      "section": "summary",
+      "page_no": 1,
+      "text": "Site Reliability Engineer with 7 years of experience delivering production systems with Kubernetes, Terraform, AWS. Focused on reliable, well-tested software."
+    },
+    {
+      "chunk_id": "a432fa59-f984-5be8-8af9-aa72be01b217",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Site Reliability Engineer - Redwood Digital   2023 - Present\n- Built and maintained data pipelines using Kubernetes, serving 74k users.\n- Built and maintained an admin portal using Terraform, serving 5k users.\n- Built and maintained a notification system using AWS, serving 9k users.\n- Built and maintained a notification system using Docker, serving 33k users."
+    },
+    {
+      "chunk_id": "d9546c6d-3124-5644-a33e-28c25178cdb3",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Associate Site Reliability Engineer - Helio Works   2019 - 2023\n- Built and maintained a billing module using Ansible, serving 2k users.\n- Built and maintained an onboarding workflow using Linux, serving 11k users.\n- Built and maintained an admin portal using Prometheus, serving 59k users."
+    },
+    {
+      "chunk_id": "f6246ea0-a376-50e0-9509-a79dc903dcb8",
+      "section": "skills",
+      "page_no": 2,
+      "text": "Kubernetes, Terraform, AWS, Docker, Ansible, Linux, Prometheus, Grafana"
+    },
+    {
+      "chunk_id": "647d41a9-2641-5c3a-bbd3-bad61174a4f0",
+      "section": "education",
+      "page_no": 2,
+      "text": "M.Tech in Computer Science, Greenfield University, 2015"
+    }
+  ],
+  "c65f0d6f-4548-56c4-89c8-dc773783ea25": [
+    {
+      "chunk_id": "761d4747-5d90-5333-b1da-d8059b7fcb29",
+      "section": "other",
+      "page_no": 1,
+      "text": "[NAME]\nBackend Developer\n[EMAIL] | [PHONE] | [URL]"
+    },
+    {
+      "chunk_id": "423efc49-b624-590f-a975-339bef5dde51",
+      "section": "summary",
+      "page_no": 1,
+      "text": "Backend Developer with 3 years of experience delivering production systems with Python, Django, MySQL. Focused on reliable, well-tested software."
+    },
+    {
+      "chunk_id": "005f15fd-1280-50bc-86cb-86629ddf4aea",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Backend Developer - Lumen Data   2025 - Present\n- Built and maintained an analytics platform using Python, serving 34k users.\n- Built and maintained internal tooling using Django, serving 56k users."
+    },
+    {
+      "chunk_id": "b391d275-c63d-55b5-8026-9271f1f95860",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Associate Backend Developer - Northwind Labs   2023 - 2025\n- Built and maintained a notification system using MySQL, serving 88k users.\n- Built and maintained an admin portal using REST APIs, serving 81k users.\n- Built and maintained data pipelines using Docker, serving 61k users."
+    },
+    {
+      "chunk_id": "e2aa87a8-ca0f-5426-bfa2-b82ee1fe1fe1",
+      "section": "skills",
+      "page_no": 1,
+      "text": "Python, Django, MySQL, REST APIs, Docker"
+    },
+    {
+      "chunk_id": "916572ab-94fe-5064-a134-e3faeec66cdb",
+      "section": "education",
+      "page_no": 1,
+      "text": "B.Tech in Computer Science, Riverbend College of Engineering, 2019"
+    }
+  ],
+  "f2dda1c8-ce97-5d14-914c-1e01b7a6ca9b": [
+    {
+      "chunk_id": "f2165baa-fe94-5d17-9050-160edb8f79a6",
+      "section": "other",
+      "page_no": 1,
+      "text": "[NAME]\nData Analyst\n[EMAIL] | [PHONE] | [URL]"
+    },
+    {
+      "chunk_id": "e9429be6-8ec9-576f-9f69-02ea55ba0d46",
+      "section": "summary",
+      "page_no": 1,
+      "text": "Data Analyst with 2 years of experience delivering production systems with Python, SQL, Pandas. Focused on reliable, well-tested software."
+    },
+    {
+      "chunk_id": "84fcb712-af0b-5095-a744-b2dcd17b3e69",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Data Analyst - Bluepine Systems   2025 - Present\n- Built and maintained reporting dashboards using Python, serving 69k users.\n- Built and maintained a notification system using SQL, serving 37k users."
+    },
+    {
+      "chunk_id": "5adde2cc-3678-51b0-bfc4-35fb8599887d",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Associate Data Analyst - Helio Works   2024 - 2025\n- Built and maintained a notification system using Pandas, serving 77k users.\n- Built and maintained a billing module using Tableau, serving 63k users.\n- Built and maintained an admin portal using Excel, serving 3k users."
+    },
+    {
+      "chunk_id": "0d3d2e64-8c06-58bf-a28c-ec707ffea517",
+      "section": "skills",
+      "page_no": 1,
+      "text": "Python, SQL, Pandas, Tableau, Excel"
+    },
+    {
+      "chunk_id": "213c6e4a-5d2b-57f4-9046-12a6aef491eb",
+      "section": "education",
+      "page_no": 1,
+      "text": "B.Tech in Computer Science, KIIT University, 2020"
+    }
+  ],
+  "a8b0c7ab-24be-50f8-acb6-e2b6c7c3d66a": [
+    {
+      "chunk_id": "91ec381a-7b2f-59ec-b9ee-c2de8f01eac5",
+      "section": "other",
+      "page_no": 1,
+      "text": "[NAME]\nAPI Engineer\n[EMAIL] | [PHONE] | [URL]"
+    },
+    {
+      "chunk_id": "cba20652-ed50-5424-a629-7eef6985444b",
+      "section": "summary",
+      "page_no": 1,
+      "text": "API Engineer with 6 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software."
+    },
+    {
+      "chunk_id": "e9a16ce1-d24e-5db8-9724-b21900c69db6",
+      "section": "experience",
+      "page_no": 1,
+      "text": "API Engineer - Kestrel Soft   2023 - Present\n- Built and maintained a search feature using Python, serving 46k users.\n- Built and maintained a search feature using FastAPI, serving 23k users.\n- Built and maintained customer-facing services using PostgreSQL, serving 46k users."
+    },
+    {
+      "chunk_id": "e3c9dda1-f7a7-5caa-90fd-c3dcabb2234a",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Associate API Engineer - Mosaic Cloud   2020 - 2023\n- Built and maintained reporting dashboards using Docker, serving 6k users.\n- Built and maintained reporting dashboards using REST APIs, serving 69k users.\n- Built and maintained reporting dashboards using AWS, serving 77k users."
+    },
+    {
+      "chunk_id": "1a07d85c-d9b2-5905-9a26-b8f85c20ea48",
+      "section": "skills",
+      "page_no": 1,
+      "text": "Python, FastAPI, PostgreSQL, Docker, REST APIs, AWS, Redis"
+    },
+    {
+      "chunk_id": "c5848704-66ae-50b7-8603-b7adff3a9ffd",
+      "section": "education",
+      "page_no": 1,
+      "text": "M.Tech in Computer Science, Riverbend College of Engineering, 2016"
+    }
+  ],
+  "597bf13b-0c78-51e1-9bb3-e619ea5dd459": [
+    {
+      "chunk_id": "99d717c8-61d2-5b0b-be44-6bf1bc4d712f",
+      "section": "other",
+      "page_no": 1,
+      "text": "[NAME]\nWeb Developer\n[EMAIL] | [PHONE] | [URL]"
+    },
+    {
+      "chunk_id": "97905a64-b865-58dd-9fb9-08b3b6ae5d5e",
+      "section": "summary",
+      "page_no": 1,
+      "text": "Web Developer with 2 years of experience delivering production systems with HTML, CSS, JavaScript. Focused on reliable, well-tested software."
+    },
+    {
+      "chunk_id": "3f1ce371-e477-5991-835e-6293512f5d37",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Web Developer - Redwood Digital   2025 - Present\n- Built and maintained a notification system using HTML, serving 26k users.\n- Built and maintained customer-facing services using CSS, serving 47k users."
+    },
+    {
+      "chunk_id": "4235e9bf-870f-5f65-a768-38923ea9d0fc",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Associate Web Developer - Tidal Software   2024 - 2025\n- Built and maintained a billing module using JavaScript, serving 15k users.\n- Built and maintained a billing module using React, serving 36k users.\n- Built and maintained internal tooling using Git, serving 87k users."
+    },
+    {
+      "chunk_id": "ebfce1a6-dd05-5297-b8c3-2cb4dc6420f2",
+      "section": "skills",
+      "page_no": 1,
+      "text": "HTML, CSS, JavaScript, React, Git"
+    },
+    {
+      "chunk_id": "0268a055-affc-5e50-9647-571ab936a5b7",
+      "section": "education",
+      "page_no": 1,
+      "text": "B.Tech in Computer Science, Greenfield University, 2020"
+    }
+  ],
+  "02518bb5-e3e4-5237-886d-c5abcd18d3fd": [
+    {
+      "chunk_id": "9a7dfa73-6e85-5b95-80b9-6ba4ca0eda1c",
+      "section": "other",
+      "page_no": 1,
+      "text": "[NAME]\nCloud Engineer\n[EMAIL] | [PHONE] | [URL]"
+    },
+    {
+      "chunk_id": "4ad7e25e-6b67-55cf-be78-fc271d6f50d1",
+      "section": "summary",
+      "page_no": 1,
+      "text": "Cloud Engineer with 4 years of experience delivering production systems with AWS, Docker, Terraform. Focused on reliable, well-tested software."
+    },
+    {
+      "chunk_id": "741e8130-0c86-5f51-b450-76ebcffdbf78",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Cloud Engineer - Mosaic Cloud   2024 - Present\n- Built and maintained a notification system using AWS, serving 14k users.\n- Built and maintained an analytics platform using Docker, serving 77k users.\n- Built and maintained an onboarding workflow using Terraform, serving 30k users."
+    },
+    {
+      "chunk_id": "f04ba937-d859-565c-84a0-cd710a1303f8",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Associate Cloud Engineer - Tidal Software   2022 - 2024\n- Built and maintained data pipelines using Linux, serving 69k users.\n- Built and maintained a notification system using Python, serving 29k users.\n- Built and maintained customer-facing services using CI/CD, serving 51k users."
+    },
+    {
+      "chunk_id": "3cd3cb79-945d-540a-a77c-39a7ce3be096",
+      "section": "skills",
+      "page_no": 1,
+      "text": "AWS, Docker, Terraform, Linux, Python, CI/CD"
+    },
+    {
+      "chunk_id": "4edc2955-0b26-57f2-816e-b4a13ddc7277",
+      "section": "education",
+      "page_no": 1,
+      "text": "B.Tech in Computer Science, Pune Institute of Technology, 2018"
+    }
+  ],
+  "00b0db55-7815-5a9b-b48f-158922435089": [
+    {
+      "chunk_id": "7adcd079-d287-57e7-a883-f95d90297fc9",
+      "section": "other",
+      "page_no": 1,
+      "text": "[NAME]\nBackend Engineer\n[EMAIL] | [PHONE] | [URL]"
+    },
+    {
+      "chunk_id": "bb4b85e0-d0f0-59ef-8f59-5132a2425117",
+      "section": "summary",
+      "page_no": 1,
+      "text": "Backend Engineer with 8 years of experience delivering production systems with Java, Spring Boot, PostgreSQL. Focused on reliable, well-tested software."
+    },
+    {
+      "chunk_id": "0a286e79-2ac8-5fae-a6cc-3204b2e8fd9c",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Backend Engineer - Northwind Labs   2022 - Present\n- Built and maintained an analytics platform using Java, serving 14k users.\n- Built and maintained an analytics platform using Spring Boot, serving 59k users.\n- Built and maintained an admin portal using PostgreSQL, serving 71k users."
+    },
+    {
+      "chunk_id": "bf5da579-1115-5aee-bb38-1cdb3c4246bf",
+      "section": "experience",
+      "page_no": 1,
+      "text": "Associate Backend Engineer - Kestrel Soft   2018 - 2022\n- Built and maintained an analytics platform using Microservices, serving 39k users.\n- Built and maintained a notification system using REST APIs, serving 51k users.\n- Built and maintained a billing module using Kafka, serving 35k users."
+    },
+    {
+      "chunk_id": "099a534d-28d6-53f3-a09e-62a74a01c4de",
+      "section": "skills",
+      "page_no": 2,
+      "text": "Java, Spring Boot, PostgreSQL, Microservices, REST APIs, Kafka, Docker"
+    },
+    {
+      "chunk_id": "e2702a25-ccb6-5a4c-9fc9-c07cf9f7f42f",
+      "section": "education",
+      "page_no": 2,
+      "text": "M.Tech in Computer Science, Pune Institute of Technology, 2014"
+    }
+  ]
+}

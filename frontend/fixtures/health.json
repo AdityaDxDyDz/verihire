@@ -1,0 +1,20 @@
+{
+  "status": "ok",
+  "db": "ok",
+  "embedder": "fixture-embedder-384",
+  "reranker": "fixture-rerank-1",
+  "contract_version": "1.1.0",
+  "ml_mode": "stub",
+  "ml_components": {
+    "run_ingest": "stub",
+    "get_embedder": "stub",
+    "get_llm_client": "stub",
+    "parse_job_description": "stub",
+    "build_queries": "stub",
+    "get_reranker": "stub",
+    "analyze_skill_gap": "stub"
+  },
+  "stubs_in_use": true,
+  "auth_mode": "dev",
+  "storage_mode": "local"
+}

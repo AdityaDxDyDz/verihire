@@ -1,0 +1,24 @@
+{
+  "id": "f46f5072-e15f-4559-8168-6a73f6b2880a",
+  "label": "Candidate F46F50",
+  "document_id": "d4743725-768b-49df-84fb-cf115b4ef121",
+  "profile": {
+    "skills": [
+      "python",
+      "fastapi",
+      "postgresql",
+      "docker"
+    ],
+    "titles": [
+      "backend engineer"
+    ],
+    "years_experience": 6.0,
+    "education_level": 4,
+    "education_fields": [],
+    "certifications": [],
+    "summary": "Summary\nBackend Engineer with 6 years of experience building production systems.",
+    "parser_version": "stub-ingest-v1"
+  },
+  "suspicious_hidden_text": false,
+  "pii": null
+}

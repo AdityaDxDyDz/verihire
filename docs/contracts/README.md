@@ -1,0 +1,2 @@
+# Contracts
+`fixtures/*.json` are the **consumer-driven contract**: the frontend is built against them, and `tests/test_fixtures_match_models.py` proves they match `contract_drafts/api.py`. Backend (Raj) must return shapes that validate against those models. Change a shape → update `scripts/make_fixtures.py`, regenerate, update the model, tell the frontend owner. `contract_drafts/contracts.py` (v1.1.0) is the ML interface for Harsh and Ekant.

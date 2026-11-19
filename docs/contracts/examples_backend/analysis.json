@@ -1,0 +1,156 @@
+{
+  "result": {
+    "summary": "3 skills evidenced in experience; 0 required skills missing.",
+    "skills": [
+      {
+        "skill": "python",
+        "status": "present",
+        "reasoning": "Used in work experience or projects.",
+        "citations": [
+          {
+            "chunk_id": "6df6ef39-ee2c-4453-bec3-efd8448fa72d",
+            "quote": "- Built and maintained services using Python, FastAPI"
+          },
+          {
+            "chunk_id": "822c5d51-98f2-4346-9a01-7ba5aa55dde4",
+            "quote": "Python, FastAPI, Docker, PostgreSQL"
+          }
+        ]
+      },
+      {
+        "skill": "fastapi",
+        "status": "present",
+        "reasoning": "Used in work experience or projects.",
+        "citations": [
+          {
+            "chunk_id": "6df6ef39-ee2c-4453-bec3-efd8448fa72d",
+            "quote": "- Built and maintained services using Python, FastAPI"
+          },
+          {
+            "chunk_id": "822c5d51-98f2-4346-9a01-7ba5aa55dde4",
+            "quote": "Python, FastAPI, Docker, PostgreSQL"
+          }
+        ]
+      },
+      {
+        "skill": "postgresql",
+        "status": "present",
+        "reasoning": "Used in work experience or projects.",
+        "citations": [
+          {
+            "chunk_id": "6df6ef39-ee2c-4453-bec3-efd8448fa72d",
+            "quote": "- Improved reliability and shipped features with PostgreSQL"
+          },
+          {
+            "chunk_id": "822c5d51-98f2-4346-9a01-7ba5aa55dde4",
+            "quote": "Python, FastAPI, Docker, PostgreSQL"
+          }
+        ]
+      },
+      {
+        "skill": "docker",
+        "status": "partial",
+        "reasoning": "Listed, but not shown in experience.",
+        "citations": [
+          {
+            "chunk_id": "822c5d51-98f2-4346-9a01-7ba5aa55dde4",
+            "quote": "Python, FastAPI, Docker, PostgreSQL"
+          }
+        ]
+      },
+      {
+        "skill": "aws",
+        "status": "missing",
+        "reasoning": "No mention found in the resume.",
+        "citations": []
+      }
+    ],
+    "strengths": [
+      "Hands-on python",
+      "Hands-on fastapi",
+      "Hands-on postgresql"
+    ],
+    "risks": [],
+    "interview_questions": [
+      "Describe a project where you used python.",
+      "Describe a project where you used fastapi.",
+      "Describe a project where you used postgresql."
+    ],
+    "dropped_unverified_claims": 0,
+    "model": "stub",
+    "prompt_version": "stub-skillgap-v1"
+  },
+  "citations_resolved": [
+    {
+      "skill": "python",
+      "chunk_id": "6df6ef39-ee2c-4453-bec3-efd8448fa72d",
+      "quote": "- Built and maintained services using Python, FastAPI",
+      "text_scrubbed": "Experience\nBackend Engineer, Fictional Corp (2020 - present)\n- Built and maintained services using Python, FastAPI.\n- Improved reliability and shipped features with PostgreSQL.\n",
+      "page_no": 1,
+      "section": "experience",
+      "start": 61,
+      "end": 114
+    },
+    {
+      "skill": "python",
+      "chunk_id": "822c5d51-98f2-4346-9a01-7ba5aa55dde4",
+      "quote": "Python, FastAPI, Docker, PostgreSQL",
+      "text_scrubbed": "Skills\nPython, FastAPI, Docker, PostgreSQL\n",
+      "page_no": 1,
+      "section": "skills",
+      "start": 7,
+      "end": 42
+    },
+    {
+      "skill": "fastapi",
+      "chunk_id": "6df6ef39-ee2c-4453-bec3-efd8448fa72d",
+      "quote": "- Built and maintained services using Python, FastAPI",
+      "text_scrubbed": "Experience\nBackend Engineer, Fictional Corp (2020 - present)\n- Built and maintained services using Python, FastAPI.\n- Improved reliability and shipped features with PostgreSQL.\n",
+      "page_no": 1,
+      "section": "experience",
+      "start": 61,
+      "end": 114
+    },
+    {
+      "skill": "fastapi",
+      "chunk_id": "822c5d51-98f2-4346-9a01-7ba5aa55dde4",
+      "quote": "Python, FastAPI, Docker, PostgreSQL",
+      "text_scrubbed": "Skills\nPython, FastAPI, Docker, PostgreSQL\n",
+      "page_no": 1,
+      "section": "skills",
+      "start": 7,
+      "end": 42
+    },
+    {
+      "skill": "postgresql",
+      "chunk_id": "6df6ef39-ee2c-4453-bec3-efd8448fa72d",
+      "quote": "- Improved reliability and shipped features with PostgreSQL",
+      "text_scrubbed": "Experience\nBackend Engineer, Fictional Corp (2020 - present)\n- Built and maintained services using Python, FastAPI.\n- Improved reliability and shipped features with PostgreSQL.\n",
+      "page_no": 1,
+      "section": "experience",
+      "start": 116,
+      "end": 175
+    },
+    {
+      "skill": "postgresql",
+      "chunk_id": "822c5d51-98f2-4346-9a01-7ba5aa55dde4",
+      "quote": "Python, FastAPI, Docker, PostgreSQL",
+      "text_scrubbed": "Skills\nPython, FastAPI, Docker, PostgreSQL\n",
+      "page_no": 1,
+      "section": "skills",
+      "start": 7,
+      "end": 42
+    },
+    {
+      "skill": "docker",
+      "chunk_id": "822c5d51-98f2-4346-9a01-7ba5aa55dde4",
+      "quote": "Python, FastAPI, Docker, PostgreSQL",
+      "text_scrubbed": "Skills\nPython, FastAPI, Docker, PostgreSQL\n",
+      "page_no": 1,
+      "section": "skills",
+      "start": 7,
+      "end": 42
+    }
+  ],
+  "from_cache": false
+}

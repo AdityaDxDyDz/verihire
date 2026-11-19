@@ -1,0 +1,3176 @@
+{
+  "95e42bf9-4ed6-5603-b0fb-cd46e658fcdb": {
+    "result": {
+      "summary": "5 of 5 required skills are shown in work experience.",
+      "skills": [
+        {
+          "skill": "python",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "74184d9f-c44a-5c1d-a9e5-5e85af11e7e7",
+              "quote": "Senior Backend Engineer with 7 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software."
+            },
+            {
+              "chunk_id": "c3d07e7a-10fc-5008-80d9-92e268b0acd1",
+              "quote": "Built and maintained customer-facing services using Python, serving 52k users."
+            }
+          ]
+        },
+        {
+          "skill": "fastapi",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "74184d9f-c44a-5c1d-a9e5-5e85af11e7e7",
+              "quote": "Senior Backend Engineer with 7 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software."
+            },
+            {
+              "chunk_id": "c3d07e7a-10fc-5008-80d9-92e268b0acd1",
+              "quote": "Built and maintained an onboarding workflow using FastAPI, serving 10k users."
+            }
+          ]
+        },
+        {
+          "skill": "postgresql",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "74184d9f-c44a-5c1d-a9e5-5e85af11e7e7",
+              "quote": "Senior Backend Engineer with 7 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software."
+            },
+            {
+              "chunk_id": "c3d07e7a-10fc-5008-80d9-92e268b0acd1",
+              "quote": "Built and maintained reporting dashboards using PostgreSQL, serving 23k users."
+            }
+          ]
+        },
+        {
+          "skill": "docker",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "c3d07e7a-10fc-5008-80d9-92e268b0acd1",
+              "quote": "Built and maintained a search feature using Docker, serving 57k users."
+            },
+            {
+              "chunk_id": "92209b91-0036-5a97-9367-ee4fbc6cee0c",
+              "quote": "Python, FastAPI, PostgreSQL, Docker, REST APIs, Redis, AWS, Git"
+            }
+          ]
+        },
+        {
+          "skill": "rest",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "2ff1c5a0-cb83-52cd-9bb4-347b0ce42782",
+              "quote": "Built and maintained data pipelines using REST APIs, serving 30k users."
+            },
+            {
+              "chunk_id": "92209b91-0036-5a97-9367-ee4fbc6cee0c",
+              "quote": "Python, FastAPI, PostgreSQL, Docker, REST APIs, Redis, AWS, Git"
+            }
+          ]
+        },
+        {
+          "skill": "redis",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "2ff1c5a0-cb83-52cd-9bb4-347b0ce42782",
+              "quote": "Built and maintained an analytics platform using Redis, serving 48k users."
+            },
+            {
+              "chunk_id": "92209b91-0036-5a97-9367-ee4fbc6cee0c",
+              "quote": "Python, FastAPI, PostgreSQL, Docker, REST APIs, Redis, AWS, Git"
+            }
+          ]
+        },
+        {
+          "skill": "aws",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "2ff1c5a0-cb83-52cd-9bb4-347b0ce42782",
+              "quote": "Built and maintained reporting dashboards using AWS, serving 27k users."
+            },
+            {
+              "chunk_id": "92209b91-0036-5a97-9367-ee4fbc6cee0c",
+              "quote": "Python, FastAPI, PostgreSQL, Docker, REST APIs, Redis, AWS, Git"
+            }
+          ]
+        },
+        {
+          "skill": "kafka",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        }
+      ],
+      "strengths": [
+        "Hands-on Python in production work.",
+        "Hands-on FastAPI in production work.",
+        "Hands-on PostgreSQL in production work."
+      ],
+      "risks": [],
+      "interview_questions": [
+        "Describe a system you built with Python and how you tested it.",
+        "Describe a system you built with FastAPI and how you tested it."
+      ],
+      "dropped_unverified_claims": 0,
+      "model": "fixture-model",
+      "prompt_version": "skillgap_v1"
+    },
+    "citations_resolved": [
+      {
+        "skill": "python",
+        "chunk_id": "74184d9f-c44a-5c1d-a9e5-5e85af11e7e7",
+        "quote": "Senior Backend Engineer with 7 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software.",
+        "text_scrubbed": "Senior Backend Engineer with 7 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software.",
+        "page_no": 1,
+        "section": "summary",
+        "start": 0,
+        "end": 157
+      },
+      {
+        "skill": "python",
+        "chunk_id": "c3d07e7a-10fc-5008-80d9-92e268b0acd1",
+        "quote": "Built and maintained customer-facing services using Python, serving 52k users.",
+        "text_scrubbed": "Senior Backend Engineer - Mosaic Cloud   2023 - Present\n- Built and maintained customer-facing services using Python, serving 52k users.\n- Built and maintained an onboarding workflow using FastAPI, serving 10k users.\n- Built and maintained reporting dashboards using PostgreSQL, serving 23k users.\n- Built and maintained a search feature using Docker, serving 57k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 58,
+        "end": 136
+      },
+      {
+        "skill": "fastapi",
+        "chunk_id": "74184d9f-c44a-5c1d-a9e5-5e85af11e7e7",
+        "quote": "Senior Backend Engineer with 7 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software.",
+        "text_scrubbed": "Senior Backend Engineer with 7 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software.",
+        "page_no": 1,
+        "section": "summary",
+        "start": 0,
+        "end": 157
+      },
+      {
+        "skill": "fastapi",
+        "chunk_id": "c3d07e7a-10fc-5008-80d9-92e268b0acd1",
+        "quote": "Built and maintained an onboarding workflow using FastAPI, serving 10k users.",
+        "text_scrubbed": "Senior Backend Engineer - Mosaic Cloud   2023 - Present\n- Built and maintained customer-facing services using Python, serving 52k users.\n- Built and maintained an onboarding workflow using FastAPI, serving 10k users.\n- Built and maintained reporting dashboards using PostgreSQL, serving 23k users.\n- Built and maintained a search feature using Docker, serving 57k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 139,
+        "end": 216
+      },
+      {
+        "skill": "postgresql",
+        "chunk_id": "74184d9f-c44a-5c1d-a9e5-5e85af11e7e7",
+        "quote": "Senior Backend Engineer with 7 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software.",
+        "text_scrubbed": "Senior Backend Engineer with 7 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software.",
+        "page_no": 1,
+        "section": "summary",
+        "start": 0,
+        "end": 157
+      },
+      {
+        "skill": "postgresql",
+        "chunk_id": "c3d07e7a-10fc-5008-80d9-92e268b0acd1",
+        "quote": "Built and maintained reporting dashboards using PostgreSQL, serving 23k users.",
+        "text_scrubbed": "Senior Backend Engineer - Mosaic Cloud   2023 - Present\n- Built and maintained customer-facing services using Python, serving 52k users.\n- Built and maintained an onboarding workflow using FastAPI, serving 10k users.\n- Built and maintained reporting dashboards using PostgreSQL, serving 23k users.\n- Built and maintained a search feature using Docker, serving 57k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 219,
+        "end": 297
+      },
+      {
+        "skill": "docker",
+        "chunk_id": "c3d07e7a-10fc-5008-80d9-92e268b0acd1",
+        "quote": "Built and maintained a search feature using Docker, serving 57k users.",
+        "text_scrubbed": "Senior Backend Engineer - Mosaic Cloud   2023 - Present\n- Built and maintained customer-facing services using Python, serving 52k users.\n- Built and maintained an onboarding workflow using FastAPI, serving 10k users.\n- Built and maintained reporting dashboards using PostgreSQL, serving 23k users.\n- Built and maintained a search feature using Docker, serving 57k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 300,
+        "end": 370
+      },
+      {
+        "skill": "docker",
+        "chunk_id": "92209b91-0036-5a97-9367-ee4fbc6cee0c",
+        "quote": "Python, FastAPI, PostgreSQL, Docker, REST APIs, Redis, AWS, Git",
+        "text_scrubbed": "Python, FastAPI, PostgreSQL, Docker, REST APIs, Redis, AWS, Git",
+        "page_no": 2,
+        "section": "skills",
+        "start": 0,
+        "end": 63
+      },
+      {
+        "skill": "rest",
+        "chunk_id": "2ff1c5a0-cb83-52cd-9bb4-347b0ce42782",
+        "quote": "Built and maintained data pipelines using REST APIs, serving 30k users.",
+        "text_scrubbed": "Associate Senior Backend Engineer - Tidal Software   2019 - 2023\n- Built and maintained data pipelines using REST APIs, serving 30k users.\n- Built and maintained an analytics platform using Redis, serving 48k users.\n- Built and maintained reporting dashboards using AWS, serving 27k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 67,
+        "end": 138
+      },
+      {
+        "skill": "rest",
+        "chunk_id": "92209b91-0036-5a97-9367-ee4fbc6cee0c",
+        "quote": "Python, FastAPI, PostgreSQL, Docker, REST APIs, Redis, AWS, Git",
+        "text_scrubbed": "Python, FastAPI, PostgreSQL, Docker, REST APIs, Redis, AWS, Git",
+        "page_no": 2,
+        "section": "skills",
+        "start": 0,
+        "end": 63
+      },
+      {
+        "skill": "redis",
+        "chunk_id": "2ff1c5a0-cb83-52cd-9bb4-347b0ce42782",
+        "quote": "Built and maintained an analytics platform using Redis, serving 48k users.",
+        "text_scrubbed": "Associate Senior Backend Engineer - Tidal Software   2019 - 2023\n- Built and maintained data pipelines using REST APIs, serving 30k users.\n- Built and maintained an analytics platform using Redis, serving 48k users.\n- Built and maintained reporting dashboards using AWS, serving 27k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 141,
+        "end": 215
+      },
+      {
+        "skill": "redis",
+        "chunk_id": "92209b91-0036-5a97-9367-ee4fbc6cee0c",
+        "quote": "Python, FastAPI, PostgreSQL, Docker, REST APIs, Redis, AWS, Git",
+        "text_scrubbed": "Python, FastAPI, PostgreSQL, Docker, REST APIs, Redis, AWS, Git",
+        "page_no": 2,
+        "section": "skills",
+        "start": 0,
+        "end": 63
+      },
+      {
+        "skill": "aws",
+        "chunk_id": "2ff1c5a0-cb83-52cd-9bb4-347b0ce42782",
+        "quote": "Built and maintained reporting dashboards using AWS, serving 27k users.",
+        "text_scrubbed": "Associate Senior Backend Engineer - Tidal Software   2019 - 2023\n- Built and maintained data pipelines using REST APIs, serving 30k users.\n- Built and maintained an analytics platform using Redis, serving 48k users.\n- Built and maintained reporting dashboards using AWS, serving 27k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 218,
+        "end": 289
+      },
+      {
+        "skill": "aws",
+        "chunk_id": "92209b91-0036-5a97-9367-ee4fbc6cee0c",
+        "quote": "Python, FastAPI, PostgreSQL, Docker, REST APIs, Redis, AWS, Git",
+        "text_scrubbed": "Python, FastAPI, PostgreSQL, Docker, REST APIs, Redis, AWS, Git",
+        "page_no": 2,
+        "section": "skills",
+        "start": 0,
+        "end": 63
+      }
+    ],
+    "from_cache": false
+  },
+  "f1b8ed5b-12fc-59d0-bc98-4dad32ad57c0": {
+    "result": {
+      "summary": "4 of 5 required skills are shown in work experience; 1 have no evidence.",
+      "skills": [
+        {
+          "skill": "python",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "52ee011e-96ab-513d-b0df-bf83381f9bbc",
+              "quote": "Backend Engineer with 5 years of experience delivering production systems with Python, Django, PostgreSQL. Focused on reliable, well-tested software."
+            },
+            {
+              "chunk_id": "c5955958-c063-5b20-8d4f-7f4dc93a57a4",
+              "quote": "Built and maintained customer-facing services using Python, serving 73k users."
+            }
+          ]
+        },
+        {
+          "skill": "fastapi",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "postgresql",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "52ee011e-96ab-513d-b0df-bf83381f9bbc",
+              "quote": "Backend Engineer with 5 years of experience delivering production systems with Python, Django, PostgreSQL. Focused on reliable, well-tested software."
+            },
+            {
+              "chunk_id": "c5955958-c063-5b20-8d4f-7f4dc93a57a4",
+              "quote": "Built and maintained a notification system using PostgreSQL, serving 49k users."
+            }
+          ]
+        },
+        {
+          "skill": "docker",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "0bc9fc71-439c-5947-b395-07d8f86e5272",
+              "quote": "Built and maintained an admin portal using Docker, serving 85k users."
+            },
+            {
+              "chunk_id": "f50712ee-7f62-5f3d-9ca4-b872c683a39c",
+              "quote": "Python, Django, PostgreSQL, Docker, REST APIs, Redis, Git"
+            }
+          ]
+        },
+        {
+          "skill": "rest",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "0bc9fc71-439c-5947-b395-07d8f86e5272",
+              "quote": "Built and maintained a notification system using REST APIs, serving 75k users."
+            },
+            {
+              "chunk_id": "f50712ee-7f62-5f3d-9ca4-b872c683a39c",
+              "quote": "Python, Django, PostgreSQL, Docker, REST APIs, Redis, Git"
+            }
+          ]
+        },
+        {
+          "skill": "redis",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "0bc9fc71-439c-5947-b395-07d8f86e5272",
+              "quote": "Built and maintained an analytics platform using Redis, serving 79k users."
+            },
+            {
+              "chunk_id": "f50712ee-7f62-5f3d-9ca4-b872c683a39c",
+              "quote": "Python, Django, PostgreSQL, Docker, REST APIs, Redis, Git"
+            }
+          ]
+        },
+        {
+          "skill": "aws",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "kafka",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        }
+      ],
+      "strengths": [
+        "Hands-on Python in production work.",
+        "Hands-on PostgreSQL in production work.",
+        "Hands-on Docker in production work."
+      ],
+      "risks": [
+        "No evidence of FastAPI."
+      ],
+      "interview_questions": [
+        "Describe a system you built with Python and how you tested it.",
+        "Describe a system you built with PostgreSQL and how you tested it.",
+        "How would you get productive with FastAPI?"
+      ],
+      "dropped_unverified_claims": 0,
+      "model": "fixture-model",
+      "prompt_version": "skillgap_v1"
+    },
+    "citations_resolved": [
+      {
+        "skill": "python",
+        "chunk_id": "52ee011e-96ab-513d-b0df-bf83381f9bbc",
+        "quote": "Backend Engineer with 5 years of experience delivering production systems with Python, Django, PostgreSQL. Focused on reliable, well-tested software.",
+        "text_scrubbed": "Backend Engineer with 5 years of experience delivering production systems with Python, Django, PostgreSQL. Focused on reliable, well-tested software.",
+        "page_no": 1,
+        "section": "summary",
+        "start": 0,
+        "end": 149
+      },
+      {
+        "skill": "python",
+        "chunk_id": "c5955958-c063-5b20-8d4f-7f4dc93a57a4",
+        "quote": "Built and maintained customer-facing services using Python, serving 73k users.",
+        "text_scrubbed": "Backend Engineer - Northwind Labs   2024 - Present\n- Built and maintained customer-facing services using Python, serving 73k users.\n- Built and maintained a notification system using Django, serving 22k users.\n- Built and maintained a notification system using PostgreSQL, serving 49k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 53,
+        "end": 131
+      },
+      {
+        "skill": "postgresql",
+        "chunk_id": "52ee011e-96ab-513d-b0df-bf83381f9bbc",
+        "quote": "Backend Engineer with 5 years of experience delivering production systems with Python, Django, PostgreSQL. Focused on reliable, well-tested software.",
+        "text_scrubbed": "Backend Engineer with 5 years of experience delivering production systems with Python, Django, PostgreSQL. Focused on reliable, well-tested software.",
+        "page_no": 1,
+        "section": "summary",
+        "start": 0,
+        "end": 149
+      },
+      {
+        "skill": "postgresql",
+        "chunk_id": "c5955958-c063-5b20-8d4f-7f4dc93a57a4",
+        "quote": "Built and maintained a notification system using PostgreSQL, serving 49k users.",
+        "text_scrubbed": "Backend Engineer - Northwind Labs   2024 - Present\n- Built and maintained customer-facing services using Python, serving 73k users.\n- Built and maintained a notification system using Django, serving 22k users.\n- Built and maintained a notification system using PostgreSQL, serving 49k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 212,
+        "end": 291
+      },
+      {
+        "skill": "docker",
+        "chunk_id": "0bc9fc71-439c-5947-b395-07d8f86e5272",
+        "quote": "Built and maintained an admin portal using Docker, serving 85k users.",
+        "text_scrubbed": "Associate Backend Engineer - Ardent Analytics   2021 - 2024\n- Built and maintained an admin portal using Docker, serving 85k users.\n- Built and maintained a notification system using REST APIs, serving 75k users.\n- Built and maintained an analytics platform using Redis, serving 79k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 62,
+        "end": 131
+      },
+      {
+        "skill": "docker",
+        "chunk_id": "f50712ee-7f62-5f3d-9ca4-b872c683a39c",
+        "quote": "Python, Django, PostgreSQL, Docker, REST APIs, Redis, Git",
+        "text_scrubbed": "Python, Django, PostgreSQL, Docker, REST APIs, Redis, Git",
+        "page_no": 1,
+        "section": "skills",
+        "start": 0,
+        "end": 57
+      },
+      {
+        "skill": "rest",
+        "chunk_id": "0bc9fc71-439c-5947-b395-07d8f86e5272",
+        "quote": "Built and maintained a notification system using REST APIs, serving 75k users.",
+        "text_scrubbed": "Associate Backend Engineer - Ardent Analytics   2021 - 2024\n- Built and maintained an admin portal using Docker, serving 85k users.\n- Built and maintained a notification system using REST APIs, serving 75k users.\n- Built and maintained an analytics platform using Redis, serving 79k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 134,
+        "end": 212
+      },
+      {
+        "skill": "rest",
+        "chunk_id": "f50712ee-7f62-5f3d-9ca4-b872c683a39c",
+        "quote": "Python, Django, PostgreSQL, Docker, REST APIs, Redis, Git",
+        "text_scrubbed": "Python, Django, PostgreSQL, Docker, REST APIs, Redis, Git",
+        "page_no": 1,
+        "section": "skills",
+        "start": 0,
+        "end": 57
+      },
+      {
+        "skill": "redis",
+        "chunk_id": "0bc9fc71-439c-5947-b395-07d8f86e5272",
+        "quote": "Built and maintained an analytics platform using Redis, serving 79k users.",
+        "text_scrubbed": "Associate Backend Engineer - Ardent Analytics   2021 - 2024\n- Built and maintained an admin portal using Docker, serving 85k users.\n- Built and maintained a notification system using REST APIs, serving 75k users.\n- Built and maintained an analytics platform using Redis, serving 79k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 215,
+        "end": 289
+      },
+      {
+        "skill": "redis",
+        "chunk_id": "f50712ee-7f62-5f3d-9ca4-b872c683a39c",
+        "quote": "Python, Django, PostgreSQL, Docker, REST APIs, Redis, Git",
+        "text_scrubbed": "Python, Django, PostgreSQL, Docker, REST APIs, Redis, Git",
+        "page_no": 1,
+        "section": "skills",
+        "start": 0,
+        "end": 57
+      }
+    ],
+    "from_cache": false
+  },
+  "9aa4526e-44da-55a6-8dfd-74c24a7d1d6c": {
+    "result": {
+      "summary": "3 of 5 required skills are shown in work experience; 1 have no evidence.",
+      "skills": [
+        {
+          "skill": "python",
+          "status": "partial",
+          "reasoning": "Listed, but no work context shows how it was used.",
+          "citations": [
+            {
+              "chunk_id": "54215d59-ead2-5e80-96d3-c6ea3befdb6e",
+              "quote": "Python Developer"
+            },
+            {
+              "chunk_id": "9d4ff59d-27e2-5d78-a3dd-5245fba456d7",
+              "quote": "Python Developer with 4 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software."
+            }
+          ]
+        },
+        {
+          "skill": "fastapi",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "9d4ff59d-27e2-5d78-a3dd-5245fba456d7",
+              "quote": "Python Developer with 4 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software."
+            },
+            {
+              "chunk_id": "387381e8-da2f-5362-a7d3-42269f357b2c",
+              "quote": "Built and maintained data pipelines using FastAPI, serving 18k users."
+            }
+          ]
+        },
+        {
+          "skill": "postgresql",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "9d4ff59d-27e2-5d78-a3dd-5245fba456d7",
+              "quote": "Python Developer with 4 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software."
+            },
+            {
+              "chunk_id": "387381e8-da2f-5362-a7d3-42269f357b2c",
+              "quote": "Built and maintained a billing module using PostgreSQL, serving 63k users."
+            }
+          ]
+        },
+        {
+          "skill": "docker",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "rest",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "9a597482-5216-53ca-8fbc-b19ff535be2e",
+              "quote": "Built and maintained data pipelines using REST APIs, serving 82k users."
+            },
+            {
+              "chunk_id": "e3931b33-3f32-52b3-9ec1-b38a56ba6aee",
+              "quote": "Python, FastAPI, PostgreSQL, REST APIs, Git, Kafka"
+            }
+          ]
+        },
+        {
+          "skill": "redis",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "aws",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "kafka",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "9a597482-5216-53ca-8fbc-b19ff535be2e",
+              "quote": "Built and maintained customer-facing services using Kafka, serving 57k users."
+            },
+            {
+              "chunk_id": "e3931b33-3f32-52b3-9ec1-b38a56ba6aee",
+              "quote": "Python, FastAPI, PostgreSQL, REST APIs, Git, Kafka"
+            }
+          ]
+        }
+      ],
+      "strengths": [
+        "Hands-on FastAPI in production work.",
+        "Hands-on PostgreSQL in production work.",
+        "Hands-on REST APIs in production work."
+      ],
+      "risks": [
+        "No evidence of Docker."
+      ],
+      "interview_questions": [
+        "Describe a system you built with FastAPI and how you tested it.",
+        "Describe a system you built with PostgreSQL and how you tested it.",
+        "How would you get productive with Docker?"
+      ],
+      "dropped_unverified_claims": 0,
+      "model": "fixture-model",
+      "prompt_version": "skillgap_v1"
+    },
+    "citations_resolved": [
+      {
+        "skill": "python",
+        "chunk_id": "54215d59-ead2-5e80-96d3-c6ea3befdb6e",
+        "quote": "Python Developer",
+        "text_scrubbed": "[NAME]\nPython Developer\n[EMAIL] | [PHONE] | [URL]",
+        "page_no": 1,
+        "section": "other",
+        "start": 7,
+        "end": 23
+      },
+      {
+        "skill": "python",
+        "chunk_id": "9d4ff59d-27e2-5d78-a3dd-5245fba456d7",
+        "quote": "Python Developer with 4 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software.",
+        "text_scrubbed": "Python Developer with 4 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software.",
+        "page_no": 1,
+        "section": "summary",
+        "start": 0,
+        "end": 150
+      },
+      {
+        "skill": "fastapi",
+        "chunk_id": "9d4ff59d-27e2-5d78-a3dd-5245fba456d7",
+        "quote": "Python Developer with 4 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software.",
+        "text_scrubbed": "Python Developer with 4 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software.",
+        "page_no": 1,
+        "section": "summary",
+        "start": 0,
+        "end": 150
+      },
+      {
+        "skill": "fastapi",
+        "chunk_id": "387381e8-da2f-5362-a7d3-42269f357b2c",
+        "quote": "Built and maintained data pipelines using FastAPI, serving 18k users.",
+        "text_scrubbed": "Python Developer - Lumen Data   2024 - Present\n- Built and maintained a notification system using Python, serving 30k users.\n- Built and maintained data pipelines using FastAPI, serving 18k users.\n- Built and maintained a billing module using PostgreSQL, serving 63k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 127,
+        "end": 196
+      },
+      {
+        "skill": "postgresql",
+        "chunk_id": "9d4ff59d-27e2-5d78-a3dd-5245fba456d7",
+        "quote": "Python Developer with 4 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software.",
+        "text_scrubbed": "Python Developer with 4 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software.",
+        "page_no": 1,
+        "section": "summary",
+        "start": 0,
+        "end": 150
+      },
+      {
+        "skill": "postgresql",
+        "chunk_id": "387381e8-da2f-5362-a7d3-42269f357b2c",
+        "quote": "Built and maintained a billing module using PostgreSQL, serving 63k users.",
+        "text_scrubbed": "Python Developer - Lumen Data   2024 - Present\n- Built and maintained a notification system using Python, serving 30k users.\n- Built and maintained data pipelines using FastAPI, serving 18k users.\n- Built and maintained a billing module using PostgreSQL, serving 63k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 199,
+        "end": 273
+      },
+      {
+        "skill": "rest",
+        "chunk_id": "9a597482-5216-53ca-8fbc-b19ff535be2e",
+        "quote": "Built and maintained data pipelines using REST APIs, serving 82k users.",
+        "text_scrubbed": "Associate Python Developer - Orbit Commerce   2022 - 2024\n- Built and maintained data pipelines using REST APIs, serving 82k users.\n- Built and maintained an admin portal using Git, serving 81k users.\n- Built and maintained customer-facing services using Kafka, serving 57k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 60,
+        "end": 131
+      },
+      {
+        "skill": "rest",
+        "chunk_id": "e3931b33-3f32-52b3-9ec1-b38a56ba6aee",
+        "quote": "Python, FastAPI, PostgreSQL, REST APIs, Git, Kafka",
+        "text_scrubbed": "Python, FastAPI, PostgreSQL, REST APIs, Git, Kafka",
+        "page_no": 1,
+        "section": "skills",
+        "start": 0,
+        "end": 50
+      },
+      {
+        "skill": "kafka",
+        "chunk_id": "9a597482-5216-53ca-8fbc-b19ff535be2e",
+        "quote": "Built and maintained customer-facing services using Kafka, serving 57k users.",
+        "text_scrubbed": "Associate Python Developer - Orbit Commerce   2022 - 2024\n- Built and maintained data pipelines using REST APIs, serving 82k users.\n- Built and maintained an admin portal using Git, serving 81k users.\n- Built and maintained customer-facing services using Kafka, serving 57k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 203,
+        "end": 280
+      },
+      {
+        "skill": "kafka",
+        "chunk_id": "e3931b33-3f32-52b3-9ec1-b38a56ba6aee",
+        "quote": "Python, FastAPI, PostgreSQL, REST APIs, Git, Kafka",
+        "text_scrubbed": "Python, FastAPI, PostgreSQL, REST APIs, Git, Kafka",
+        "page_no": 1,
+        "section": "skills",
+        "start": 0,
+        "end": 50
+      }
+    ],
+    "from_cache": false
+  },
+  "448bd318-1859-56c0-8850-1020872bd4b9": {
+    "result": {
+      "summary": "3 of 5 required skills are shown in work experience; 2 have no evidence.",
+      "skills": [
+        {
+          "skill": "python",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "992e2ba1-f0b1-5b37-9155-5f2db351c0e4",
+              "quote": "Software Engineer with 3 years of experience delivering production systems with Python, Flask, MySQL. Focused on reliable, well-tested software."
+            },
+            {
+              "chunk_id": "9dea6390-1d56-5e29-8bd3-89bb047bb3c8",
+              "quote": "Built and maintained an onboarding workflow using Python, serving 30k users."
+            }
+          ]
+        },
+        {
+          "skill": "fastapi",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "postgresql",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "docker",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "6e30576b-432b-5a51-88e8-5510e77a2f56",
+              "quote": "Built and maintained a notification system using Docker, serving 5k users."
+            },
+            {
+              "chunk_id": "f89efade-a360-5e7c-8cf6-3e7ff33044a7",
+              "quote": "Python, Flask, MySQL, Docker, REST APIs, Git"
+            }
+          ]
+        },
+        {
+          "skill": "rest",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "6e30576b-432b-5a51-88e8-5510e77a2f56",
+              "quote": "Built and maintained an onboarding workflow using REST APIs, serving 10k users."
+            },
+            {
+              "chunk_id": "f89efade-a360-5e7c-8cf6-3e7ff33044a7",
+              "quote": "Python, Flask, MySQL, Docker, REST APIs, Git"
+            }
+          ]
+        },
+        {
+          "skill": "redis",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "aws",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "kafka",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        }
+      ],
+      "strengths": [
+        "Hands-on Python in production work.",
+        "Hands-on Docker in production work.",
+        "Hands-on REST APIs in production work."
+      ],
+      "risks": [
+        "No evidence of FastAPI.",
+        "No evidence of PostgreSQL."
+      ],
+      "interview_questions": [
+        "Describe a system you built with Python and how you tested it.",
+        "Describe a system you built with Docker and how you tested it.",
+        "How would you get productive with FastAPI?",
+        "How would you get productive with PostgreSQL?"
+      ],
+      "dropped_unverified_claims": 0,
+      "model": "fixture-model",
+      "prompt_version": "skillgap_v1"
+    },
+    "citations_resolved": [
+      {
+        "skill": "python",
+        "chunk_id": "992e2ba1-f0b1-5b37-9155-5f2db351c0e4",
+        "quote": "Software Engineer with 3 years of experience delivering production systems with Python, Flask, MySQL. Focused on reliable, well-tested software.",
+        "text_scrubbed": "Software Engineer with 3 years of experience delivering production systems with Python, Flask, MySQL. Focused on reliable, well-tested software.",
+        "page_no": 1,
+        "section": "summary",
+        "start": 0,
+        "end": 144
+      },
+      {
+        "skill": "python",
+        "chunk_id": "9dea6390-1d56-5e29-8bd3-89bb047bb3c8",
+        "quote": "Built and maintained an onboarding workflow using Python, serving 30k users.",
+        "text_scrubbed": "Software Engineer - Redwood Digital   2025 - Present\n- Built and maintained an onboarding workflow using Python, serving 30k users.\n- Built and maintained reporting dashboards using Flask, serving 59k users.\n- Built and maintained a search feature using MySQL, serving 60k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 55,
+        "end": 131
+      },
+      {
+        "skill": "docker",
+        "chunk_id": "6e30576b-432b-5a51-88e8-5510e77a2f56",
+        "quote": "Built and maintained a notification system using Docker, serving 5k users.",
+        "text_scrubbed": "Associate Software Engineer - Lumen Data   2023 - 2025\n- Built and maintained a notification system using Docker, serving 5k users.\n- Built and maintained an onboarding workflow using REST APIs, serving 10k users.\n- Built and maintained reporting dashboards using Git, serving 66k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 57,
+        "end": 131
+      },
+      {
+        "skill": "docker",
+        "chunk_id": "f89efade-a360-5e7c-8cf6-3e7ff33044a7",
+        "quote": "Python, Flask, MySQL, Docker, REST APIs, Git",
+        "text_scrubbed": "Python, Flask, MySQL, Docker, REST APIs, Git",
+        "page_no": 1,
+        "section": "skills",
+        "start": 0,
+        "end": 44
+      },
+      {
+        "skill": "rest",
+        "chunk_id": "6e30576b-432b-5a51-88e8-5510e77a2f56",
+        "quote": "Built and maintained an onboarding workflow using REST APIs, serving 10k users.",
+        "text_scrubbed": "Associate Software Engineer - Lumen Data   2023 - 2025\n- Built and maintained a notification system using Docker, serving 5k users.\n- Built and maintained an onboarding workflow using REST APIs, serving 10k users.\n- Built and maintained reporting dashboards using Git, serving 66k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 134,
+        "end": 213
+      },
+      {
+        "skill": "rest",
+        "chunk_id": "f89efade-a360-5e7c-8cf6-3e7ff33044a7",
+        "quote": "Python, Flask, MySQL, Docker, REST APIs, Git",
+        "text_scrubbed": "Python, Flask, MySQL, Docker, REST APIs, Git",
+        "page_no": 1,
+        "section": "skills",
+        "start": 0,
+        "end": 44
+      }
+    ],
+    "from_cache": false
+  },
+  "f0845dea-228f-517f-9a26-23c1b5f582a0": {
+    "result": {
+      "summary": "2 of 5 required skills are shown in work experience; 3 have no evidence.",
+      "skills": [
+        {
+          "skill": "python",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "fastapi",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "postgresql",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "docker",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "c7d93035-c51c-51cc-b8d2-bb02cf9b441e",
+              "quote": "Built and maintained an admin portal using Docker, serving 49k users."
+            },
+            {
+              "chunk_id": "925a7b2d-a809-5063-9dbd-03b6a15dc1da",
+              "quote": "Java, Spring Boot, MySQL, Microservices, REST APIs, Docker, Kafka"
+            }
+          ]
+        },
+        {
+          "skill": "rest",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "c7d93035-c51c-51cc-b8d2-bb02cf9b441e",
+              "quote": "Built and maintained internal tooling using REST APIs, serving 21k users."
+            },
+            {
+              "chunk_id": "925a7b2d-a809-5063-9dbd-03b6a15dc1da",
+              "quote": "Java, Spring Boot, MySQL, Microservices, REST APIs, Docker, Kafka"
+            }
+          ]
+        },
+        {
+          "skill": "redis",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "aws",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "kafka",
+          "status": "partial",
+          "reasoning": "Listed, but no work context shows how it was used.",
+          "citations": [
+            {
+              "chunk_id": "925a7b2d-a809-5063-9dbd-03b6a15dc1da",
+              "quote": "Java, Spring Boot, MySQL, Microservices, REST APIs, Docker, Kafka"
+            }
+          ]
+        }
+      ],
+      "strengths": [
+        "Hands-on Docker in production work.",
+        "Hands-on REST APIs in production work."
+      ],
+      "risks": [
+        "No evidence of Python.",
+        "No evidence of FastAPI.",
+        "No evidence of PostgreSQL."
+      ],
+      "interview_questions": [
+        "Describe a system you built with Docker and how you tested it.",
+        "Describe a system you built with REST APIs and how you tested it.",
+        "How would you get productive with Python?",
+        "How would you get productive with FastAPI?"
+      ],
+      "dropped_unverified_claims": 0,
+      "model": "fixture-model",
+      "prompt_version": "skillgap_v1"
+    },
+    "citations_resolved": [
+      {
+        "skill": "docker",
+        "chunk_id": "c7d93035-c51c-51cc-b8d2-bb02cf9b441e",
+        "quote": "Built and maintained an admin portal using Docker, serving 49k users.",
+        "text_scrubbed": "Associate Java Developer - Bluepine Systems   2020 - 2023\n- Built and maintained an onboarding workflow using Microservices, serving 85k users.\n- Built and maintained internal tooling using REST APIs, serving 21k users.\n- Built and maintained an admin portal using Docker, serving 49k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 222,
+        "end": 291
+      },
+      {
+        "skill": "docker",
+        "chunk_id": "925a7b2d-a809-5063-9dbd-03b6a15dc1da",
+        "quote": "Java, Spring Boot, MySQL, Microservices, REST APIs, Docker, Kafka",
+        "text_scrubbed": "Java, Spring Boot, MySQL, Microservices, REST APIs, Docker, Kafka",
+        "page_no": 1,
+        "section": "skills",
+        "start": 0,
+        "end": 65
+      },
+      {
+        "skill": "rest",
+        "chunk_id": "c7d93035-c51c-51cc-b8d2-bb02cf9b441e",
+        "quote": "Built and maintained internal tooling using REST APIs, serving 21k users.",
+        "text_scrubbed": "Associate Java Developer - Bluepine Systems   2020 - 2023\n- Built and maintained an onboarding workflow using Microservices, serving 85k users.\n- Built and maintained internal tooling using REST APIs, serving 21k users.\n- Built and maintained an admin portal using Docker, serving 49k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 146,
+        "end": 219
+      },
+      {
+        "skill": "rest",
+        "chunk_id": "925a7b2d-a809-5063-9dbd-03b6a15dc1da",
+        "quote": "Java, Spring Boot, MySQL, Microservices, REST APIs, Docker, Kafka",
+        "text_scrubbed": "Java, Spring Boot, MySQL, Microservices, REST APIs, Docker, Kafka",
+        "page_no": 1,
+        "section": "skills",
+        "start": 0,
+        "end": 65
+      },
+      {
+        "skill": "kafka",
+        "chunk_id": "925a7b2d-a809-5063-9dbd-03b6a15dc1da",
+        "quote": "Java, Spring Boot, MySQL, Microservices, REST APIs, Docker, Kafka",
+        "text_scrubbed": "Java, Spring Boot, MySQL, Microservices, REST APIs, Docker, Kafka",
+        "page_no": 1,
+        "section": "skills",
+        "start": 0,
+        "end": 65
+      }
+    ],
+    "from_cache": false
+  },
+  "fc82dd14-c130-5c6d-a4eb-690212d3b46d": {
+    "result": {
+      "summary": "2 of 5 required skills are shown in work experience; 2 have no evidence.",
+      "skills": [
+        {
+          "skill": "python",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "fe35792e-ee6a-510a-8af4-2d96fef89abd",
+              "quote": "Data Scientist with 4 years of experience delivering production systems with Python, Pandas, Numpy. Focused on reliable, well-tested software."
+            },
+            {
+              "chunk_id": "a58ef34e-5937-5637-a659-93167999a435",
+              "quote": "Built and maintained a search feature using Python, serving 54k users."
+            }
+          ]
+        },
+        {
+          "skill": "fastapi",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "postgresql",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "260f5dd3-9de5-560a-abdd-a09aef94a63b",
+              "quote": "Built and maintained customer-facing services using PostgreSQL, serving 75k users."
+            },
+            {
+              "chunk_id": "780afde1-97d8-5e77-986e-1ef17797f2a8",
+              "quote": "Python, Pandas, Numpy, scikit-learn, SQL, PostgreSQL, Docker"
+            }
+          ]
+        },
+        {
+          "skill": "docker",
+          "status": "partial",
+          "reasoning": "Listed, but no work context shows how it was used.",
+          "citations": [
+            {
+              "chunk_id": "780afde1-97d8-5e77-986e-1ef17797f2a8",
+              "quote": "Python, Pandas, Numpy, scikit-learn, SQL, PostgreSQL, Docker"
+            }
+          ]
+        },
+        {
+          "skill": "rest",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "redis",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "aws",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "kafka",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        }
+      ],
+      "strengths": [
+        "Hands-on Python in production work.",
+        "Hands-on PostgreSQL in production work."
+      ],
+      "risks": [
+        "No evidence of FastAPI.",
+        "No evidence of REST APIs."
+      ],
+      "interview_questions": [
+        "Describe a system you built with Python and how you tested it.",
+        "Describe a system you built with PostgreSQL and how you tested it.",
+        "How would you get productive with FastAPI?",
+        "How would you get productive with REST APIs?"
+      ],
+      "dropped_unverified_claims": 0,
+      "model": "fixture-model",
+      "prompt_version": "skillgap_v1"
+    },
+    "citations_resolved": [
+      {
+        "skill": "python",
+        "chunk_id": "fe35792e-ee6a-510a-8af4-2d96fef89abd",
+        "quote": "Data Scientist with 4 years of experience delivering production systems with Python, Pandas, Numpy. Focused on reliable, well-tested software.",
+        "text_scrubbed": "Data Scientist with 4 years of experience delivering production systems with Python, Pandas, Numpy. Focused on reliable, well-tested software.",
+        "page_no": 1,
+        "section": "summary",
+        "start": 0,
+        "end": 142
+      },
+      {
+        "skill": "python",
+        "chunk_id": "a58ef34e-5937-5637-a659-93167999a435",
+        "quote": "Built and maintained a search feature using Python, serving 54k users.",
+        "text_scrubbed": "Data Scientist - Redwood Digital   2024 - Present\n- Built and maintained a search feature using Python, serving 54k users.\n- Built and maintained an admin portal using Pandas, serving 83k users.\n- Built and maintained a billing module using Numpy, serving 47k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 52,
+        "end": 122
+      },
+      {
+        "skill": "postgresql",
+        "chunk_id": "260f5dd3-9de5-560a-abdd-a09aef94a63b",
+        "quote": "Built and maintained customer-facing services using PostgreSQL, serving 75k users.",
+        "text_scrubbed": "Associate Data Scientist - Mosaic Cloud   2022 - 2024\n- Built and maintained a search feature using scikit-learn, serving 86k users.\n- Built and maintained data pipelines using SQL, serving 64k users.\n- Built and maintained customer-facing services using PostgreSQL, serving 75k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 203,
+        "end": 285
+      },
+      {
+        "skill": "postgresql",
+        "chunk_id": "780afde1-97d8-5e77-986e-1ef17797f2a8",
+        "quote": "Python, Pandas, Numpy, scikit-learn, SQL, PostgreSQL, Docker",
+        "text_scrubbed": "Python, Pandas, Numpy, scikit-learn, SQL, PostgreSQL, Docker",
+        "page_no": 1,
+        "section": "skills",
+        "start": 0,
+        "end": 60
+      },
+      {
+        "skill": "docker",
+        "chunk_id": "780afde1-97d8-5e77-986e-1ef17797f2a8",
+        "quote": "Python, Pandas, Numpy, scikit-learn, SQL, PostgreSQL, Docker",
+        "text_scrubbed": "Python, Pandas, Numpy, scikit-learn, SQL, PostgreSQL, Docker",
+        "page_no": 1,
+        "section": "skills",
+        "start": 0,
+        "end": 60
+      }
+    ],
+    "from_cache": false
+  },
+  "b135aaf0-7c9f-51fa-b87f-f515bc24ff70": {
+    "result": {
+      "summary": "1 of 5 required skills are shown in work experience; 3 have no evidence.",
+      "skills": [
+        {
+          "skill": "python",
+          "status": "partial",
+          "reasoning": "Listed, but no work context shows how it was used.",
+          "citations": [
+            {
+              "chunk_id": "9634fe09-a634-5fae-a147-9c808a61efcd",
+              "quote": "Docker, Kubernetes, AWS, Terraform, Linux, CI/CD, Python"
+            }
+          ]
+        },
+        {
+          "skill": "fastapi",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "postgresql",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "docker",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "9b648088-c2a0-52b5-bcbf-95aeebd1b7f4",
+              "quote": "DevOps Engineer with 5 years of experience delivering production systems with Docker, Kubernetes, AWS. Focused on reliable, well-tested software."
+            },
+            {
+              "chunk_id": "ced29ac6-873e-5882-bfb1-ed7ba5c7b4c3",
+              "quote": "Built and maintained an analytics platform using Docker, serving 58k users."
+            }
+          ]
+        },
+        {
+          "skill": "rest",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "redis",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "aws",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "9b648088-c2a0-52b5-bcbf-95aeebd1b7f4",
+              "quote": "DevOps Engineer with 5 years of experience delivering production systems with Docker, Kubernetes, AWS. Focused on reliable, well-tested software."
+            },
+            {
+              "chunk_id": "ced29ac6-873e-5882-bfb1-ed7ba5c7b4c3",
+              "quote": "Built and maintained an admin portal using AWS, serving 43k users."
+            }
+          ]
+        },
+        {
+          "skill": "kafka",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        }
+      ],
+      "strengths": [
+        "Hands-on Docker in production work."
+      ],
+      "risks": [
+        "No evidence of FastAPI.",
+        "No evidence of PostgreSQL.",
+        "No evidence of REST APIs."
+      ],
+      "interview_questions": [
+        "Describe a system you built with Docker and how you tested it.",
+        "How would you get productive with FastAPI?",
+        "How would you get productive with PostgreSQL?"
+      ],
+      "dropped_unverified_claims": 0,
+      "model": "fixture-model",
+      "prompt_version": "skillgap_v1"
+    },
+    "citations_resolved": [
+      {
+        "skill": "python",
+        "chunk_id": "9634fe09-a634-5fae-a147-9c808a61efcd",
+        "quote": "Docker, Kubernetes, AWS, Terraform, Linux, CI/CD, Python",
+        "text_scrubbed": "Docker, Kubernetes, AWS, Terraform, Linux, CI/CD, Python",
+        "page_no": 1,
+        "section": "skills",
+        "start": 0,
+        "end": 56
+      },
+      {
+        "skill": "docker",
+        "chunk_id": "9b648088-c2a0-52b5-bcbf-95aeebd1b7f4",
+        "quote": "DevOps Engineer with 5 years of experience delivering production systems with Docker, Kubernetes, AWS. Focused on reliable, well-tested software.",
+        "text_scrubbed": "DevOps Engineer with 5 years of experience delivering production systems with Docker, Kubernetes, AWS. Focused on reliable, well-tested software.",
+        "page_no": 1,
+        "section": "summary",
+        "start": 0,
+        "end": 145
+      },
+      {
+        "skill": "docker",
+        "chunk_id": "ced29ac6-873e-5882-bfb1-ed7ba5c7b4c3",
+        "quote": "Built and maintained an analytics platform using Docker, serving 58k users.",
+        "text_scrubbed": "DevOps Engineer - Kestrel Soft   2024 - Present\n- Built and maintained an analytics platform using Docker, serving 58k users.\n- Built and maintained internal tooling using Kubernetes, serving 28k users.\n- Built and maintained an admin portal using AWS, serving 43k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 50,
+        "end": 125
+      },
+      {
+        "skill": "aws",
+        "chunk_id": "9b648088-c2a0-52b5-bcbf-95aeebd1b7f4",
+        "quote": "DevOps Engineer with 5 years of experience delivering production systems with Docker, Kubernetes, AWS. Focused on reliable, well-tested software.",
+        "text_scrubbed": "DevOps Engineer with 5 years of experience delivering production systems with Docker, Kubernetes, AWS. Focused on reliable, well-tested software.",
+        "page_no": 1,
+        "section": "summary",
+        "start": 0,
+        "end": 145
+      },
+      {
+        "skill": "aws",
+        "chunk_id": "ced29ac6-873e-5882-bfb1-ed7ba5c7b4c3",
+        "quote": "Built and maintained an admin portal using AWS, serving 43k users.",
+        "text_scrubbed": "DevOps Engineer - Kestrel Soft   2024 - Present\n- Built and maintained an analytics platform using Docker, serving 58k users.\n- Built and maintained internal tooling using Kubernetes, serving 28k users.\n- Built and maintained an admin portal using AWS, serving 43k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 205,
+        "end": 271
+      }
+    ],
+    "from_cache": false
+  },
+  "196b095e-f8a7-5ebf-a6cc-378016a95207": {
+    "result": {
+      "summary": "0 of 5 required skills are shown in work experience; 5 have no evidence.",
+      "skills": [
+        {
+          "skill": "python",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "fastapi",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "postgresql",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "docker",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "rest",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "redis",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "aws",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "kafka",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        }
+      ],
+      "strengths": [],
+      "risks": [
+        "No evidence of Python.",
+        "No evidence of FastAPI.",
+        "No evidence of PostgreSQL."
+      ],
+      "interview_questions": [
+        "How would you get productive with Python?",
+        "How would you get productive with FastAPI?"
+      ],
+      "dropped_unverified_claims": 0,
+      "model": "fixture-model",
+      "prompt_version": "skillgap_v1"
+    },
+    "citations_resolved": [],
+    "from_cache": false
+  },
+  "b0f5a745-fc74-5d00-a281-70fd4d912e1d": {
+    "result": {
+      "summary": "4 of 5 required skills are shown in work experience.",
+      "skills": [
+        {
+          "skill": "python",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "52c94345-5263-55f1-8270-170fbb5a1520",
+              "quote": "Principal Engineer with 9 years of experience delivering production systems with Python, Django, FastAPI. Focused on reliable, well-tested software."
+            },
+            {
+              "chunk_id": "24c48e3c-695a-5399-aca1-183c826074f3",
+              "quote": "Built and maintained an onboarding workflow using Python, serving 12k users."
+            }
+          ]
+        },
+        {
+          "skill": "fastapi",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "52c94345-5263-55f1-8270-170fbb5a1520",
+              "quote": "Principal Engineer with 9 years of experience delivering production systems with Python, Django, FastAPI. Focused on reliable, well-tested software."
+            },
+            {
+              "chunk_id": "24c48e3c-695a-5399-aca1-183c826074f3",
+              "quote": "Built and maintained data pipelines using FastAPI, serving 88k users."
+            }
+          ]
+        },
+        {
+          "skill": "postgresql",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "24c48e3c-695a-5399-aca1-183c826074f3",
+              "quote": "Built and maintained an admin portal using PostgreSQL, serving 16k users."
+            },
+            {
+              "chunk_id": "7dc537d3-a9eb-570a-915d-53862f6c0766",
+              "quote": "Python, Django, FastAPI, PostgreSQL, Docker, AWS, Kafka, Redis, REST APIs"
+            }
+          ]
+        },
+        {
+          "skill": "docker",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "5c2662ed-ca9a-50bf-be32-b5d64435e760",
+              "quote": "Built and maintained an admin portal using Docker, serving 46k users."
+            },
+            {
+              "chunk_id": "7dc537d3-a9eb-570a-915d-53862f6c0766",
+              "quote": "Python, Django, FastAPI, PostgreSQL, Docker, AWS, Kafka, Redis, REST APIs"
+            }
+          ]
+        },
+        {
+          "skill": "rest",
+          "status": "partial",
+          "reasoning": "Listed, but no work context shows how it was used.",
+          "citations": [
+            {
+              "chunk_id": "7dc537d3-a9eb-570a-915d-53862f6c0766",
+              "quote": "Python, Django, FastAPI, PostgreSQL, Docker, AWS, Kafka, Redis, REST APIs"
+            }
+          ]
+        },
+        {
+          "skill": "redis",
+          "status": "partial",
+          "reasoning": "Listed, but no work context shows how it was used.",
+          "citations": [
+            {
+              "chunk_id": "7dc537d3-a9eb-570a-915d-53862f6c0766",
+              "quote": "Python, Django, FastAPI, PostgreSQL, Docker, AWS, Kafka, Redis, REST APIs"
+            }
+          ]
+        },
+        {
+          "skill": "aws",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "5c2662ed-ca9a-50bf-be32-b5d64435e760",
+              "quote": "Built and maintained internal tooling using AWS, serving 71k users."
+            },
+            {
+              "chunk_id": "7dc537d3-a9eb-570a-915d-53862f6c0766",
+              "quote": "Python, Django, FastAPI, PostgreSQL, Docker, AWS, Kafka, Redis, REST APIs"
+            }
+          ]
+        },
+        {
+          "skill": "kafka",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "5c2662ed-ca9a-50bf-be32-b5d64435e760",
+              "quote": "Built and maintained an onboarding workflow using Kafka, serving 35k users."
+            },
+            {
+              "chunk_id": "7dc537d3-a9eb-570a-915d-53862f6c0766",
+              "quote": "Python, Django, FastAPI, PostgreSQL, Docker, AWS, Kafka, Redis, REST APIs"
+            }
+          ]
+        }
+      ],
+      "strengths": [
+        "Hands-on Python in production work.",
+        "Hands-on FastAPI in production work.",
+        "Hands-on PostgreSQL in production work."
+      ],
+      "risks": [],
+      "interview_questions": [
+        "Describe a system you built with Python and how you tested it.",
+        "Describe a system you built with FastAPI and how you tested it."
+      ],
+      "dropped_unverified_claims": 0,
+      "model": "fixture-model",
+      "prompt_version": "skillgap_v1"
+    },
+    "citations_resolved": [
+      {
+        "skill": "python",
+        "chunk_id": "52c94345-5263-55f1-8270-170fbb5a1520",
+        "quote": "Principal Engineer with 9 years of experience delivering production systems with Python, Django, FastAPI. Focused on reliable, well-tested software.",
+        "text_scrubbed": "Principal Engineer with 9 years of experience delivering production systems with Python, Django, FastAPI. Focused on reliable, well-tested software.",
+        "page_no": 1,
+        "section": "summary",
+        "start": 0,
+        "end": 148
+      },
+      {
+        "skill": "python",
+        "chunk_id": "24c48e3c-695a-5399-aca1-183c826074f3",
+        "quote": "Built and maintained an onboarding workflow using Python, serving 12k users.",
+        "text_scrubbed": "Principal Engineer - Lumen Data   2022 - Present\n- Built and maintained an onboarding workflow using Python, serving 12k users.\n- Built and maintained customer-facing services using Django, serving 8k users.\n- Built and maintained data pipelines using FastAPI, serving 88k users.\n- Built and maintained an admin portal using PostgreSQL, serving 16k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 51,
+        "end": 127
+      },
+      {
+        "skill": "fastapi",
+        "chunk_id": "52c94345-5263-55f1-8270-170fbb5a1520",
+        "quote": "Principal Engineer with 9 years of experience delivering production systems with Python, Django, FastAPI. Focused on reliable, well-tested software.",
+        "text_scrubbed": "Principal Engineer with 9 years of experience delivering production systems with Python, Django, FastAPI. Focused on reliable, well-tested software.",
+        "page_no": 1,
+        "section": "summary",
+        "start": 0,
+        "end": 148
+      },
+      {
+        "skill": "fastapi",
+        "chunk_id": "24c48e3c-695a-5399-aca1-183c826074f3",
+        "quote": "Built and maintained data pipelines using FastAPI, serving 88k users.",
+        "text_scrubbed": "Principal Engineer - Lumen Data   2022 - Present\n- Built and maintained an onboarding workflow using Python, serving 12k users.\n- Built and maintained customer-facing services using Django, serving 8k users.\n- Built and maintained data pipelines using FastAPI, serving 88k users.\n- Built and maintained an admin portal using PostgreSQL, serving 16k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 210,
+        "end": 279
+      },
+      {
+        "skill": "postgresql",
+        "chunk_id": "24c48e3c-695a-5399-aca1-183c826074f3",
+        "quote": "Built and maintained an admin portal using PostgreSQL, serving 16k users.",
+        "text_scrubbed": "Principal Engineer - Lumen Data   2022 - Present\n- Built and maintained an onboarding workflow using Python, serving 12k users.\n- Built and maintained customer-facing services using Django, serving 8k users.\n- Built and maintained data pipelines using FastAPI, serving 88k users.\n- Built and maintained an admin portal using PostgreSQL, serving 16k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 282,
+        "end": 355
+      },
+      {
+        "skill": "postgresql",
+        "chunk_id": "7dc537d3-a9eb-570a-915d-53862f6c0766",
+        "quote": "Python, Django, FastAPI, PostgreSQL, Docker, AWS, Kafka, Redis, REST APIs",
+        "text_scrubbed": "Python, Django, FastAPI, PostgreSQL, Docker, AWS, Kafka, Redis, REST APIs",
+        "page_no": 2,
+        "section": "skills",
+        "start": 0,
+        "end": 73
+      },
+      {
+        "skill": "docker",
+        "chunk_id": "5c2662ed-ca9a-50bf-be32-b5d64435e760",
+        "quote": "Built and maintained an admin portal using Docker, serving 46k users.",
+        "text_scrubbed": "Associate Principal Engineer - Redwood Digital   2017 - 2022\n- Built and maintained an admin portal using Docker, serving 46k users.\n- Built and maintained internal tooling using AWS, serving 71k users.\n- Built and maintained an onboarding workflow using Kafka, serving 35k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 63,
+        "end": 132
+      },
+      {
+        "skill": "docker",
+        "chunk_id": "7dc537d3-a9eb-570a-915d-53862f6c0766",
+        "quote": "Python, Django, FastAPI, PostgreSQL, Docker, AWS, Kafka, Redis, REST APIs",
+        "text_scrubbed": "Python, Django, FastAPI, PostgreSQL, Docker, AWS, Kafka, Redis, REST APIs",
+        "page_no": 2,
+        "section": "skills",
+        "start": 0,
+        "end": 73
+      },
+      {
+        "skill": "rest",
+        "chunk_id": "7dc537d3-a9eb-570a-915d-53862f6c0766",
+        "quote": "Python, Django, FastAPI, PostgreSQL, Docker, AWS, Kafka, Redis, REST APIs",
+        "text_scrubbed": "Python, Django, FastAPI, PostgreSQL, Docker, AWS, Kafka, Redis, REST APIs",
+        "page_no": 2,
+        "section": "skills",
+        "start": 0,
+        "end": 73
+      },
+      {
+        "skill": "redis",
+        "chunk_id": "7dc537d3-a9eb-570a-915d-53862f6c0766",
+        "quote": "Python, Django, FastAPI, PostgreSQL, Docker, AWS, Kafka, Redis, REST APIs",
+        "text_scrubbed": "Python, Django, FastAPI, PostgreSQL, Docker, AWS, Kafka, Redis, REST APIs",
+        "page_no": 2,
+        "section": "skills",
+        "start": 0,
+        "end": 73
+      },
+      {
+        "skill": "aws",
+        "chunk_id": "5c2662ed-ca9a-50bf-be32-b5d64435e760",
+        "quote": "Built and maintained internal tooling using AWS, serving 71k users.",
+        "text_scrubbed": "Associate Principal Engineer - Redwood Digital   2017 - 2022\n- Built and maintained an admin portal using Docker, serving 46k users.\n- Built and maintained internal tooling using AWS, serving 71k users.\n- Built and maintained an onboarding workflow using Kafka, serving 35k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 135,
+        "end": 202
+      },
+      {
+        "skill": "aws",
+        "chunk_id": "7dc537d3-a9eb-570a-915d-53862f6c0766",
+        "quote": "Python, Django, FastAPI, PostgreSQL, Docker, AWS, Kafka, Redis, REST APIs",
+        "text_scrubbed": "Python, Django, FastAPI, PostgreSQL, Docker, AWS, Kafka, Redis, REST APIs",
+        "page_no": 2,
+        "section": "skills",
+        "start": 0,
+        "end": 73
+      },
+      {
+        "skill": "kafka",
+        "chunk_id": "5c2662ed-ca9a-50bf-be32-b5d64435e760",
+        "quote": "Built and maintained an onboarding workflow using Kafka, serving 35k users.",
+        "text_scrubbed": "Associate Principal Engineer - Redwood Digital   2017 - 2022\n- Built and maintained an admin portal using Docker, serving 46k users.\n- Built and maintained internal tooling using AWS, serving 71k users.\n- Built and maintained an onboarding workflow using Kafka, serving 35k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 205,
+        "end": 280
+      },
+      {
+        "skill": "kafka",
+        "chunk_id": "7dc537d3-a9eb-570a-915d-53862f6c0766",
+        "quote": "Python, Django, FastAPI, PostgreSQL, Docker, AWS, Kafka, Redis, REST APIs",
+        "text_scrubbed": "Python, Django, FastAPI, PostgreSQL, Docker, AWS, Kafka, Redis, REST APIs",
+        "page_no": 2,
+        "section": "skills",
+        "start": 0,
+        "end": 73
+      }
+    ],
+    "from_cache": false
+  },
+  "febe3f29-6aa5-5c67-9dc3-fc45149d575d": {
+    "result": {
+      "summary": "3 of 5 required skills are shown in work experience; 2 have no evidence.",
+      "skills": [
+        {
+          "skill": "python",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "b2373776-4af4-58ac-b6e0-4440bbb0b16d",
+              "quote": "Junior Backend Developer with 2 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software."
+            },
+            {
+              "chunk_id": "169620c9-8884-5e65-8d9f-05c9d9e3cbc8",
+              "quote": "Built and maintained reporting dashboards using Python, serving 11k users."
+            }
+          ]
+        },
+        {
+          "skill": "fastapi",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "b2373776-4af4-58ac-b6e0-4440bbb0b16d",
+              "quote": "Junior Backend Developer with 2 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software."
+            },
+            {
+              "chunk_id": "169620c9-8884-5e65-8d9f-05c9d9e3cbc8",
+              "quote": "Built and maintained a search feature using FastAPI, serving 63k users."
+            }
+          ]
+        },
+        {
+          "skill": "postgresql",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "b2373776-4af4-58ac-b6e0-4440bbb0b16d",
+              "quote": "Junior Backend Developer with 2 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software."
+            },
+            {
+              "chunk_id": "b8c0b83b-f250-587a-aba7-b8814a03c269",
+              "quote": "Built and maintained data pipelines using PostgreSQL, serving 66k users."
+            }
+          ]
+        },
+        {
+          "skill": "docker",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "rest",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "redis",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "aws",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "kafka",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        }
+      ],
+      "strengths": [
+        "Hands-on Python in production work.",
+        "Hands-on FastAPI in production work.",
+        "Hands-on PostgreSQL in production work."
+      ],
+      "risks": [
+        "No evidence of Docker.",
+        "No evidence of REST APIs.",
+        "Only 2 years of experience against a minimum of 3."
+      ],
+      "interview_questions": [
+        "Describe a system you built with Python and how you tested it.",
+        "Describe a system you built with FastAPI and how you tested it.",
+        "How would you get productive with Docker?",
+        "How would you get productive with REST APIs?"
+      ],
+      "dropped_unverified_claims": 0,
+      "model": "fixture-model",
+      "prompt_version": "skillgap_v1"
+    },
+    "citations_resolved": [
+      {
+        "skill": "python",
+        "chunk_id": "b2373776-4af4-58ac-b6e0-4440bbb0b16d",
+        "quote": "Junior Backend Developer with 2 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software.",
+        "text_scrubbed": "Junior Backend Developer with 2 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software.",
+        "page_no": 1,
+        "section": "summary",
+        "start": 0,
+        "end": 158
+      },
+      {
+        "skill": "python",
+        "chunk_id": "169620c9-8884-5e65-8d9f-05c9d9e3cbc8",
+        "quote": "Built and maintained reporting dashboards using Python, serving 11k users.",
+        "text_scrubbed": "Junior Backend Developer - Quantum Loop   2025 - Present\n- Built and maintained reporting dashboards using Python, serving 11k users.\n- Built and maintained a search feature using FastAPI, serving 63k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 59,
+        "end": 133
+      },
+      {
+        "skill": "fastapi",
+        "chunk_id": "b2373776-4af4-58ac-b6e0-4440bbb0b16d",
+        "quote": "Junior Backend Developer with 2 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software.",
+        "text_scrubbed": "Junior Backend Developer with 2 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software.",
+        "page_no": 1,
+        "section": "summary",
+        "start": 0,
+        "end": 158
+      },
+      {
+        "skill": "fastapi",
+        "chunk_id": "169620c9-8884-5e65-8d9f-05c9d9e3cbc8",
+        "quote": "Built and maintained a search feature using FastAPI, serving 63k users.",
+        "text_scrubbed": "Junior Backend Developer - Quantum Loop   2025 - Present\n- Built and maintained reporting dashboards using Python, serving 11k users.\n- Built and maintained a search feature using FastAPI, serving 63k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 136,
+        "end": 207
+      },
+      {
+        "skill": "postgresql",
+        "chunk_id": "b2373776-4af4-58ac-b6e0-4440bbb0b16d",
+        "quote": "Junior Backend Developer with 2 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software.",
+        "text_scrubbed": "Junior Backend Developer with 2 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software.",
+        "page_no": 1,
+        "section": "summary",
+        "start": 0,
+        "end": 158
+      },
+      {
+        "skill": "postgresql",
+        "chunk_id": "b8c0b83b-f250-587a-aba7-b8814a03c269",
+        "quote": "Built and maintained data pipelines using PostgreSQL, serving 66k users.",
+        "text_scrubbed": "Associate Junior Backend Developer - Northwind Labs   2024 - 2025\n- Built and maintained data pipelines using PostgreSQL, serving 66k users.\n- Built and maintained an analytics platform using Git, serving 29k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 68,
+        "end": 140
+      }
+    ],
+    "from_cache": false
+  },
+  "98dc7c75-7a1a-5459-a59e-e772b63d8b84": {
+    "result": {
+      "summary": "1 of 5 required skills are shown in work experience; 4 have no evidence.",
+      "skills": [
+        {
+          "skill": "python",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "c17e1bb6-1e30-5cc5-a502-d3d4edd64b3a",
+              "quote": "ML Engineer with 6 years of experience delivering production systems with Python, PyTorch, TensorFlow. Focused on reliable, well-tested software."
+            },
+            {
+              "chunk_id": "2592a256-079e-5d07-bf4e-0bf84aacc0b4",
+              "quote": "Built and maintained an analytics platform using Python, serving 70k users."
+            }
+          ]
+        },
+        {
+          "skill": "fastapi",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "postgresql",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "docker",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "rest",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "redis",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "aws",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "kafka",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        }
+      ],
+      "strengths": [
+        "Hands-on Python in production work."
+      ],
+      "risks": [
+        "No evidence of FastAPI.",
+        "No evidence of PostgreSQL.",
+        "No evidence of Docker."
+      ],
+      "interview_questions": [
+        "Describe a system you built with Python and how you tested it.",
+        "How would you get productive with FastAPI?",
+        "How would you get productive with PostgreSQL?"
+      ],
+      "dropped_unverified_claims": 0,
+      "model": "fixture-model",
+      "prompt_version": "skillgap_v1"
+    },
+    "citations_resolved": [
+      {
+        "skill": "python",
+        "chunk_id": "c17e1bb6-1e30-5cc5-a502-d3d4edd64b3a",
+        "quote": "ML Engineer with 6 years of experience delivering production systems with Python, PyTorch, TensorFlow. Focused on reliable, well-tested software.",
+        "text_scrubbed": "ML Engineer with 6 years of experience delivering production systems with Python, PyTorch, TensorFlow. Focused on reliable, well-tested software.",
+        "page_no": 1,
+        "section": "summary",
+        "start": 0,
+        "end": 145
+      },
+      {
+        "skill": "python",
+        "chunk_id": "2592a256-079e-5d07-bf4e-0bf84aacc0b4",
+        "quote": "Built and maintained an analytics platform using Python, serving 70k users.",
+        "text_scrubbed": "ML Engineer - Tidal Software   2023 - Present\n- Built and maintained an analytics platform using Python, serving 70k users.\n- Built and maintained customer-facing services using PyTorch, serving 54k users.\n- Built and maintained a notification system using TensorFlow, serving 54k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 48,
+        "end": 123
+      }
+    ],
+    "from_cache": false
+  },
+  "cf1d2014-4202-5d56-9f8a-5042d644b135": {
+    "result": {
+      "summary": "1 of 5 required skills are shown in work experience; 4 have no evidence.",
+      "skills": [
+        {
+          "skill": "python",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "f7051493-2d7d-5aa7-aea3-e40cce5ca3b9",
+              "quote": "Built and maintained customer-facing services using Python, serving 61k users."
+            },
+            {
+              "chunk_id": "49ce5235-acf2-576e-bb4c-b80fc5656820",
+              "quote": "Selenium, Pytest, Java, Jira, Agile, Python"
+            }
+          ]
+        },
+        {
+          "skill": "fastapi",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "postgresql",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "docker",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "rest",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "redis",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "aws",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "kafka",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        }
+      ],
+      "strengths": [
+        "Hands-on Python in production work."
+      ],
+      "risks": [
+        "No evidence of FastAPI.",
+        "No evidence of PostgreSQL.",
+        "No evidence of Docker."
+      ],
+      "interview_questions": [
+        "Describe a system you built with Python and how you tested it.",
+        "How would you get productive with FastAPI?",
+        "How would you get productive with PostgreSQL?"
+      ],
+      "dropped_unverified_claims": 0,
+      "model": "fixture-model",
+      "prompt_version": "skillgap_v1"
+    },
+    "citations_resolved": [
+      {
+        "skill": "python",
+        "chunk_id": "f7051493-2d7d-5aa7-aea3-e40cce5ca3b9",
+        "quote": "Built and maintained customer-facing services using Python, serving 61k users.",
+        "text_scrubbed": "Associate QA Engineer - Helio Works   2022 - 2024\n- Built and maintained reporting dashboards using Jira, serving 66k users.\n- Built and maintained a billing module using Agile, serving 24k users.\n- Built and maintained customer-facing services using Python, serving 61k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 199,
+        "end": 277
+      },
+      {
+        "skill": "python",
+        "chunk_id": "49ce5235-acf2-576e-bb4c-b80fc5656820",
+        "quote": "Selenium, Pytest, Java, Jira, Agile, Python",
+        "text_scrubbed": "Selenium, Pytest, Java, Jira, Agile, Python",
+        "page_no": 1,
+        "section": "skills",
+        "start": 0,
+        "end": 43
+      }
+    ],
+    "from_cache": false
+  },
+  "0b8d7eaa-9a67-5165-a7b6-fa87f2f23eab": {
+    "result": {
+      "summary": "0 of 5 required skills are shown in work experience; 5 have no evidence.",
+      "skills": [
+        {
+          "skill": "python",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "fastapi",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "postgresql",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "docker",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "rest",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "redis",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "aws",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "kafka",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        }
+      ],
+      "strengths": [],
+      "risks": [
+        "No evidence of Python.",
+        "No evidence of FastAPI.",
+        "No evidence of PostgreSQL."
+      ],
+      "interview_questions": [
+        "How would you get productive with Python?",
+        "How would you get productive with FastAPI?"
+      ],
+      "dropped_unverified_claims": 0,
+      "model": "fixture-model",
+      "prompt_version": "skillgap_v1"
+    },
+    "citations_resolved": [],
+    "from_cache": false
+  },
+  "f463b13f-2dcc-598a-90dd-f7339a067fe5": {
+    "result": {
+      "summary": "1 of 5 required skills are shown in work experience; 4 have no evidence.",
+      "skills": [
+        {
+          "skill": "python",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "fastapi",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "postgresql",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "docker",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "a432fa59-f984-5be8-8af9-aa72be01b217",
+              "quote": "Built and maintained a notification system using Docker, serving 33k users."
+            },
+            {
+              "chunk_id": "f6246ea0-a376-50e0-9509-a79dc903dcb8",
+              "quote": "Kubernetes, Terraform, AWS, Docker, Ansible, Linux, Prometheus, Grafana"
+            }
+          ]
+        },
+        {
+          "skill": "rest",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "redis",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "aws",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "3e056b4b-9478-5aaa-aeb1-9283b3c17b63",
+              "quote": "Site Reliability Engineer with 7 years of experience delivering production systems with Kubernetes, Terraform, AWS. Focused on reliable, well-tested software."
+            },
+            {
+              "chunk_id": "a432fa59-f984-5be8-8af9-aa72be01b217",
+              "quote": "Built and maintained a notification system using AWS, serving 9k users."
+            }
+          ]
+        },
+        {
+          "skill": "kafka",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        }
+      ],
+      "strengths": [
+        "Hands-on Docker in production work."
+      ],
+      "risks": [
+        "No evidence of Python.",
+        "No evidence of FastAPI.",
+        "No evidence of PostgreSQL."
+      ],
+      "interview_questions": [
+        "Describe a system you built with Docker and how you tested it.",
+        "How would you get productive with Python?",
+        "How would you get productive with FastAPI?"
+      ],
+      "dropped_unverified_claims": 0,
+      "model": "fixture-model",
+      "prompt_version": "skillgap_v1"
+    },
+    "citations_resolved": [
+      {
+        "skill": "docker",
+        "chunk_id": "a432fa59-f984-5be8-8af9-aa72be01b217",
+        "quote": "Built and maintained a notification system using Docker, serving 33k users.",
+        "text_scrubbed": "Site Reliability Engineer - Redwood Digital   2023 - Present\n- Built and maintained data pipelines using Kubernetes, serving 74k users.\n- Built and maintained an admin portal using Terraform, serving 5k users.\n- Built and maintained a notification system using AWS, serving 9k users.\n- Built and maintained a notification system using Docker, serving 33k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 286,
+        "end": 361
+      },
+      {
+        "skill": "docker",
+        "chunk_id": "f6246ea0-a376-50e0-9509-a79dc903dcb8",
+        "quote": "Kubernetes, Terraform, AWS, Docker, Ansible, Linux, Prometheus, Grafana",
+        "text_scrubbed": "Kubernetes, Terraform, AWS, Docker, Ansible, Linux, Prometheus, Grafana",
+        "page_no": 2,
+        "section": "skills",
+        "start": 0,
+        "end": 71
+      },
+      {
+        "skill": "aws",
+        "chunk_id": "3e056b4b-9478-5aaa-aeb1-9283b3c17b63",
+        "quote": "Site Reliability Engineer with 7 years of experience delivering production systems with Kubernetes, Terraform, AWS. Focused on reliable, well-tested software.",
+        "text_scrubbed": "Site Reliability Engineer with 7 years of experience delivering production systems with Kubernetes, Terraform, AWS. Focused on reliable, well-tested software.",
+        "page_no": 1,
+        "section": "summary",
+        "start": 0,
+        "end": 158
+      },
+      {
+        "skill": "aws",
+        "chunk_id": "a432fa59-f984-5be8-8af9-aa72be01b217",
+        "quote": "Built and maintained a notification system using AWS, serving 9k users.",
+        "text_scrubbed": "Site Reliability Engineer - Redwood Digital   2023 - Present\n- Built and maintained data pipelines using Kubernetes, serving 74k users.\n- Built and maintained an admin portal using Terraform, serving 5k users.\n- Built and maintained a notification system using AWS, serving 9k users.\n- Built and maintained a notification system using Docker, serving 33k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 212,
+        "end": 283
+      }
+    ],
+    "from_cache": false
+  },
+  "c65f0d6f-4548-56c4-89c8-dc773783ea25": {
+    "result": {
+      "summary": "3 of 5 required skills are shown in work experience; 2 have no evidence.",
+      "skills": [
+        {
+          "skill": "python",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "423efc49-b624-590f-a975-339bef5dde51",
+              "quote": "Backend Developer with 3 years of experience delivering production systems with Python, Django, MySQL. Focused on reliable, well-tested software."
+            },
+            {
+              "chunk_id": "005f15fd-1280-50bc-86cb-86629ddf4aea",
+              "quote": "Built and maintained an analytics platform using Python, serving 34k users."
+            }
+          ]
+        },
+        {
+          "skill": "fastapi",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "postgresql",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "docker",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "b391d275-c63d-55b5-8026-9271f1f95860",
+              "quote": "Built and maintained data pipelines using Docker, serving 61k users."
+            },
+            {
+              "chunk_id": "e2aa87a8-ca0f-5426-bfa2-b82ee1fe1fe1",
+              "quote": "Python, Django, MySQL, REST APIs, Docker"
+            }
+          ]
+        },
+        {
+          "skill": "rest",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "b391d275-c63d-55b5-8026-9271f1f95860",
+              "quote": "Built and maintained an admin portal using REST APIs, serving 81k users."
+            },
+            {
+              "chunk_id": "e2aa87a8-ca0f-5426-bfa2-b82ee1fe1fe1",
+              "quote": "Python, Django, MySQL, REST APIs, Docker"
+            }
+          ]
+        },
+        {
+          "skill": "redis",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "aws",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "kafka",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        }
+      ],
+      "strengths": [
+        "Hands-on Python in production work.",
+        "Hands-on Docker in production work.",
+        "Hands-on REST APIs in production work."
+      ],
+      "risks": [
+        "No evidence of FastAPI.",
+        "No evidence of PostgreSQL."
+      ],
+      "interview_questions": [
+        "Describe a system you built with Python and how you tested it.",
+        "Describe a system you built with Docker and how you tested it.",
+        "How would you get productive with FastAPI?",
+        "How would you get productive with PostgreSQL?"
+      ],
+      "dropped_unverified_claims": 0,
+      "model": "fixture-model",
+      "prompt_version": "skillgap_v1"
+    },
+    "citations_resolved": [
+      {
+        "skill": "python",
+        "chunk_id": "423efc49-b624-590f-a975-339bef5dde51",
+        "quote": "Backend Developer with 3 years of experience delivering production systems with Python, Django, MySQL. Focused on reliable, well-tested software.",
+        "text_scrubbed": "Backend Developer with 3 years of experience delivering production systems with Python, Django, MySQL. Focused on reliable, well-tested software.",
+        "page_no": 1,
+        "section": "summary",
+        "start": 0,
+        "end": 145
+      },
+      {
+        "skill": "python",
+        "chunk_id": "005f15fd-1280-50bc-86cb-86629ddf4aea",
+        "quote": "Built and maintained an analytics platform using Python, serving 34k users.",
+        "text_scrubbed": "Backend Developer - Lumen Data   2025 - Present\n- Built and maintained an analytics platform using Python, serving 34k users.\n- Built and maintained internal tooling using Django, serving 56k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 50,
+        "end": 125
+      },
+      {
+        "skill": "docker",
+        "chunk_id": "b391d275-c63d-55b5-8026-9271f1f95860",
+        "quote": "Built and maintained data pipelines using Docker, serving 61k users.",
+        "text_scrubbed": "Associate Backend Developer - Northwind Labs   2023 - 2025\n- Built and maintained a notification system using MySQL, serving 88k users.\n- Built and maintained an admin portal using REST APIs, serving 81k users.\n- Built and maintained data pipelines using Docker, serving 61k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 213,
+        "end": 281
+      },
+      {
+        "skill": "docker",
+        "chunk_id": "e2aa87a8-ca0f-5426-bfa2-b82ee1fe1fe1",
+        "quote": "Python, Django, MySQL, REST APIs, Docker",
+        "text_scrubbed": "Python, Django, MySQL, REST APIs, Docker",
+        "page_no": 1,
+        "section": "skills",
+        "start": 0,
+        "end": 40
+      },
+      {
+        "skill": "rest",
+        "chunk_id": "b391d275-c63d-55b5-8026-9271f1f95860",
+        "quote": "Built and maintained an admin portal using REST APIs, serving 81k users.",
+        "text_scrubbed": "Associate Backend Developer - Northwind Labs   2023 - 2025\n- Built and maintained a notification system using MySQL, serving 88k users.\n- Built and maintained an admin portal using REST APIs, serving 81k users.\n- Built and maintained data pipelines using Docker, serving 61k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 138,
+        "end": 210
+      },
+      {
+        "skill": "rest",
+        "chunk_id": "e2aa87a8-ca0f-5426-bfa2-b82ee1fe1fe1",
+        "quote": "Python, Django, MySQL, REST APIs, Docker",
+        "text_scrubbed": "Python, Django, MySQL, REST APIs, Docker",
+        "page_no": 1,
+        "section": "skills",
+        "start": 0,
+        "end": 40
+      }
+    ],
+    "from_cache": false
+  },
+  "f2dda1c8-ce97-5d14-914c-1e01b7a6ca9b": {
+    "result": {
+      "summary": "1 of 5 required skills are shown in work experience; 4 have no evidence.",
+      "skills": [
+        {
+          "skill": "python",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "e9429be6-8ec9-576f-9f69-02ea55ba0d46",
+              "quote": "Data Analyst with 2 years of experience delivering production systems with Python, SQL, Pandas. Focused on reliable, well-tested software."
+            },
+            {
+              "chunk_id": "84fcb712-af0b-5095-a744-b2dcd17b3e69",
+              "quote": "Built and maintained reporting dashboards using Python, serving 69k users."
+            }
+          ]
+        },
+        {
+          "skill": "fastapi",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "postgresql",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "docker",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "rest",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "redis",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "aws",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "kafka",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        }
+      ],
+      "strengths": [
+        "Hands-on Python in production work."
+      ],
+      "risks": [
+        "No evidence of FastAPI.",
+        "No evidence of PostgreSQL.",
+        "No evidence of Docker.",
+        "Only 2 years of experience against a minimum of 3."
+      ],
+      "interview_questions": [
+        "Describe a system you built with Python and how you tested it.",
+        "How would you get productive with FastAPI?",
+        "How would you get productive with PostgreSQL?"
+      ],
+      "dropped_unverified_claims": 0,
+      "model": "fixture-model",
+      "prompt_version": "skillgap_v1"
+    },
+    "citations_resolved": [
+      {
+        "skill": "python",
+        "chunk_id": "e9429be6-8ec9-576f-9f69-02ea55ba0d46",
+        "quote": "Data Analyst with 2 years of experience delivering production systems with Python, SQL, Pandas. Focused on reliable, well-tested software.",
+        "text_scrubbed": "Data Analyst with 2 years of experience delivering production systems with Python, SQL, Pandas. Focused on reliable, well-tested software.",
+        "page_no": 1,
+        "section": "summary",
+        "start": 0,
+        "end": 138
+      },
+      {
+        "skill": "python",
+        "chunk_id": "84fcb712-af0b-5095-a744-b2dcd17b3e69",
+        "quote": "Built and maintained reporting dashboards using Python, serving 69k users.",
+        "text_scrubbed": "Data Analyst - Bluepine Systems   2025 - Present\n- Built and maintained reporting dashboards using Python, serving 69k users.\n- Built and maintained a notification system using SQL, serving 37k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 51,
+        "end": 125
+      }
+    ],
+    "from_cache": false
+  },
+  "a8b0c7ab-24be-50f8-acb6-e2b6c7c3d66a": {
+    "result": {
+      "summary": "5 of 5 required skills are shown in work experience.",
+      "skills": [
+        {
+          "skill": "python",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "cba20652-ed50-5424-a629-7eef6985444b",
+              "quote": "API Engineer with 6 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software."
+            },
+            {
+              "chunk_id": "e9a16ce1-d24e-5db8-9724-b21900c69db6",
+              "quote": "Built and maintained a search feature using Python, serving 46k users."
+            }
+          ]
+        },
+        {
+          "skill": "fastapi",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "cba20652-ed50-5424-a629-7eef6985444b",
+              "quote": "API Engineer with 6 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software."
+            },
+            {
+              "chunk_id": "e9a16ce1-d24e-5db8-9724-b21900c69db6",
+              "quote": "Built and maintained a search feature using FastAPI, serving 23k users."
+            }
+          ]
+        },
+        {
+          "skill": "postgresql",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "cba20652-ed50-5424-a629-7eef6985444b",
+              "quote": "API Engineer with 6 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software."
+            },
+            {
+              "chunk_id": "e9a16ce1-d24e-5db8-9724-b21900c69db6",
+              "quote": "Built and maintained customer-facing services using PostgreSQL, serving 46k users."
+            }
+          ]
+        },
+        {
+          "skill": "docker",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "e3c9dda1-f7a7-5caa-90fd-c3dcabb2234a",
+              "quote": "Built and maintained reporting dashboards using Docker, serving 6k users."
+            },
+            {
+              "chunk_id": "1a07d85c-d9b2-5905-9a26-b8f85c20ea48",
+              "quote": "Python, FastAPI, PostgreSQL, Docker, REST APIs, AWS, Redis"
+            }
+          ]
+        },
+        {
+          "skill": "rest",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "e3c9dda1-f7a7-5caa-90fd-c3dcabb2234a",
+              "quote": "Built and maintained reporting dashboards using REST APIs, serving 69k users."
+            },
+            {
+              "chunk_id": "1a07d85c-d9b2-5905-9a26-b8f85c20ea48",
+              "quote": "Python, FastAPI, PostgreSQL, Docker, REST APIs, AWS, Redis"
+            }
+          ]
+        },
+        {
+          "skill": "redis",
+          "status": "partial",
+          "reasoning": "Listed, but no work context shows how it was used.",
+          "citations": [
+            {
+              "chunk_id": "1a07d85c-d9b2-5905-9a26-b8f85c20ea48",
+              "quote": "Python, FastAPI, PostgreSQL, Docker, REST APIs, AWS, Redis"
+            }
+          ]
+        },
+        {
+          "skill": "aws",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "e3c9dda1-f7a7-5caa-90fd-c3dcabb2234a",
+              "quote": "Built and maintained reporting dashboards using AWS, serving 77k users."
+            },
+            {
+              "chunk_id": "1a07d85c-d9b2-5905-9a26-b8f85c20ea48",
+              "quote": "Python, FastAPI, PostgreSQL, Docker, REST APIs, AWS, Redis"
+            }
+          ]
+        },
+        {
+          "skill": "kafka",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        }
+      ],
+      "strengths": [
+        "Hands-on Python in production work.",
+        "Hands-on FastAPI in production work.",
+        "Hands-on PostgreSQL in production work."
+      ],
+      "risks": [],
+      "interview_questions": [
+        "Describe a system you built with Python and how you tested it.",
+        "Describe a system you built with FastAPI and how you tested it."
+      ],
+      "dropped_unverified_claims": 0,
+      "model": "fixture-model",
+      "prompt_version": "skillgap_v1"
+    },
+    "citations_resolved": [
+      {
+        "skill": "python",
+        "chunk_id": "cba20652-ed50-5424-a629-7eef6985444b",
+        "quote": "API Engineer with 6 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software.",
+        "text_scrubbed": "API Engineer with 6 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software.",
+        "page_no": 1,
+        "section": "summary",
+        "start": 0,
+        "end": 146
+      },
+      {
+        "skill": "python",
+        "chunk_id": "e9a16ce1-d24e-5db8-9724-b21900c69db6",
+        "quote": "Built and maintained a search feature using Python, serving 46k users.",
+        "text_scrubbed": "API Engineer - Kestrel Soft   2023 - Present\n- Built and maintained a search feature using Python, serving 46k users.\n- Built and maintained a search feature using FastAPI, serving 23k users.\n- Built and maintained customer-facing services using PostgreSQL, serving 46k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 47,
+        "end": 117
+      },
+      {
+        "skill": "fastapi",
+        "chunk_id": "cba20652-ed50-5424-a629-7eef6985444b",
+        "quote": "API Engineer with 6 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software.",
+        "text_scrubbed": "API Engineer with 6 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software.",
+        "page_no": 1,
+        "section": "summary",
+        "start": 0,
+        "end": 146
+      },
+      {
+        "skill": "fastapi",
+        "chunk_id": "e9a16ce1-d24e-5db8-9724-b21900c69db6",
+        "quote": "Built and maintained a search feature using FastAPI, serving 23k users.",
+        "text_scrubbed": "API Engineer - Kestrel Soft   2023 - Present\n- Built and maintained a search feature using Python, serving 46k users.\n- Built and maintained a search feature using FastAPI, serving 23k users.\n- Built and maintained customer-facing services using PostgreSQL, serving 46k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 120,
+        "end": 191
+      },
+      {
+        "skill": "postgresql",
+        "chunk_id": "cba20652-ed50-5424-a629-7eef6985444b",
+        "quote": "API Engineer with 6 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software.",
+        "text_scrubbed": "API Engineer with 6 years of experience delivering production systems with Python, FastAPI, PostgreSQL. Focused on reliable, well-tested software.",
+        "page_no": 1,
+        "section": "summary",
+        "start": 0,
+        "end": 146
+      },
+      {
+        "skill": "postgresql",
+        "chunk_id": "e9a16ce1-d24e-5db8-9724-b21900c69db6",
+        "quote": "Built and maintained customer-facing services using PostgreSQL, serving 46k users.",
+        "text_scrubbed": "API Engineer - Kestrel Soft   2023 - Present\n- Built and maintained a search feature using Python, serving 46k users.\n- Built and maintained a search feature using FastAPI, serving 23k users.\n- Built and maintained customer-facing services using PostgreSQL, serving 46k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 194,
+        "end": 276
+      },
+      {
+        "skill": "docker",
+        "chunk_id": "e3c9dda1-f7a7-5caa-90fd-c3dcabb2234a",
+        "quote": "Built and maintained reporting dashboards using Docker, serving 6k users.",
+        "text_scrubbed": "Associate API Engineer - Mosaic Cloud   2020 - 2023\n- Built and maintained reporting dashboards using Docker, serving 6k users.\n- Built and maintained reporting dashboards using REST APIs, serving 69k users.\n- Built and maintained reporting dashboards using AWS, serving 77k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 54,
+        "end": 127
+      },
+      {
+        "skill": "docker",
+        "chunk_id": "1a07d85c-d9b2-5905-9a26-b8f85c20ea48",
+        "quote": "Python, FastAPI, PostgreSQL, Docker, REST APIs, AWS, Redis",
+        "text_scrubbed": "Python, FastAPI, PostgreSQL, Docker, REST APIs, AWS, Redis",
+        "page_no": 1,
+        "section": "skills",
+        "start": 0,
+        "end": 58
+      },
+      {
+        "skill": "rest",
+        "chunk_id": "e3c9dda1-f7a7-5caa-90fd-c3dcabb2234a",
+        "quote": "Built and maintained reporting dashboards using REST APIs, serving 69k users.",
+        "text_scrubbed": "Associate API Engineer - Mosaic Cloud   2020 - 2023\n- Built and maintained reporting dashboards using Docker, serving 6k users.\n- Built and maintained reporting dashboards using REST APIs, serving 69k users.\n- Built and maintained reporting dashboards using AWS, serving 77k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 130,
+        "end": 207
+      },
+      {
+        "skill": "rest",
+        "chunk_id": "1a07d85c-d9b2-5905-9a26-b8f85c20ea48",
+        "quote": "Python, FastAPI, PostgreSQL, Docker, REST APIs, AWS, Redis",
+        "text_scrubbed": "Python, FastAPI, PostgreSQL, Docker, REST APIs, AWS, Redis",
+        "page_no": 1,
+        "section": "skills",
+        "start": 0,
+        "end": 58
+      },
+      {
+        "skill": "redis",
+        "chunk_id": "1a07d85c-d9b2-5905-9a26-b8f85c20ea48",
+        "quote": "Python, FastAPI, PostgreSQL, Docker, REST APIs, AWS, Redis",
+        "text_scrubbed": "Python, FastAPI, PostgreSQL, Docker, REST APIs, AWS, Redis",
+        "page_no": 1,
+        "section": "skills",
+        "start": 0,
+        "end": 58
+      },
+      {
+        "skill": "aws",
+        "chunk_id": "e3c9dda1-f7a7-5caa-90fd-c3dcabb2234a",
+        "quote": "Built and maintained reporting dashboards using AWS, serving 77k users.",
+        "text_scrubbed": "Associate API Engineer - Mosaic Cloud   2020 - 2023\n- Built and maintained reporting dashboards using Docker, serving 6k users.\n- Built and maintained reporting dashboards using REST APIs, serving 69k users.\n- Built and maintained reporting dashboards using AWS, serving 77k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 210,
+        "end": 281
+      },
+      {
+        "skill": "aws",
+        "chunk_id": "1a07d85c-d9b2-5905-9a26-b8f85c20ea48",
+        "quote": "Python, FastAPI, PostgreSQL, Docker, REST APIs, AWS, Redis",
+        "text_scrubbed": "Python, FastAPI, PostgreSQL, Docker, REST APIs, AWS, Redis",
+        "page_no": 1,
+        "section": "skills",
+        "start": 0,
+        "end": 58
+      }
+    ],
+    "from_cache": false
+  },
+  "597bf13b-0c78-51e1-9bb3-e619ea5dd459": {
+    "result": {
+      "summary": "0 of 5 required skills are shown in work experience; 5 have no evidence.",
+      "skills": [
+        {
+          "skill": "python",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "fastapi",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "postgresql",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "docker",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "rest",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "redis",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "aws",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "kafka",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        }
+      ],
+      "strengths": [],
+      "risks": [
+        "No evidence of Python.",
+        "No evidence of FastAPI.",
+        "No evidence of PostgreSQL.",
+        "Only 2 years of experience against a minimum of 3."
+      ],
+      "interview_questions": [
+        "How would you get productive with Python?",
+        "How would you get productive with FastAPI?"
+      ],
+      "dropped_unverified_claims": 0,
+      "model": "fixture-model",
+      "prompt_version": "skillgap_v1"
+    },
+    "citations_resolved": [],
+    "from_cache": false
+  },
+  "02518bb5-e3e4-5237-886d-c5abcd18d3fd": {
+    "result": {
+      "summary": "2 of 5 required skills are shown in work experience; 3 have no evidence.",
+      "skills": [
+        {
+          "skill": "python",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "f04ba937-d859-565c-84a0-cd710a1303f8",
+              "quote": "Built and maintained a notification system using Python, serving 29k users."
+            },
+            {
+              "chunk_id": "3cd3cb79-945d-540a-a77c-39a7ce3be096",
+              "quote": "AWS, Docker, Terraform, Linux, Python, CI/CD"
+            }
+          ]
+        },
+        {
+          "skill": "fastapi",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "postgresql",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "docker",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "4ad7e25e-6b67-55cf-be78-fc271d6f50d1",
+              "quote": "Cloud Engineer with 4 years of experience delivering production systems with AWS, Docker, Terraform. Focused on reliable, well-tested software."
+            },
+            {
+              "chunk_id": "741e8130-0c86-5f51-b450-76ebcffdbf78",
+              "quote": "Built and maintained an analytics platform using Docker, serving 77k users."
+            }
+          ]
+        },
+        {
+          "skill": "rest",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "redis",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "aws",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "4ad7e25e-6b67-55cf-be78-fc271d6f50d1",
+              "quote": "Cloud Engineer with 4 years of experience delivering production systems with AWS, Docker, Terraform. Focused on reliable, well-tested software."
+            },
+            {
+              "chunk_id": "741e8130-0c86-5f51-b450-76ebcffdbf78",
+              "quote": "Built and maintained a notification system using AWS, serving 14k users."
+            }
+          ]
+        },
+        {
+          "skill": "kafka",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        }
+      ],
+      "strengths": [
+        "Hands-on Python in production work.",
+        "Hands-on Docker in production work."
+      ],
+      "risks": [
+        "No evidence of FastAPI.",
+        "No evidence of PostgreSQL.",
+        "No evidence of REST APIs."
+      ],
+      "interview_questions": [
+        "Describe a system you built with Python and how you tested it.",
+        "Describe a system you built with Docker and how you tested it.",
+        "How would you get productive with FastAPI?",
+        "How would you get productive with PostgreSQL?"
+      ],
+      "dropped_unverified_claims": 0,
+      "model": "fixture-model",
+      "prompt_version": "skillgap_v1"
+    },
+    "citations_resolved": [
+      {
+        "skill": "python",
+        "chunk_id": "f04ba937-d859-565c-84a0-cd710a1303f8",
+        "quote": "Built and maintained a notification system using Python, serving 29k users.",
+        "text_scrubbed": "Associate Cloud Engineer - Tidal Software   2022 - 2024\n- Built and maintained data pipelines using Linux, serving 69k users.\n- Built and maintained a notification system using Python, serving 29k users.\n- Built and maintained customer-facing services using CI/CD, serving 51k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 128,
+        "end": 203
+      },
+      {
+        "skill": "python",
+        "chunk_id": "3cd3cb79-945d-540a-a77c-39a7ce3be096",
+        "quote": "AWS, Docker, Terraform, Linux, Python, CI/CD",
+        "text_scrubbed": "AWS, Docker, Terraform, Linux, Python, CI/CD",
+        "page_no": 1,
+        "section": "skills",
+        "start": 0,
+        "end": 44
+      },
+      {
+        "skill": "docker",
+        "chunk_id": "4ad7e25e-6b67-55cf-be78-fc271d6f50d1",
+        "quote": "Cloud Engineer with 4 years of experience delivering production systems with AWS, Docker, Terraform. Focused on reliable, well-tested software.",
+        "text_scrubbed": "Cloud Engineer with 4 years of experience delivering production systems with AWS, Docker, Terraform. Focused on reliable, well-tested software.",
+        "page_no": 1,
+        "section": "summary",
+        "start": 0,
+        "end": 143
+      },
+      {
+        "skill": "docker",
+        "chunk_id": "741e8130-0c86-5f51-b450-76ebcffdbf78",
+        "quote": "Built and maintained an analytics platform using Docker, serving 77k users.",
+        "text_scrubbed": "Cloud Engineer - Mosaic Cloud   2024 - Present\n- Built and maintained a notification system using AWS, serving 14k users.\n- Built and maintained an analytics platform using Docker, serving 77k users.\n- Built and maintained an onboarding workflow using Terraform, serving 30k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 124,
+        "end": 199
+      },
+      {
+        "skill": "aws",
+        "chunk_id": "4ad7e25e-6b67-55cf-be78-fc271d6f50d1",
+        "quote": "Cloud Engineer with 4 years of experience delivering production systems with AWS, Docker, Terraform. Focused on reliable, well-tested software.",
+        "text_scrubbed": "Cloud Engineer with 4 years of experience delivering production systems with AWS, Docker, Terraform. Focused on reliable, well-tested software.",
+        "page_no": 1,
+        "section": "summary",
+        "start": 0,
+        "end": 143
+      },
+      {
+        "skill": "aws",
+        "chunk_id": "741e8130-0c86-5f51-b450-76ebcffdbf78",
+        "quote": "Built and maintained a notification system using AWS, serving 14k users.",
+        "text_scrubbed": "Cloud Engineer - Mosaic Cloud   2024 - Present\n- Built and maintained a notification system using AWS, serving 14k users.\n- Built and maintained an analytics platform using Docker, serving 77k users.\n- Built and maintained an onboarding workflow using Terraform, serving 30k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 49,
+        "end": 121
+      }
+    ],
+    "from_cache": false
+  },
+  "00b0db55-7815-5a9b-b48f-158922435089": {
+    "result": {
+      "summary": "2 of 5 required skills are shown in work experience; 2 have no evidence.",
+      "skills": [
+        {
+          "skill": "python",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "fastapi",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "postgresql",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "bb4b85e0-d0f0-59ef-8f59-5132a2425117",
+              "quote": "Backend Engineer with 8 years of experience delivering production systems with Java, Spring Boot, PostgreSQL. Focused on reliable, well-tested software."
+            },
+            {
+              "chunk_id": "0a286e79-2ac8-5fae-a6cc-3204b2e8fd9c",
+              "quote": "Built and maintained an admin portal using PostgreSQL, serving 71k users."
+            }
+          ]
+        },
+        {
+          "skill": "docker",
+          "status": "partial",
+          "reasoning": "Listed, but no work context shows how it was used.",
+          "citations": [
+            {
+              "chunk_id": "099a534d-28d6-53f3-a09e-62a74a01c4de",
+              "quote": "Java, Spring Boot, PostgreSQL, Microservices, REST APIs, Kafka, Docker"
+            }
+          ]
+        },
+        {
+          "skill": "rest",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "bf5da579-1115-5aee-bb38-1cdb3c4246bf",
+              "quote": "Built and maintained a notification system using REST APIs, serving 51k users."
+            },
+            {
+              "chunk_id": "099a534d-28d6-53f3-a09e-62a74a01c4de",
+              "quote": "Java, Spring Boot, PostgreSQL, Microservices, REST APIs, Kafka, Docker"
+            }
+          ]
+        },
+        {
+          "skill": "redis",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "aws",
+          "status": "missing",
+          "reasoning": "No mention found in the resume.",
+          "citations": []
+        },
+        {
+          "skill": "kafka",
+          "status": "present",
+          "reasoning": "Used in work experience with concrete scope.",
+          "citations": [
+            {
+              "chunk_id": "bf5da579-1115-5aee-bb38-1cdb3c4246bf",
+              "quote": "Built and maintained a billing module using Kafka, serving 35k users."
+            },
+            {
+              "chunk_id": "099a534d-28d6-53f3-a09e-62a74a01c4de",
+              "quote": "Java, Spring Boot, PostgreSQL, Microservices, REST APIs, Kafka, Docker"
+            }
+          ]
+        }
+      ],
+      "strengths": [
+        "Hands-on PostgreSQL in production work.",
+        "Hands-on REST APIs in production work."
+      ],
+      "risks": [
+        "No evidence of Python.",
+        "No evidence of FastAPI."
+      ],
+      "interview_questions": [
+        "Describe a system you built with PostgreSQL and how you tested it.",
+        "Describe a system you built with REST APIs and how you tested it.",
+        "How would you get productive with Python?",
+        "How would you get productive with FastAPI?"
+      ],
+      "dropped_unverified_claims": 0,
+      "model": "fixture-model",
+      "prompt_version": "skillgap_v1"
+    },
+    "citations_resolved": [
+      {
+        "skill": "postgresql",
+        "chunk_id": "bb4b85e0-d0f0-59ef-8f59-5132a2425117",
+        "quote": "Backend Engineer with 8 years of experience delivering production systems with Java, Spring Boot, PostgreSQL. Focused on reliable, well-tested software.",
+        "text_scrubbed": "Backend Engineer with 8 years of experience delivering production systems with Java, Spring Boot, PostgreSQL. Focused on reliable, well-tested software.",
+        "page_no": 1,
+        "section": "summary",
+        "start": 0,
+        "end": 152
+      },
+      {
+        "skill": "postgresql",
+        "chunk_id": "0a286e79-2ac8-5fae-a6cc-3204b2e8fd9c",
+        "quote": "Built and maintained an admin portal using PostgreSQL, serving 71k users.",
+        "text_scrubbed": "Backend Engineer - Northwind Labs   2022 - Present\n- Built and maintained an analytics platform using Java, serving 14k users.\n- Built and maintained an analytics platform using Spring Boot, serving 59k users.\n- Built and maintained an admin portal using PostgreSQL, serving 71k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 212,
+        "end": 285
+      },
+      {
+        "skill": "docker",
+        "chunk_id": "099a534d-28d6-53f3-a09e-62a74a01c4de",
+        "quote": "Java, Spring Boot, PostgreSQL, Microservices, REST APIs, Kafka, Docker",
+        "text_scrubbed": "Java, Spring Boot, PostgreSQL, Microservices, REST APIs, Kafka, Docker",
+        "page_no": 2,
+        "section": "skills",
+        "start": 0,
+        "end": 70
+      },
+      {
+        "skill": "rest",
+        "chunk_id": "bf5da579-1115-5aee-bb38-1cdb3c4246bf",
+        "quote": "Built and maintained a notification system using REST APIs, serving 51k users.",
+        "text_scrubbed": "Associate Backend Engineer - Kestrel Soft   2018 - 2022\n- Built and maintained an analytics platform using Microservices, serving 39k users.\n- Built and maintained a notification system using REST APIs, serving 51k users.\n- Built and maintained a billing module using Kafka, serving 35k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 143,
+        "end": 221
+      },
+      {
+        "skill": "rest",
+        "chunk_id": "099a534d-28d6-53f3-a09e-62a74a01c4de",
+        "quote": "Java, Spring Boot, PostgreSQL, Microservices, REST APIs, Kafka, Docker",
+        "text_scrubbed": "Java, Spring Boot, PostgreSQL, Microservices, REST APIs, Kafka, Docker",
+        "page_no": 2,
+        "section": "skills",
+        "start": 0,
+        "end": 70
+      },
+      {
+        "skill": "kafka",
+        "chunk_id": "bf5da579-1115-5aee-bb38-1cdb3c4246bf",
+        "quote": "Built and maintained a billing module using Kafka, serving 35k users.",
+        "text_scrubbed": "Associate Backend Engineer - Kestrel Soft   2018 - 2022\n- Built and maintained an analytics platform using Microservices, serving 39k users.\n- Built and maintained a notification system using REST APIs, serving 51k users.\n- Built and maintained a billing module using Kafka, serving 35k users.",
+        "page_no": 1,
+        "section": "experience",
+        "start": 224,
+        "end": 293
+      },
+      {
+        "skill": "kafka",
+        "chunk_id": "099a534d-28d6-53f3-a09e-62a74a01c4de",
+        "quote": "Java, Spring Boot, PostgreSQL, Microservices, REST APIs, Kafka, Docker",
+        "text_scrubbed": "Java, Spring Boot, PostgreSQL, Microservices, REST APIs, Kafka, Docker",
+        "page_no": 2,
+        "section": "skills",
+        "start": 0,
+        "end": 70
+      }
+    ],
+    "from_cache": false
+  }
+}

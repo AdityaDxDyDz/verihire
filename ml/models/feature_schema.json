@@ -1,0 +1,20 @@
+{
+  "schema_version": "1",
+  "features": [
+    "rrf_sum_top3",
+    "rrf_max",
+    "n_chunks_hit",
+    "best_vec_sim",
+    "mean_vec_sim",
+    "required_skill_coverage",
+    "preferred_skill_coverage",
+    "n_required_missing",
+    "years_exp",
+    "years_gap",
+    "edu_level",
+    "edu_gap",
+    "title_match",
+    "experience_section_hit",
+    "skills_in_experience_ratio"
+  ]
+}

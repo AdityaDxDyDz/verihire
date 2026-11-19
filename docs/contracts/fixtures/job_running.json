@@ -1,0 +1,35 @@
+{
+  "id": "227ba97b-49b1-55e8-99bb-c514844e769a",
+  "status": "running",
+  "total": 4,
+  "done": 2,
+  "failed": 0,
+  "created_at": "2026-11-07T09:30:00+00:00",
+  "finished_at": null,
+  "documents": [
+    {
+      "id": "8ea6b6c6-ce5d-5733-8413-2ef1e04558ea",
+      "filename": "resume_024.pdf",
+      "status": "ready",
+      "error": null
+    },
+    {
+      "id": "128642cd-560d-5491-9f6f-88054a227364",
+      "filename": "resume_025.pdf",
+      "status": "ready",
+      "error": null
+    },
+    {
+      "id": "1beab596-43c5-5986-b9ef-33a0cc72ac6f",
+      "filename": "resume_026.pdf",
+      "status": "embedding",
+      "error": null
+    },
+    {
+      "id": "b5bd93c6-a4b6-508a-98a6-9082d3a05366",
+      "filename": "resume_027.pdf",
+      "status": "uploaded",
+      "error": null
+    }
+  ]
+}

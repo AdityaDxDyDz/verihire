@@ -1,0 +1,112 @@
+/* Design tokens. The app is a recruiter's desk: a cool slate desk, white paper sheets, a pen-blue for actions and a
+   highlighter yellow reserved for one job only: marking verified evidence in the resume text. */
+:root {
+  color-scheme: light;
+  --desk: #e8ecf1;
+  --desk-2: #dce2ea;
+  --sheet: #ffffff;
+  --sheet-2: #f6f8fb;
+  --ink: #1d2733;
+  --ink-2: #435063;
+  --ink-3: #5c6879;
+  --line: #cdd5df;
+  --line-strong: #a7b3c2;
+
+  --pen: #2b4fd0;
+  --pen-hover: #213fae;
+  --pen-ink: #ffffff;
+  --pen-soft: #e1e8fb;
+
+  --mark: #ffe45c;
+  --mark-ink: #1d2733;
+
+  --ok: #17794f;
+  --ok-soft: #d9f1e4;
+  --warn: #85560a;
+  --warn-soft: #fbebc9;
+  --bad: #b3243f;
+  --bad-soft: #fadce2;
+
+  --font-ui: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-doc: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+
+  --text-xs: 0.8125rem;
+  --text-sm: 0.875rem;
+  --text-md: 0.9375rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 1.875rem;
+
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s5: 24px;
+  --s6: 32px;
+  --s7: 48px;
+
+  --r-ctl: 6px;
+  --r-sheet: 3px;
+  --r-pill: 999px;
+
+  --shadow-drawer: -12px 0 32px rgba(18, 28, 45, 0.18);
+  --shadow-modal: 0 18px 48px rgba(18, 28, 45, 0.28);
+  --focus: 0 0 0 2px var(--sheet), 0 0 0 4px var(--pen);
+  --topbar-h: 54px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --desk: #10151c;
+    --desk-2: #161d26;
+    --sheet: #1a222d;
+    --sheet-2: #1f2834;
+    --ink: #e7ecf3;
+    --ink-2: #b9c3d1;
+    --ink-3: #93a0b2;
+    --line: #2d3947;
+    --line-strong: #455467;
+    --pen: #8aa2ff;
+    --pen-hover: #a5b8ff;
+    --pen-ink: #0d1530;
+    --pen-soft: #1f2d5c;
+    --mark: rgba(255, 214, 10, 0.34);
+    --mark-ink: #f4f6fa;
+    --ok: #62d29c;
+    --ok-soft: #153a2a;
+    --warn: #f2bb4e;
+    --warn-soft: #3b2b0b;
+    --bad: #ff8fa4;
+    --bad-soft: #45202a;
+    --shadow-drawer: -12px 0 32px rgba(0, 0, 0, 0.5);
+    --shadow-modal: 0 18px 48px rgba(0, 0, 0, 0.6);
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --desk: #10151c;
+  --desk-2: #161d26;
+  --sheet: #1a222d;
+  --sheet-2: #1f2834;
+  --ink: #e7ecf3;
+  --ink-2: #b9c3d1;
+  --ink-3: #93a0b2;
+  --line: #2d3947;
+  --line-strong: #455467;
+  --pen: #8aa2ff;
+  --pen-hover: #a5b8ff;
+  --pen-ink: #0d1530;
+  --pen-soft: #1f2d5c;
+  --mark: rgba(255, 214, 10, 0.34);
+  --mark-ink: #f4f6fa;
+  --ok: #62d29c;
+  --ok-soft: #153a2a;
+  --warn: #f2bb4e;
+  --warn-soft: #3b2b0b;
+  --bad: #ff8fa4;
+  --bad-soft: #45202a;
+  --shadow-drawer: -12px 0 32px rgba(0, 0, 0, 0.5);
+  --shadow-modal: 0 18px 48px rgba(0, 0, 0, 0.6);
+}

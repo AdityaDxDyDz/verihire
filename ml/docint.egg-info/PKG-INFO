@@ -1,0 +1,20 @@
+Metadata-Version: 2.4
+Name: docint
+Version: 1.2.0
+Summary: VeriHire document intelligence: ingestion (Track B), ranking + LLM (Track C), shared contracts
+Requires-Python: >=3.11
+Requires-Dist: pydantic>=2.6
+Requires-Dist: numpy>=1.26
+Provides-Extra: ingest
+Requires-Dist: pymupdf>=1.24; extra == "ingest"
+Requires-Dist: fastembed>=0.4; extra == "ingest"
+Provides-Extra: rank
+Requires-Dist: xgboost>=2.0; extra == "rank"
+Requires-Dist: scikit-learn>=1.4; extra == "rank"
+Requires-Dist: pandas>=2.0; extra == "rank"
+Provides-Extra: llm
+Requires-Dist: anthropic>=0.40; extra == "llm"
+Provides-Extra: study
+Requires-Dist: lightgbm>=4.0; extra == "study"
+Provides-Extra: all
+Requires-Dist: docint[ingest,llm,rank]; extra == "all"

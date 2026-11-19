@@ -1,0 +1,15 @@
+line-length = 140
+target-version = "py311"
+extend-exclude = [".venv", "venv", ".cache", ".data"]
+
+[lint]
+select = ["E", "F", "W", "I", "B", "UP", "BLE", "ASYNC"]
+ignore = ["B008", "UP015", "ASYNC109", "ASYNC110", "ASYNC251"]  # Depends() defaults; timeouts passed to wait_for; sleeps in test fakes
+
+[lint.per-file-ignores]
+"tests/*" = ["BLE001", "B023", "E402"]
+"backend/tests/*" = ["BLE001", "B023", "E402"]
+"scripts/make_fixtures.py" = ["E501"]  # Kadam's fixture generator: long literal rows
+
+[lint.isort]
+known-first-party = ["app", "docint", "devtools", "conftest", "migrate", "seed_demo"]

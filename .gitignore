@@ -1,0 +1,39 @@
+# python
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.coverage
+.venv/
+venv/
+
+# secrets - never commit
+.env
+*.key
+
+# runtime data / caches
+.data/
+.cache/
+*.log
+
+# model weights are downloaded, not committed (the small trained reranker in ml/models IS committed)
+*.onnx
+
+# from Track B
+.idea/
+.vscode/
+*.tmp
+tmp/
+sample_resumes/*.pdf
+!sample_resumes/README.md
+
+# from Kadam (frontend)
+node_modules/
+*.env
+frontend/tests/screens/
+frontend/tests/screens_real/
+
+# real-data testing (personal data - never commit)
+/data/
+kaggle_report.json
+kaggle/

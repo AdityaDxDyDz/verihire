@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "docint"
+version = "1.2.0"
+description = "VeriHire document intelligence: ingestion (Track B), ranking + LLM (Track C), shared contracts"
+requires-python = ">=3.11"
+dependencies = ["pydantic>=2.6", "numpy>=1.26"]
+
+[project.optional-dependencies]
+ingest = ["pymupdf>=1.24", "fastembed>=0.4"]
+rank = ["xgboost>=2.0", "scikit-learn>=1.4", "pandas>=2.0"]
+llm = ["anthropic>=0.40"]
+study = ["lightgbm>=4.0"]
+all = ["docint[ingest,rank,llm]"]
+
+[tool.setuptools.packages.find]
+include = ["docint*"]

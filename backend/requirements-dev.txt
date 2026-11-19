@@ -1,0 +1,4 @@
+-r requirements.txt
+pytest>=8
+pytest-cov>=5
+ruff==0.16.9   # pinned: newer ruff versions add rules, and the lint step must give the same result everywhere

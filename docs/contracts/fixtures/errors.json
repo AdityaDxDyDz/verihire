@@ -1,0 +1,32 @@
+{
+  "401": {
+    "error": {
+      "code": "unauthorized",
+      "message": "Missing or invalid credentials"
+    }
+  },
+  "404": {
+    "error": {
+      "code": "not_found",
+      "message": "Candidate not found"
+    }
+  },
+  "422": {
+    "error": {
+      "code": "validation_error",
+      "message": "text: String should have at least 40 characters"
+    }
+  },
+  "429": {
+    "error": {
+      "code": "rate_limited",
+      "message": "Too many requests. Try again in 12s."
+    }
+  },
+  "500": {
+    "error": {
+      "code": "internal_error",
+      "message": "Internal server error"
+    }
+  }
+}

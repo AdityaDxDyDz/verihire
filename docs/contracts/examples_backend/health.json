@@ -1,0 +1,25 @@
+{
+  "status": "ok",
+  "db": "ok",
+  "embedder": "stub-hash-384",
+  "reranker": "stub-linear-v1",
+  "contract_version": "1.2.0",
+  "ml_mode": "stub",
+  "ml_components": {
+    "ingest": "stub",
+    "embedder": "stub",
+    "llm": "stub",
+    "jd_parser": "stub",
+    "skillgap": "stub",
+    "queries": "stub",
+    "reranker": "stub"
+  },
+  "stubs_in_use": true,
+  "auth_mode": "dev",
+  "storage_mode": "local",
+  "app_env": "test",
+  "api_version": "1.0.0",
+  "prompt_version": "stub-skillgap-v1",
+  "pipeline_version": "stub-ingest-v1",
+  "llm_model": "stub-llm"
+}

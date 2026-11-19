@@ -1,0 +1,184 @@
+# VeriHire — evidence-verified resume screening
+
+*Rank candidates by meaning. Trust every claim.*
+
+VeriHire ingests resume PDFs, hides personal data by default (blind screening), understands resumes semantically,
+ranks candidates against a job description with a trained model, and explains every ranking with **quotes that are
+verified to exist in the resume**.
+
+**Status (v1.2):** backend (Raj) + ingestion/embeddings (Harsh, Track B) + ranking/LLM/evaluation (Ekant, Track C) are
+**merged and tested together**. Kadam's frontend and deployment plug in without code changes (see *For Kadam* below).
+What changed while merging, and why: [`INTEGRATION.md`](INTEGRATION.md).
+
+---
+
+## How it works
+
+```
+PDF ──► Track B: extract (PyMuPDF) ─► drop hidden text ─► PII scrub ─► section chunks ─► profile ─► BGE-small 384-d
+                                                                                                      │
+Postgres + pgvector ◄────────────── backend: queue, workers, storage, audit, blind mode ◄────────────┘
+        │
+JD ──► Track C: parse (Claude or rules) ─► queries ─► hybrid SQL search (vector + full text, RRF k=60)
+        ─► top 50 candidates ─► XGBoost reranker (15 features, monotone in years/education) ─► "why" bars (SHAP)
+        ─► skill-gap analysis (Claude or rules) ─► citations verified by Track C AND again by the backend
+```
+
+| Component | Owner | Folder |
+|---|---|---|
+| Frontend, deployment, CI | Aditya Kadam | `frontend/`, `deploy/`, `.github/` *(to be merged)* |
+| Backend API, database, ingestion queue, search, analysis service | Aditya Raj | `backend/`, `db/`, `scripts/` |
+| Track B: PDF → text → PII scrub → chunks → profile → embeddings | Harsh Lal | `ml/docint/ingest`, `ml/docint/embed`, `ml/data_ingest` |
+| Track C: queries, reranker, LLM JD parsing + skill gap, evaluation | Ekant Patel | `ml/docint/rank`, `ml/docint/llm`, `ml/docint/eval`, `ml/data_rank`, `ml/models` |
+| Shared, frozen contracts | all four | `ml/docint/contracts.py` (v1.2.0), `ml/docint/stubs.py`, `backend/app/schemas/api.py` |
+
+## Repository layout
+
+```
+verihire/
+├── README.md  INTEGRATION.md  .env.example  .gitignore
+├── backend/                     Raj      FastAPI app (app/), tests/ (incl. full-stack integration), devtools/
+├── db/                          Raj      migrations/ (schema, hybrid search fn, RLS lockdown), docker-compose.yml
+├── ml/
+│   ├── docint/
+│   │   ├── contracts.py stubs.py         shared
+│   │   ├── ingest/ embed/                Harsh
+│   │   └── rank/ llm/ eval/              Ekant  (+ rank/benchmark.py, fresh_test.py: model study)
+│   ├── data_ingest/                      Harsh  gold set + quality evaluation
+│   ├── data_rank/                        Ekant  synthetic corpus, JDs, labels, results/
+│   ├── models/                           Ekant  trained reranker (xgb_v1.json + meta + feature schema)
+│   ├── tests/ingest|rank|llm/            Harsh / Ekant unit tests
+│   └── requirements-ingest.txt requirements-rank.txt pyproject.toml run_track_c.sh
+├── frontend/                    Kadam    vanilla-JS SPA (no build step): index.html js/ css/ fixtures/ tests/
+├── mock_server/                 Kadam    optional stand-alone mock API (the UI also has an in-browser mock: ?mock=1)
+├── scripts/                     test_all.py (FINAL runner) e2e_real.py (browser, full stack) import_kaggle.py (real data)
+│                                test_backend.py migrate.py smoke_test.py seed_demo.py make_fixtures.py (Kadam)
+├── docs/                        architecture.md data_card.md model_card.md TESTING_IRL.md DEPLOYMENT_HANDOFF.md
+│                                components/ contracts/ (fixtures = UI↔API contract, examples_backend = real responses)
+└── .github/workflows/frontend.yml
+```
+
+## Setup (Python 3.11+; tested on 3.13)
+
+```bash
+python -m venv .venv && source .venv/bin/activate          # Windows: .venv\Scripts\Activate.ps1
+pip install -r backend/requirements-dev.txt -r ml/requirements-ingest.txt -r ml/requirements-rank.txt
+pip install -e ml                                             # makes `docint` importable everywhere
+cp .env.example .env
+python -c "import sys; sys.path.insert(0,'ml'); from docint.embed import get_embedder; get_embedder()"   # caches BGE-small once (internet)
+```
+
+## Run locally
+
+```bash
+docker compose -f db/docker-compose.yml up -d                 # Postgres 16 + pgvector
+python scripts/migrate.py --local-shim                        # tables, hybrid search function, RLS (idempotent)
+uvicorn app.main:app --app-dir backend --loop app.eventloop:selector_loop --reload               # API + Swagger at http://localhost:8000/docs
+python scripts/seed_demo.py                                   # ~117 fictional resumes + 3 JDs through the real pipeline
+```
+Open **http://localhost:8000** for the app (sign in with any e-mail in dev mode; `seed_demo.py` fills `demo@example.com`).
+`/config.js` is generated by the backend from `.env`, so the UI needs no configuration.
+In Swagger (`/docs`) click **Authorize** and enter `dev:you@example.com`. `GET /api/v1/health` shows which ML components are real.
+For Claude instead of the rule-based LLM set `ANTHROPIC_API_KEY`, `LLM_MODEL_FAST`, `LLM_MODEL_STRONG` in `.env`.
+
+## Testing — one command
+
+```bash
+python scripts/test_all.py              # everything (~3-4 min)
+python scripts/test_all.py --install    # install every requirements file first
+python scripts/test_all.py --quick      # skip the reproducibility re-run and the live server
+python scripts/test_all.py --real-model # also with the real BGE model (internet once)
+python scripts/test_all.py --channel chrome   # browser tests in your installed Chrome instead of Playwright's
+```
+Browser tests need `pip install playwright` + `python -m playwright install chromium` (or `--channel chrome`) and
+Node 18+ for the UI unit tests; without them those steps SKIP instead of failing.
+
+It finds or **starts** a throw-away Postgres + pgvector (Docker or a local install) and runs, with PASS/FAIL per step:
+
+| Step | What it proves |
+|---|---|
+| dependencies, test database, lint | environment is complete; Raj's code is ruff-clean |
+| Track B unit tests + gold-set targets | Harsh's extraction, PII scrubbing, chunking, profile, embedder; all quality targets met |
+| Track C unit tests | Ekant's matcher, queries, metrics, citation verifier, JD parser, skill gap, leakage, train/serve parity, monotonicity |
+| Track C numbers reproducible | `run_eval` re-computes **every number** in `ml/data_rank/results/results.json` |
+| backend + integration tests | API, DB, auth, isolation, ingestion failure drills, search, analysis; Track B integration; **full stack with every teammate component real** and a simulated Claude API |
+| live smoke test | real uvicorn server + `scripts/smoke_test.py`: upload → ingest → JD → search → analysis, citations verbatim, no PII |
+| frontend unit tests | Kadam's 75 `node --test` tests (API client, auth, router, highlighting, validation, mock) |
+| frontend mock E2E | the UI against its in-browser mock (fixtures = the contract) |
+| full-stack E2E | `scripts/e2e_real.py`: Chrome drives the **real** UI + server + DB + every ML component: sign in, upload 12 PDFs (corrupt + scanned + hidden-text included), JD → requirements, search in blind mode (no names/e-mails/phones on screen), analysis with highlighted verbatim quotes, audited identity reveal, PDF viewer, no console errors. Screenshots in `frontend/tests/screens_real/` |
+
+Exit code 0 only if nothing failed.
+
+### If the test database fails
+
+Run `python scripts/check_db.py` - it says exactly what is wrong (Docker missing / not running, wrong password, port in use,
+no pgvector) and what to do. The tests need **Postgres + the pgvector extension**; pick ONE way:
+
+1. **Docker (easiest, any OS).** Install Docker Desktop, open it, wait for *Engine running*, check with `docker info`.
+   Then just run `python scripts/test_all.py` - it downloads `pgvector/pgvector:pg16` once (~150 MB), starts a throw-away
+   database on a free port and removes it afterwards. Nothing to configure.
+2. **Your own Postgres** (must have pgvector: `brew install pgvector`, `sudo apt install postgresql-16-pgvector`;
+   on Windows use option 1 or 3). Point the tests at it with YOUR password:
+   - PowerShell: `$env:TEST_DATABASE_URL="postgresql://postgres:YOUR_PASSWORD@localhost:5432/verihire_test"`
+   - Command Prompt: `set TEST_DATABASE_URL=postgresql://postgres:YOUR_PASSWORD@localhost:5432/verihire_test`
+   - macOS/Linux: `export TEST_DATABASE_URL=postgresql://postgres:YOUR_PASSWORD@localhost:5432/verihire_test`
+3. **No install at all - free hosted Postgres** (e.g. Neon, which supports pgvector): create a project, add a database
+   named `verihire_test`, copy its connection string and set it as `TEST_DATABASE_URL` as above (keep `?sslmode=require`).
+   Slower (network round-trips) but works on any laptop. Use a throw-away project: the tests wipe VeriHire's tables.
+
+Set the variable in the **same terminal** you run the tests from. The database name must contain `test` (safety: the
+tests wipe it).
+
+Single tracks: `cd ml && python -m pytest tests/ingest` (Harsh),
+`cd ml && python -m pytest tests/rank tests/llm` (Ekant), `python scripts/test_backend.py` (Raj).
+
+## Results (synthetic data — compare systems, do not quote as real-world accuracy)
+
+| Held-out JDs (n = 6) | NDCG@10 | MRR | Recall@20 |
+|---|---|---|---|
+| E0 keyword (BM25) | 0.608 | 0.792 | 0.535 |
+| E2 hybrid (vector + full text, RRF) | 0.567 | 0.806 | 0.556 |
+| **E3 hybrid + XGBoost reranker** | **0.957** | **1.000** | **0.801** |
+
+- 120 fresh JDs (never used for any choice): NDCG@10 0.968; 0.955 with a different embedder at serving time.
+  CV over all 24 JDs: 0.978. Serving-like corpus (PDFs parsed by Track B): held-out 0.963, CV 0.976.
+- Citations: 100 % verbatim after verification (78 % before, under a simulated hallucinating LLM).
+- Prompt injection: 102 resume×JD pairs, 0 skills raised without evidence; hidden text never reaches the model.
+- Integrated stack (real Track B + Track C, stand-in embedder): search p95 72 ms for 118 resumes, 220 ms for 1,122 resumes
+  (5.6k chunks; plan target < 3 s); reranking 50 candidates 12-14 ms; ingestion of 1,006 PDFs 16 s; skill-gap 32 ms (rules LLM).
+- Model study (8 model families, 3 feature treatments): XGBoost was kept — see `ml/data_rank/results/MODEL_STUDY.md`.
+- **8-model comparison with accuracy / precision / recall / F1 / ROC-AUC + ranking metrics** and why XGBoost was chosen:
+  `ml/data_rank/results/MODEL_COMPARISON.md` (re-run: `cd ml && python -m docint.rank.compare_models`, ~30 s).
+  Shipped model on 120 fresh JDs: accuracy 0.930, precision 0.898, recall 0.976, F1 0.936, ROC-AUC 0.976, NDCG@10 0.968.
+Full tables: `ml/data_rank/results/RESULTS.md`, `…/serving_like/RESULTS.md`, `docs/model_card.md`.
+
+## Frontend (Kadam) — merged in v1.3
+
+Served by the backend from `frontend/` (same origin, no CORS); `FRONTEND_DIR` overrides the folder. The fixtures in
+`docs/contracts/fixtures/` (copied into `frontend/fixtures/`) are validated against the backend models on every run, so
+the UI and API cannot drift silently. Regenerate them with `python scripts/make_fixtures.py`. Mock-only UI work:
+open `frontend/index.html?mock=1` from any static server. Deployment: `docs/DEPLOYMENT_HANDOFF.md`
+(production needs `APP_ENV=production AUTH_MODE=supabase STORAGE_MODE=supabase ML_MODE=real`, Supabase keys, a 32+ char
+`APP_SECRET`, the pooler `DATABASE_URL`, and the BGE model baked into the image).
+
+## Testing with real resumes (Kaggle) and by hand
+
+Step-by-step guide for Windows: **`docs/TESTING_IRL.md`**. Short version, with the server running:
+```bash
+python scripts/import_kaggle.py --pdf-dir <unzipped resume-data-pdf> --limit 200
+python scripts/import_kaggle.py --csv <unzipped resume-and-job-description>/<file>.csv --limit 200
+python scripts/e2e_real.py --pdf-dir <unzipped resume-data-pdf> --headed     # watch the browser test on real PDFs
+```
+
+## Limitations
+
+Synthetic labels make ranking numbers optimistic (the reranker partly re-learns the label rubric). The real BGE model and
+real Claude calls could not be exercised in the build environment (stand-ins were used; run `--real-model` and the smoke
+test with a key once). No OCR (scanned / image-only PDFs → `needs_ocr`). English-centric heuristics. No name-swap bias test yet.
+`match_score` is a relative ranking score (0–100), not a probability. Details in the model and data cards.
+
+## Privacy
+
+Only fictional data is in the repo. Kaggle datasets contain real people's resumes: keep them (and `kaggle_report.json`)
+out of git, use a separate workspace, and follow each dataset's licence. PII is stored separately and revealed only on request (audited). Never commit `.env`,
+real resumes or model weights.

@@ -1,0 +1,7 @@
+{
+  "name": "verihire-frontend",
+  "private": true,
+  "type": "module",
+  "description": "VeriHire frontend (vanilla ES modules, no build step). Only dev command: npm test",
+  "scripts": { "test": "node --test" }
+}

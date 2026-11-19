@@ -1,0 +1,29 @@
+{
+  "id": "47a5ace6-a614-5f83-a6b7-193395ec3fc5",
+  "title": "Backend Engineer (Python)",
+  "spec": {
+    "title": "Backend Engineer (Python)",
+    "raw_text": "Backend Engineer (Python)\nWe are hiring a backend engineer to build and scale our document intelligence APIs.\n- Design REST APIs and background workers\n- Own PostgreSQL schemas and query performance\n- Containerise and deploy services\nRequirements: 3+ years of experience. Strong Python, FastAPI or Django, PostgreSQL, Docker and REST.\nPreferred: Redis, AWS, Kafka. Bachelor degree in computer science.",
+    "required_skills": [
+      "python",
+      "fastapi",
+      "postgresql",
+      "docker",
+      "rest"
+    ],
+    "preferred_skills": [
+      "redis",
+      "aws",
+      "kafka"
+    ],
+    "min_years": 3.0,
+    "min_education": 2,
+    "responsibilities": [
+      "Design REST APIs and background workers",
+      "Own PostgreSQL schemas and query performance",
+      "Containerise and deploy services"
+    ]
+  },
+  "created_at": "2026-11-07T09:30:00+00:00",
+  "updated_at": "2026-11-07T09:30:00+00:00"
+}

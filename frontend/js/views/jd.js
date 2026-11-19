@@ -1,0 +1,155 @@
+import { h, mount } from "../dom.js";
+import { button, field, banner, emptyState, errorState, skeletonRows, switchControl, spinner, skillChip } from "../components/ui.js";
+import { chipInput } from "../components/chipinput.js";
+import { jdTextProblem, sameJson, JD_MAX_CHARS } from "../validate.js";
+import { EDU_LABELS, fmtDate, displaySkill } from "../format.js";
+import { buildHash } from "../router.js";
+
+const eduSelect = (id, value) => {
+  const s = h("select", { class: "select", id }, EDU_LABELS.map((l, i) => h("option", { value: String(i), selected: Number(value ?? 0) === i }, i === 0 ? "No requirement" : l)));
+  return s;
+};
+
+export function jdView(ctx, route) {
+  const id = route.params.id ?? null;
+  let alive = true;
+  const st = { list: null, listError: null, jd: null, error: null, busy: false, searching: false, problem: null };
+  const listHost = h("div", { class: "sheet jd-list" });
+  const mainHost = h("div");
+  const el = h("div", null,
+    h("div", { class: "page-head" }, h("div", null, h("h1", null, "Job description"), h("p", { class: "sub" }, "Paste a job description. We pull out the skills, years of experience and education it asks for. Check them, adjust anything that is off, then search your library."))),
+    h("div", { class: "jd-layout" }, h("div", null, h("h2", { class: "sr-only" }, "Saved job descriptions"), listHost), mainHost));
+
+  function drawList() {
+    if (st.listError) return mount(listHost, h("div", { class: "pad", style: { padding: "16px" } }, errorState(st.listError, loadList)));
+    if (!st.list) return mount(listHost, h("div", { style: { padding: "12px" } }, skeletonRows(3, 40)));
+    mount(listHost,
+      h("a", { class: "item", href: buildHash("jd"), "aria-current": String(!id) }, h("div", { class: "t" }, "+ New job description"), h("div", { class: "m" }, "Paste text to start")),
+      st.list.map((j) => h("a", { class: "item", href: buildHash("jdEdit", { id: j.id }), "aria-current": String(j.id === id) }, h("div", { class: "t" }, j.title || "Untitled role"), h("div", { class: "m" }, `Updated ${fmtDate(j.updated_at)}`))));
+  }
+  async function loadList() {
+    try { st.list = await ctx.api.listJDs(); st.listError = null; } catch (e) { st.listError = e; }
+    if (alive) drawList();
+  }
+
+  // ---- composer (new JD) ---------------------------------------------------------------------------------
+  function drawComposer() {
+    const title = h("input", { class: "input", id: "jd-title", placeholder: "e.g. Backend Engineer", maxlength: "120" });
+    const text = h("textarea", { class: "textarea", id: "jd-text", placeholder: "Paste the full job description here…", style: { minHeight: "300px" } });
+    const msg = h("div", { "aria-live": "polite" });
+    const go = button({ label: "Extract requirements", icon: "sparkle", variant: "primary", type: "submit" });
+    const form = h("form", { class: "sheet pad form-grid", novalidate: true, onSubmit: async (e) => {
+      e.preventDefault();
+      const problem = jdTextProblem(text.value);
+      if (problem) { mount(msg, banner("warn", problem)); text.focus(); return; }
+      go.disabled = true; mount(msg, h("span", { class: "muted" }, spinner(), " Reading the job description…"));
+      try {
+        const jd = await ctx.api.createJD(text.value, title.value.trim());
+        ctx.toast.show("Requirements extracted. Please check them.", { tone: "ok" });
+        st.list = null; loadList();
+        ctx.navigate("jdEdit", { id: jd.id });
+      } catch (err) { go.disabled = false; mount(msg); ctx.reportError(err, "Could not read that job description."); }
+    } },
+      field({ label: "Role title (optional)", id: "jd-title", control: title }),
+      field({ label: "Job description", id: "jd-text", hint: `Plain text, up to ${JD_MAX_CHARS.toLocaleString("en-US")} characters.`, control: text }),
+      msg, h("div", null, go));
+    mount(mainHost, form);
+    return { el: form, title: "Job description" };
+  }
+
+  // ---- editor --------------------------------------------------------------------------------------------
+  function drawEditor() {
+    const jd = st.jd;
+    const spec = jd.spec;
+    const original = JSON.parse(JSON.stringify(spec));
+    const title = h("input", { class: "input", id: "e-title", value: jd.title ?? spec.title ?? "" });
+    const req = chipInput({ label: "Required skills", values: spec.required_skills });
+    const pref = chipInput({ label: "Preferred skills", values: spec.preferred_skills });
+    const years = h("input", { class: "input", id: "e-years", type: "number", min: "0", max: "60", step: "0.5", value: spec.min_years ?? "", placeholder: "Not specified" });
+    const edu = eduSelect("e-edu", spec.min_education);
+    const resp = h("textarea", { class: "textarea", id: "e-resp", style: { minHeight: "120px" }, "aria-describedby": "resp-hint" }, "");
+    resp.value = (spec.responsibilities ?? []).join("\n");
+    const saveMsg = h("div", { "aria-live": "polite", class: "small muted" });
+
+    const current = () => ({
+      ...spec,
+      title: title.value.trim() || null,
+      required_skills: req.value,
+      preferred_skills: pref.value.filter((s) => !req.value.includes(s)),
+      min_years: years.value === "" ? null : Number(years.value),
+      min_education: Number(edu.value) || null,
+      responsibilities: resp.value.split("\n").map((l) => l.trim()).filter(Boolean),
+    });
+    const dirty = () => !sameJson(current(), { ...original, title: original.title ?? null });
+
+    const save = button({ label: "Save changes", variant: "primary", onClick: () => persist() });
+    async function persist() {
+      save.disabled = true;
+      try {
+        const next = await ctx.api.updateJD(jd.id, title.value.trim(), current());
+        st.jd = next; ctx.toast.show("Saved.", { tone: "ok" }); st.list = null; loadList(); drawEditor();
+        return true;
+      } catch (err) { save.disabled = false; ctx.reportError(err, "Could not save your changes."); return false; }
+    }
+
+    // search panel
+    const topK = h("select", { class: "select", id: "s-topk" }, [5, 10, 20, 50].map((n) => h("option", { value: String(n), selected: n === 10 }, `Top ${n}`)));
+    const fYears = h("input", { class: "input", id: "s-years", type: "number", min: "0", max: "60", step: "0.5", placeholder: "No minimum" });
+    const fEdu = eduSelect("s-edu", 0);
+    const must = h("div", { class: "req-pick" });
+    const mustSel = new Set();
+    mount(must, spec.required_skills.length ? spec.required_skills.map((s) => h("label", { class: "switch", style: { fontSize: "0.875rem" } }, h("input", { type: "checkbox", onChange: (e) => (e.target.checked ? mustSel.add(s) : mustSel.delete(s)) }), h("span", { class: "track", "aria-hidden": "true" }), displaySkill(s))) : h("span", { class: "muted small" }, "Add required skills to use this."));
+    let blind = true;
+    const run = button({ label: "Search resumes", icon: "search", variant: "primary", onClick: async () => {
+      if (dirty() && !(await persist())) return;
+      run.disabled = true; st.searching = true; searchMsg();
+      try {
+        const body = { jd_id: jd.id, top_k: Number(topK.value), blind, filters: { min_years: fYears.value === "" ? null : Number(fYears.value), min_education: Number(fEdu.value) || null, required_skills: [...mustSel] } };
+        const res = await ctx.api.search(body);
+        ctx.cache.set(`search:${res.search_id}`, res);
+        ctx.navigate("results", { id: res.search_id });
+      } catch (err) { run.disabled = false; st.searching = false; searchMsg(); ctx.reportError(err, "The search failed."); }
+    } });
+    const sm = h("div", { "aria-live": "polite" });
+    function searchMsg() { mount(sm, st.searching ? h("span", { class: "muted small" }, spinner(), " Ranking resumes…") : null); }
+
+    const empty = !spec.required_skills.length;
+    const editor = h("div", { class: "jd-edit" },
+      h("div", { class: "sheet pad form-grid" },
+        h("h2", null, "What we understood"),
+        empty ? banner("warn", "No required skills were found. Add the skills this role needs so ranking has something to check.") : null,
+        field({ label: "Role title", id: "e-title", control: title }),
+        field({ label: "Required skills", id: req.id, hint: "A resume that lacks these is marked down.", control: req.el }),
+        field({ label: "Preferred skills", id: pref.id, hint: "Nice to have. Smaller effect on the score.", control: pref.el }),
+        h("div", { class: "form-grid two" },
+          field({ label: "Minimum years of experience", id: "e-years", control: years }),
+          field({ label: "Minimum education", id: "e-edu", control: edu })),
+        field({ label: "Responsibilities (one per line)", id: "e-resp", control: resp }),
+        h("details", { class: "raw" }, h("summary", null, "Original text"), h("pre", null, spec.raw_text)),
+        h("div", { class: "row" }, save, saveMsg)),
+      h("aside", { class: "sheet search-panel", "aria-labelledby": "sp-h" },
+        h("h2", { id: "sp-h" }, "Search your library"),
+        field({ label: "How many candidates", id: "s-topk", control: topK }),
+        h("fieldset", { style: { border: 0, padding: 0, margin: 0 } }, h("legend", { class: "small", style: { fontWeight: 600, marginBottom: "6px" } }, "Must have (hard filters)"), must),
+        h("div", { class: "form-grid two" }, field({ label: "Min. years", id: "s-years", control: fYears }), field({ label: "Min. education", id: "s-edu", control: fEdu })),
+        switchControl({ label: "Blind mode: hide names while ranking", checked: true, onChange: (v) => { blind = v; } }),
+        run, sm));
+    const onInput = () => { saveMsg.textContent = dirty() ? "Unsaved changes" : ""; };
+    editor.addEventListener("input", onInput); editor.addEventListener("click", onInput); editor.addEventListener("change", onInput);
+    mount(mainHost, editor);
+  }
+
+  async function loadJd() {
+    mount(mainHost, skeletonRows(4, 60));
+    try {
+      st.jd = await ctx.api.getJD(id);
+      if (alive) drawEditor();
+    } catch (err) {
+      if (alive) mount(mainHost, err.status === 404 ? emptyState({ title: "That job description was not found", body: "It may have been deleted.", action: button({ label: "Start a new one", variant: "primary", onClick: () => ctx.navigate("jd") }) }) : errorState(err, loadJd));
+    }
+  }
+
+  drawList(); loadList();
+  if (id) loadJd(); else drawComposer();
+  return { el, title: id ? "Edit job description" : "Job description", destroy() { alive = false; } };
+}

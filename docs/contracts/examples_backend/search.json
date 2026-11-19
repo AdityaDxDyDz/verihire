@@ -1,0 +1,255 @@
+{
+  "search_id": "3b3d85d6-d99e-469f-ab8d-386d50b0cf29",
+  "results": [
+    {
+      "candidate_id": "f46f5072-e15f-4559-8168-6a73f6b2880a",
+      "document_id": "d4743725-768b-49df-84fb-cf115b4ef121",
+      "label": "Candidate F46F50",
+      "match_score": 92.5,
+      "rank": 1,
+      "years_experience": 6.0,
+      "education_level": 4,
+      "titles": [
+        "backend engineer"
+      ],
+      "top_skills": [
+        "python",
+        "fastapi",
+        "postgresql",
+        "docker"
+      ],
+      "matched_required": [
+        "python",
+        "fastapi",
+        "postgresql"
+      ],
+      "missing_required": [],
+      "matched_preferred": [
+        "docker"
+      ],
+      "missing_preferred": [
+        "aws"
+      ],
+      "suspicious_hidden_text": false,
+      "top_chunks": [
+        {
+          "chunk_id": "822c5d51-98f2-4346-9a01-7ba5aa55dde4",
+          "page_no": 1,
+          "section": "skills",
+          "text_scrubbed": "Skills\nPython, FastAPI, Docker, PostgreSQL\n"
+        },
+        {
+          "chunk_id": "6df6ef39-ee2c-4453-bec3-efd8448fa72d",
+          "page_no": 1,
+          "section": "experience",
+          "text_scrubbed": "Experience\nBackend Engineer, Fictional Corp (2020 - present)\n- Built and maintained services using Python, FastAPI.\n- Improved reliability and shipped features with PostgreSQL.\n"
+        },
+        {
+          "chunk_id": "0adf08ae-16fc-4283-b653-88bec6b7d0bd",
+          "page_no": 1,
+          "section": "education",
+          "text_scrubbed": "Education\nPhD in Computer Science, Example Institute of Technology\n"
+        }
+      ],
+      "explanation": {
+        "feature_contributions": {
+          "required_skill_coverage": 55.0,
+          "preferred_skill_coverage": 7.5,
+          "years_fit": 15.0,
+          "edu_ok": 5.0,
+          "retrieval": 10.0
+        },
+        "feature_values": {
+          "required_skill_coverage": 1.0,
+          "preferred_skill_coverage": 0.5,
+          "years_fit": 1.0,
+          "edu_ok": 1.0,
+          "retrieval": 1.0
+        },
+        "cross_encoder_score": null
+      },
+      "retrieval": {
+        "rrf_sum_top3": 0.079006,
+        "n_chunks_hit": 5
+      },
+      "display_name": null
+    },
+    {
+      "candidate_id": "f4d2a425-ee9c-416f-83c9-6e61bd864cdd",
+      "document_id": "62e602da-8a1d-4ff3-a949-9db0df47d57d",
+      "label": "Candidate F4D2A4",
+      "match_score": 45.94,
+      "rank": 2,
+      "years_experience": 12.0,
+      "education_level": 3,
+      "titles": [
+        "machine learning engineer"
+      ],
+      "top_skills": [
+        "machine learning",
+        "kubernetes",
+        "pytorch",
+        "tensorflow",
+        "python"
+      ],
+      "matched_required": [
+        "python"
+      ],
+      "missing_required": [
+        "fastapi",
+        "postgresql"
+      ],
+      "matched_preferred": [],
+      "missing_preferred": [
+        "docker",
+        "aws"
+      ],
+      "suspicious_hidden_text": false,
+      "top_chunks": [
+        {
+          "chunk_id": "467343f0-ffa1-4587-bf78-ee205eb92397",
+          "page_no": 1,
+          "section": "skills",
+          "text_scrubbed": "Skills\nKubernetes, PyTorch, Python, TensorFlow\n"
+        },
+        {
+          "chunk_id": "4d142b94-59a6-4bec-a527-dad05db95d8a",
+          "page_no": 1,
+          "section": "education",
+          "text_scrubbed": "Education\nM.Tech in Computer Science, Example Institute of Technology\n"
+        },
+        {
+          "chunk_id": "65b47785-da1e-4400-bf83-89adab88548f",
+          "page_no": 1,
+          "section": "experience",
+          "text_scrubbed": "Experience\nMachine Learning Engineer, Fictional Corp (2014 - present)\n- Built and maintained services using Kubernetes, PyTorch.\n- Improved reliability and shipped features with TensorFlow.\n"
+        }
+      ],
+      "explanation": {
+        "feature_contributions": {
+          "required_skill_coverage": 18.333,
+          "preferred_skill_coverage": 0.0,
+          "years_fit": 15.0,
+          "edu_ok": 5.0,
+          "retrieval": 7.61
+        },
+        "feature_values": {
+          "required_skill_coverage": 0.3333333333333333,
+          "preferred_skill_coverage": 0.0,
+          "years_fit": 1.0,
+          "edu_ok": 1.0,
+          "retrieval": 0.7609764214784007
+        },
+        "cross_encoder_score": null
+      },
+      "retrieval": {
+        "rrf_sum_top3": 0.060122,
+        "n_chunks_hit": 5
+      },
+      "display_name": null
+    },
+    {
+      "candidate_id": "924cfda5-1465-4e3b-a759-9431aa424bab",
+      "document_id": "e5a9b138-c025-4ed4-a3ce-d5b6d70d76fe",
+      "label": "Candidate 924CFD",
+      "match_score": 25.44,
+      "rank": 3,
+      "years_experience": 7.0,
+      "education_level": 2,
+      "titles": [
+        "data scientist"
+      ],
+      "top_skills": [
+        "scikit-learn",
+        "pandas",
+        "numpy",
+        "tableau"
+      ],
+      "matched_required": [],
+      "missing_required": [
+        "python",
+        "fastapi",
+        "postgresql"
+      ],
+      "matched_preferred": [],
+      "missing_preferred": [
+        "docker",
+        "aws"
+      ],
+      "suspicious_hidden_text": false,
+      "top_chunks": [
+        {
+          "chunk_id": "f082c250-5e17-4b8d-8d9e-e24210cf9e16",
+          "page_no": 1,
+          "section": "education",
+          "text_scrubbed": "Education\nB.Tech in Computer Science, Example Institute of Technology\n"
+        },
+        {
+          "chunk_id": "7c0010f7-ed87-44e7-b6eb-53f5176344a9",
+          "page_no": 1,
+          "section": "skills",
+          "text_scrubbed": "Skills\nscikit-learn, Pandas, Tableau, NumPy\n"
+        },
+        {
+          "chunk_id": "f10ff0e8-ac86-40e2-946c-cf6be53fd361",
+          "page_no": 1,
+          "section": "header",
+          "text_scrubbed": "[NAME]\nEmail: [EMAIL] | Phone: [PHONE] | [URL]\n"
+        }
+      ],
+      "explanation": {
+        "feature_contributions": {
+          "required_skill_coverage": 0.0,
+          "preferred_skill_coverage": 0.0,
+          "years_fit": 15.0,
+          "edu_ok": 5.0,
+          "retrieval": 5.44
+        },
+        "feature_values": {
+          "required_skill_coverage": 0.0,
+          "preferred_skill_coverage": 0.0,
+          "years_fit": 1.0,
+          "edu_ok": 1.0,
+          "retrieval": 0.5439968747835904
+        },
+        "cross_encoder_score": null
+      },
+      "retrieval": {
+        "rrf_sum_top3": 0.042979,
+        "n_chunks_hit": 5
+      },
+      "display_name": null
+    }
+  ],
+  "timings": {
+    "queries_ms": 0.27,
+    "embed_ms": 0.14,
+    "retrieve_ms": 3.32,
+    "rerank_ms": 0.23,
+    "total_ms": 6.5
+  },
+  "warnings": [],
+  "reranker_version": "stub-linear-v1",
+  "embedder": "stub-hash-384",
+  "job_spec": {
+    "title": "Senior Python Backend Developer",
+    "raw_text": "Senior Python Backend Developer\nWe are hiring a backend developer to build APIs.\nRequirements: 3+ years of experience with Python, FastAPI and PostgreSQL.\nNice to have: Docker, AWS.\n- Design and build REST services\n- Bachelor degree in computer science",
+    "required_skills": [
+      "python",
+      "fastapi",
+      "postgresql"
+    ],
+    "preferred_skills": [
+      "docker",
+      "aws"
+    ],
+    "min_years": 3.0,
+    "min_education": 2,
+    "responsibilities": [
+      "Design and build REST services",
+      "Bachelor degree in computer science"
+    ]
+  },
+  "blind": true,
+  "created_at": "2026-11-18T20:54:40.524551Z"
+}

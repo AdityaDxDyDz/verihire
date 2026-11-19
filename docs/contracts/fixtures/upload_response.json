@@ -1,0 +1,13 @@
+{
+  "job_id": "227ba97b-49b1-55e8-99bb-c514844e769a",
+  "document_ids": [
+    "8ea6b6c6-ce5d-5733-8413-2ef1e04558ea",
+    "128642cd-560d-5491-9f6f-88054a227364"
+  ],
+  "rejected": [
+    {
+      "filename": "notes.docx",
+      "reason": "Only PDF files are accepted."
+    }
+  ]
+}
