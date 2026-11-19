@@ -82,9 +82,9 @@ async function toApiError(res) {
 }
 
 export function createApi({ transport, getToken, onUnauthorized }) {
-  async function call(method, path, { query, json, form, responseType = "json", onProgress, signal } = {}) {
+  async function call(method, path, { query, json, form, responseType = "json", onProgress, signal, noAuth = false } = {}) {
     const attempt = async () => {
-      const token = await getToken();
+      const token = noAuth ? null : await getToken(); // public candidate pages never carry a recruiter token
       const headers = { Accept: responseType === "blob" ? "*/*" : "application/json" };
       if (token) headers.Authorization = `Bearer ${token}`;
       let body;
@@ -102,7 +102,7 @@ export function createApi({ transport, getToken, onUnauthorized }) {
       }
     };
     let res = await attempt();
-    if (res.status === 401 && onUnauthorized && (await onUnauthorized())) res = await attempt();
+    if (res.status === 401 && !noAuth && onUnauthorized && (await onUnauthorized())) res = await attempt();
     if (!res.ok) throw await toApiError(res);
     if (res.status === 204) return null;
     if (responseType === "blob") return res.blob();
@@ -147,5 +147,13 @@ export function createApi({ transport, getToken, onUnauthorized }) {
     analyze: (body) => call("POST", "/analysis", { json: body }),
     getCandidate: (id, reveal = false) => call("GET", `/candidates/${enc(id)}`, { query: { reveal: reveal ? "true" : undefined } }),
     feedback: (body) => call("POST", "/feedback", { json: body }),
+
+    // interview scheduling e-mails (recruiter side)
+    requestInterviews: (body) => call("POST", "/outreach/interview-requests", { json: body }),
+    getOutreachBatch: (id) => call("GET", `/outreach/batches/${enc(id)}`),
+    listInterviewRequests: (params = {}) => call("GET", "/outreach/interview-requests", { query: params }),
+    // candidate side: no login, the token in the link is the credential
+    getInvitation: (token) => call("GET", `/public/interview/${enc(token)}`, { noAuth: true }),
+    submitInterviewReply: (token, body) => call("POST", `/public/interview/${enc(token)}`, { json: body, noAuth: true }),
   };
 }

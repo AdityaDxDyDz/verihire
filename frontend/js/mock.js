@@ -394,7 +394,76 @@ export function createMockTransport({ fixtures, now = () => Date.now(), sleep, l
       feedback.push(body);
       return new Response("", { status: 201 });
     }
+    const outreach = handleOutreach(method, path, query, body, t);
+    if (outreach) return outreach;
     return fail(404, "not_found", `No mock route for ${method} ${path}`);
+  }
+
+  // ---- interview e-mails (same shapes as docs/contracts/examples_backend/outreach_*.json) -------------------------
+  // Every other candidate "has no e-mail", so the "skipped" path is visible in the demo. Token "mock-token" always works,
+  // "mock-expired" shows the expired page and anything else is an unknown link.
+  const outreachMsgs = [];
+  const outreachBatches = new Map();
+  const hasEmail = (cid) => (parseInt(String(cid).replace(/\W/g, "").slice(-2), 36) || 0) % 2 === 0;
+  const tokens = new Map([["mock-token", { role_title: "Backend Engineer", company_name: "Acme Labs", message: "The interview is a 45-minute video call.", reply_by: null, expires_at: "2099-01-01T00:00:00Z", expired: false, last_reply: null }],
+    ["mock-expired", { role_title: "Backend Engineer", company_name: "Acme Labs", message: null, reply_by: null, expires_at: "2020-01-01T00:00:00Z", expired: true, last_reply: null }]]);
+
+  function msgView(m, t) {
+    const age = t - m._created;
+    const status = m.status === "queued" ? (age > 1500 ? "sent" : age > 600 ? "sending" : "queued") : m.status;
+    const { _created, ...rest } = m;
+    return { ...rest, status, sent_at: status === "sent" ? new Date(_created + 1500).toISOString() : null };
+  }
+
+  function handleOutreach(method, path, query, body, t) {
+    let m;
+    if (method === "POST" && path === "/outreach/interview-requests") {
+      const ids = body?.candidate_ids ?? [];
+      if (!jds.has(body?.jd_id)) return fail(404, "not_found", "Job description not found");
+      if (!ids.length || ids.length > 100) return fail(422, "validation_error", "candidate_ids: provide between 1 and 100 candidates");
+      if (body.reply_by && body.reply_by < new Date(t).toISOString().slice(0, 10)) return fail(422, "validation_error", "reply_by cannot be in the past");
+      const batchId = uuid();
+      const items = ids.map((cid) => {
+        const label = fixtures.pool.find((r) => r.candidate_id === cid)?.label ?? `Candidate ${String(cid).slice(0, 6).toUpperCase()}`;
+        if (!hasEmail(cid)) return { candidate_id: cid, label, status: "skipped_no_email", email_masked: null, message_id: null };
+        const prior = outreachMsgs.find((x) => x.jd_id === body.jd_id && x.candidate_id === cid);
+        if (prior && !body.resend) return { candidate_id: cid, label, status: "already_invited", email_masked: prior.email_masked, message_id: null };
+        const msg = { message_id: uuid(), batch_id: batchId, jd_id: body.jd_id, candidate_id: cid, label, email_masked: "c***@example.com", status: "queued", attempts: 1, error: null, expires_at: "2099-01-01T00:00:00Z", created_at: new Date(t).toISOString(), reply: prior?.reply ?? null, _created: t };
+        outreachMsgs.unshift(msg);
+        return { candidate_id: cid, label, status: "queued", email_masked: msg.email_masked, message_id: msg.message_id };
+      });
+      outreachBatches.set(batchId, { jd_id: body.jd_id, company_name: body.company_name ?? null, message: body.message ?? null, reply_by: body.reply_by ?? null, created_at: new Date(t).toISOString() });
+      return json({ batch_id: batchId, jd_id: body.jd_id, queued: items.filter((i) => i.status === "queued").length, skipped_no_email: items.filter((i) => i.status === "skipped_no_email").length, already_invited: items.filter((i) => i.status === "already_invited").length, items }, 202);
+    }
+    if ((m = path.match(/^\/outreach\/batches\/([^/]+)$/)) && method === "GET") {
+      const b = outreachBatches.get(m[1]);
+      if (!b) return fail(404, "not_found", "Batch not found");
+      const items = outreachMsgs.filter((x) => x.batch_id === m[1]).map((x) => msgView(x, t));
+      const counts = { queued: 0, sending: 0, sent: 0, failed: 0 };
+      for (const i of items) counts[i.status] += 1;
+      return json({ batch_id: m[1], ...b, counts, done: !counts.queued && !counts.sending, items });
+    }
+    if (method === "GET" && path === "/outreach/interview-requests") {
+      const items = outreachMsgs.filter((x) => !query?.jd_id || x.jd_id === query.jd_id).map((x) => msgView(x, t))
+        .filter((x) => !query?.status || (query.status === "replied" ? x.reply : x.status === query.status));
+      return json({ items });
+    }
+    if ((m = path.match(/^\/public\/interview\/([^/]+)$/))) {
+      const inv = tokens.get(m[1]);
+      if (!inv) return fail(404, "not_found", "This link is not valid.");
+      if (method === "GET") return json(inv);
+      if (method === "POST") {
+        if (inv.expired) return fail(410, "invitation_expired", "This invitation has expired.");
+        const slots = body?.slots ?? [];
+        if (!slots.length || slots.length > 5) return fail(422, "validation_error", "slots: provide between 1 and 5 options");
+        if (slots.some((s) => !/(Z|[+-]\d{2}:\d{2})$/.test(s.start))) return fail(422, "validation_error", "slots: start must include a UTC offset");
+        const reply = { slots: slots.map((s) => ({ start: s.start, end: s.end ?? null })), timezone: body.timezone, note: body.note ?? null, created_at: new Date(t).toISOString() };
+        inv.last_reply = reply;
+        for (const x of outreachMsgs) x.reply = reply; // the demo link belongs to every invitation
+        return json(reply, 201);
+      }
+    }
+    return null;
   }
 
   return {

@@ -3,6 +3,7 @@ import { button, linkButton, chip, skillChip, scoreBlock, banner, emptyState, er
 import { fmtYears, eduLabel, fmtDate, plural, sectionLabel, displaySkill } from "../format.js";
 import { buildHash } from "../router.js";
 import { candidateDrawer } from "./candidate.js";
+import { openOutreachDialog } from "../components/outreachDialog.js";
 
 const SORTS = {
   score: { label: "Match score", fn: (a, b) => b.match_score - a.match_score },
@@ -57,7 +58,7 @@ export function resultsView(ctx, route) {
     const required = r.matched_required.length + r.missing_required.length;
     const snippet = r.top_chunks?.[0];
     return h("tr", { class: picked ? "selected" : "" },
-      h("td", null, h("input", { type: "checkbox", checked: picked, "aria-label": `Select ${r.label} to compare`, disabled: !picked && st.selected.size >= 4, onChange: (e) => { e.target.checked ? st.selected.add(r.candidate_id) : st.selected.delete(r.candidate_id); draw(); } })),
+      h("td", null, h("input", { type: "checkbox", checked: picked, "aria-label": `Select ${r.label} to compare`, onChange: (e) => { e.target.checked ? st.selected.add(r.candidate_id) : st.selected.delete(r.candidate_id); draw(); } })),
       h("td", { class: "rank-no" }, r.rank),
       h("td", { class: "cand-cell" },
         h("a", { class: "cand-link", href: buildHash("candidate", { id: st.data.search_id, cid: r.candidate_id }) }, r.label),
@@ -79,6 +80,14 @@ export function resultsView(ctx, route) {
     catch (err) { ctx.reportError(err, "Could not export the CSV."); }
   }
 
+  const canCompare = () => st.selected.size >= 2 && st.selected.size <= 4;
+
+  function requestInterviews() {
+    const picked = st.data.results.filter((r) => st.selected.has(r.candidate_id));
+    if (!picked.length) return;
+    openOutreachDialog(ctx, { jdId: st.data.jd_id, candidates: picked.map((r) => ({ candidate_id: r.candidate_id, label: r.label })) });
+  }
+
   function draw() {
     const d = st.data;
     const spec = d.job_spec;
@@ -96,7 +105,9 @@ export function resultsView(ctx, route) {
         h("div", { class: "page-actions" },
           d.jd_id ? linkButton({ label: "Edit requirements", icon: "refresh", href: buildHash("jdEdit", { id: d.jd_id }) }) : null,
           button({ label: "Export CSV", icon: "download", onClick: exportCsv }),
-          linkButton({ label: `Compare${st.selected.size ? ` (${st.selected.size})` : ""}`, icon: "compare", variant: "primary", href: st.selected.size >= 2 ? buildHash("compare", { id: d.search_id }, { ids: [...st.selected].join(",") }) : "#", title: st.selected.size >= 2 ? "Compare selected candidates" : "Select 2 to 4 candidates to compare" }))),
+          d.jd_id ? linkButton({ label: "Interviews", icon: "eye", href: buildHash("interviews", { id: d.jd_id }), title: "Invitations sent and candidate replies" }) : null,
+          d.jd_id ? button({ label: `Request interview times${st.selected.size ? ` (${st.selected.size})` : ""}`, icon: "sparkle", disabled: !st.selected.size, title: st.selected.size ? "E-mail the selected candidates and ask for their available times" : "Tick candidates to invite them", onClick: requestInterviews }) : null,
+          linkButton({ label: `Compare${st.selected.size ? ` (${st.selected.size})` : ""}`, icon: "compare", variant: "primary", href: canCompare() ? buildHash("compare", { id: d.search_id }, { ids: [...st.selected].join(",") }) : "#", title: canCompare() ? "Compare selected candidates" : "Select 2 to 4 candidates to compare" }))),
     ];
     for (const w of d.warnings ?? []) parts.push(banner("warn", w));
     if (d.embedder?.startsWith("stub") || d.reranker_version?.startsWith("stub")) parts.push(banner("info", "Ranking is running on placeholder models, so order may not be meaningful yet."));
