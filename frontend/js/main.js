@@ -12,6 +12,8 @@ import { libraryView } from "./views/library.js";
 import { jdView } from "./views/jd.js";
 import { resultsView } from "./views/results.js";
 import { compareView } from "./views/compare.js";
+import { interviewsView } from "./views/interviews.js";
+import { interviewView } from "./views/interview.js";
 import { emptyState } from "./components/ui.js";
 import { linkButton } from "./components/ui.js";
 
@@ -61,8 +63,9 @@ function reportError(err, fallback = "Something went wrong.") {
 }
 
 let current = null; // {name, key, view}
-const VIEWS = { login: loginView, library: libraryView, jd: jdView, jdEdit: jdView, results: resultsView, candidate: resultsView, compare: compareView };
-const PROTECTED = new Set(["library", "jd", "jdEdit", "results", "candidate", "compare"]);
+const VIEWS = { login: loginView, library: libraryView, jd: jdView, jdEdit: jdView, results: resultsView, candidate: resultsView, compare: compareView, interviews: interviewsView, interview: interviewView };
+// "interview" is the public candidate page: it is deliberately NOT protected.
+const PROTECTED = new Set(["library", "jd", "jdEdit", "results", "candidate", "compare", "interviews"]);
 
 function notFound() {
   return { el: emptyState({ title: "Page not found", body: "That address does not exist.", action: linkButton({ label: "Go to the library", href: buildHash("library"), variant: "primary" }) }), title: "Not found" };
@@ -86,7 +89,7 @@ async function boot() {
     if (PROTECTED.has(route.name) && !auth.isAuthed()) { router.navigate("login"); return; }
     if (route.name === "login" && auth.isAuthed()) { router.navigate("library"); return; }
     if (route.name === "results" || route.name === "candidate") store.set({ lastResults: route.params.id });
-    const key = route.name === "results" || route.name === "candidate" ? `results:${route.params.id}` : route.name === "jd" || route.name === "jdEdit" ? `jd:${route.params.id ?? "new"}` : route.name === "compare" ? `compare:${route.params.id}:${route.query.ids}` : route.name;
+    const key = route.name === "results" || route.name === "candidate" ? `results:${route.params.id}` : route.name === "jd" || route.name === "jdEdit" ? `jd:${route.params.id ?? "new"}` : route.name === "compare" ? `compare:${route.params.id}:${route.query.ids}` : route.name === "interviews" ? `interviews:${route.params.id}` : route.name === "interview" ? `interview:${route.params.token}` : route.name;
     shell.draw(route, store.get().lastResults);
     if (current?.key === key && current.view.update) { current.view.update(route); current.route = route; return; }
     current?.view.destroy?.();

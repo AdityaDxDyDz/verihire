@@ -15,8 +15,9 @@ export function createShell(root, { auth, config, mock, onSignOut, onTheme }) {
   let status = mock ? { tone: "warn", text: "Demo data" } : null;
 
   function draw(route, lastResults) {
+    bar.hidden = route?.name === "interview"; // the candidate page is public: no app header
     const authed = auth.isAuthed();
-    const active = route?.name === "candidate" ? "results" : route?.name === "jdEdit" ? "jd" : route?.name === "compare" ? "results" : route?.name;
+    const active = route?.name === "candidate" ? "results" : route?.name === "jdEdit" ? "jd" : route?.name === "compare" || route?.name === "interviews" ? "results" : route?.name;
     mount(nav, authed ? NAV.filter(([k]) => k !== "results" || lastResults).map(([key, label]) =>
       h("a", { href: key === "results" ? buildHash("results", { id: lastResults }) : buildHash(key), "aria-current": active === key ? "page" : null }, h("span", null, label))) : null);
     mount(tools,

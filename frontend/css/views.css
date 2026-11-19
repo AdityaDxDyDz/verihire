@@ -102,3 +102,10 @@ details.raw pre { margin: 0; white-space: pre-wrap; font-family: var(--font-doc)
 .cmp th, .cmp td { vertical-align: top; }
 .cmp tbody th { font-weight: 600; color: var(--ink-2); background: var(--sheet-2); white-space: nowrap; }
 .cmp .cell-skill { display: inline-flex; align-items: center; gap: 6px; }
+
+/* interview scheduling */
+.slot-row { display: grid; grid-template-columns: 1.4fr 1fr 1fr auto; gap: var(--s3); align-items: end; }
+.slot-list { margin: 0; padding-left: 18px; display: grid; gap: 2px; }
+.invite { display: flex; justify-content: center; padding: var(--s6) var(--s4); }
+.invite-wrap { width: 100%; max-width: 640px; display: grid; gap: var(--s4); }
+@media (max-width: 560px) { .slot-row { grid-template-columns: 1fr 1fr; } }

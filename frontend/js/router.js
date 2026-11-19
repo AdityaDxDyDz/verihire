@@ -8,6 +8,8 @@ const ROUTES = [
   { name: "results", pattern: "/results/:id" },
   { name: "candidate", pattern: "/results/:id/:cid" },
   { name: "compare", pattern: "/compare/:id" },
+  { name: "interviews", pattern: "/interviews/:id" }, // recruiter: invitations sent for one job description
+  { name: "interview", pattern: "/interview/:token" }, // candidate: public, no login
 ];
 
 export const DEFAULT_PATH = "/library";
