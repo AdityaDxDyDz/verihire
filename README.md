@@ -161,6 +161,13 @@ open `frontend/index.html?mock=1` from any static server. Deployment: `docs/DEPL
 (production needs `APP_ENV=production AUTH_MODE=supabase STORAGE_MODE=supabase ML_MODE=real`, Supabase keys, a 32+ char
 `APP_SECRET`, the pooler `DATABASE_URL`, and the BGE model baked into the image).
 
+## Interview-availability e-mails (v1.4, backend)
+
+Recruiters can e-mail shortlisted candidates asking for their preferred interview date and time; candidates without an
+e-mail in their resume are skipped quietly; candidates answer on a no-login page. Dev default `EMAIL_MODE=outbox` writes
+`.eml` files to `.data/outbox/` and sends nothing. API, e-mail text, UI plan for Kadam and settings:
+**`docs/components/outreach.md`**.
+
 ## Testing with real resumes (Kaggle) and by hand
 
 Step-by-step guide for Windows: **`docs/TESTING_IRL.md`**. Short version, with the server running:

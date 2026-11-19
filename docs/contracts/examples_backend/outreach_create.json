@@ -1,0 +1,30 @@
+{
+  "batch_id": "382fdaab-b1c9-4ede-9119-c32009b4d510",
+  "jd_id": "80b86ade-7800-4a9f-80ff-7cdf5e4bdc6d",
+  "queued": 2,
+  "skipped_no_email": 1,
+  "already_invited": 0,
+  "items": [
+    {
+      "candidate_id": "930924d3-e857-4b36-adeb-44046d301b93",
+      "label": "Candidate 930924",
+      "status": "queued",
+      "email_masked": "a***@example.com",
+      "message_id": "090e3408-829d-43e7-b98e-22fc734f8494"
+    },
+    {
+      "candidate_id": "4a787a3f-4d85-443f-a642-4f722c6b7727",
+      "label": "Candidate 4A787A",
+      "status": "queued",
+      "email_masked": "s***@example.com",
+      "message_id": "7c0f1f48-cb8e-438c-9515-35c68aa849e2"
+    },
+    {
+      "candidate_id": "93fa35aa-ec23-40f7-a519-56d222f8af87",
+      "label": "Candidate 93FA35",
+      "status": "skipped_no_email",
+      "email_masked": null,
+      "message_id": null
+    }
+  ]
+}

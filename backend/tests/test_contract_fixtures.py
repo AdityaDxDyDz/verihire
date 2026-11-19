@@ -35,6 +35,10 @@ MODELS = {
     "analysis": M.AnalysisResponse, "candidate": M.CandidateResponse,
     "candidate_reveal": M.CandidateResponse, "feedback": M.FeedbackResponse, "error": M.ErrorResponse,
     "audit": M.AuditListResponse,
+    # v1.4 outreach (interview-availability e-mails)
+    "outreach_create": M.InterviewRequestBatchResponse, "outreach_batch": M.OutreachBatchResponse,
+    "outreach_list": M.OutreachListResponse, "public_invitation": M.PublicInvitationResponse,
+    "public_reply": M.InterviewReplyResponse,
 }
 # Kadam's fixture files (frontend mock data): single responses, {id: response} maps, lists, {status: error}
 KADAM_SINGLE = {"health": M.HealthResponse, "me": M.MeResponse, "upload_response": M.UploadResponse,

@@ -9,6 +9,7 @@ from .config import Settings
 from .db import Database
 from .ratelimit import RateLimiter
 from .services.ingestion import IngestionService
+from .services.outreach import OutreachService
 from .services.search import SearchService
 from .services.storage import Storage
 
@@ -39,3 +40,7 @@ def get_search(request: Request) -> SearchService:
 
 def get_llm_limiter(request: Request) -> RateLimiter:
     return request.app.state.llm_limiter
+
+
+def get_outreach(request: Request) -> OutreachService:
+    return request.app.state.outreach

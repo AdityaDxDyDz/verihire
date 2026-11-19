@@ -21,3 +21,9 @@ Generate with a tiny entrypoint script (`envsubst` or Python). **Never** put the
 - [ ] Free Supabase projects pause after ~1 week idle: open the app before the demo
 - [ ] Smoke test on the deployed URL: `/api/v1/health`, login, upload, search
 - [ ] Demo fallback: `?mock=1` works with zero backend. Keep that URL ready.
+
+
+## v1.4: e-mail settings are now required in production
+The app refuses to start in production with `EMAIL_MODE=outbox` (the dev default). Set either
+`EMAIL_MODE=disabled`, or `EMAIL_MODE=smtp` + `SMTP_HOST` / `SMTP_USERNAME` / `SMTP_PASSWORD` + `EMAIL_FROM` +
+`PUBLIC_APP_URL=https://<your app>` (candidate reply links). Details: `docs/components/outreach.md`.

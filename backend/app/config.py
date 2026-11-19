@@ -73,6 +73,27 @@ class Settings(BaseSettings):
     LLM_RATE_LIMIT_PER_MIN: int = 20
     PDF_URL_TTL_S: int = 300
 
+    # ---- outreach e-mails (interview availability requests to shortlisted candidates)
+    EMAIL_MODE: Literal["outbox", "smtp", "disabled"] = "outbox"  # outbox = write .eml files (dev), never sends
+    EMAIL_FROM: str = "VeriHire <no-reply@localhost>"
+    EMAIL_REPLY_TO: str = ""  # e.g. the recruiter's mailbox: candidates may also simply reply to the e-mail
+    SMTP_HOST: str = ""
+    SMTP_PORT: int = 587
+    SMTP_USERNAME: str = ""
+    SMTP_PASSWORD: str = ""
+    SMTP_STARTTLS: bool = True  # port 587; set false and SMTP_SSL=true for port 465
+    SMTP_SSL: bool = False
+    SMTP_TIMEOUT_S: float = 20.0
+    OUTBOX_DIR: str = str(REPO_ROOT / ".data" / "outbox")
+    PUBLIC_APP_URL: str = "http://localhost:8000"  # base of the candidate's reply link: <url>/#/interview/<token>
+    OUTREACH_WORKERS_ENABLED: bool = True
+    OUTREACH_POLL_INTERVAL_S: float = 2.0
+    OUTREACH_MAX_ATTEMPTS: int = Field(default=3, ge=1, le=10)
+    OUTREACH_SEND_PER_MINUTE: int = Field(default=30, ge=1, le=600)  # stay under the SMTP provider's limits
+    OUTREACH_LINK_TTL_DAYS: int = Field(default=14, ge=1, le=90)
+    OUTREACH_RATE_LIMIT_PER_MIN: int = 10  # send requests per recruiter per minute
+    PUBLIC_RATE_LIMIT_PER_MIN: int = 20  # candidate reply-page calls per client IP per minute
+
     FRONTEND_DIR: str = str(REPO_ROOT / "frontend")
     CORS_ORIGINS: str = ""  # comma-separated; empty = same-origin only (frontend served by backend)
 
@@ -96,6 +117,8 @@ class Settings(BaseSettings):
             problems.append("AUTH_MODE=supabase needs SUPABASE_URL and SUPABASE_ANON_KEY")
         if self.STORAGE_MODE == "supabase" and not (self.SUPABASE_URL and self.SUPABASE_SERVICE_KEY):
             problems.append("STORAGE_MODE=supabase needs SUPABASE_URL and SUPABASE_SERVICE_KEY")
+        if self.EMAIL_MODE == "smtp" and not self.SMTP_HOST:
+            problems.append("EMAIL_MODE=smtp needs SMTP_HOST (and usually SMTP_USERNAME / SMTP_PASSWORD)")
         if self.EMBEDDING_DIM != 384:
             problems.append("EMBEDDING_DIM is frozen at 384 (db column is vector(384))")
         if self.APP_ENV == "production":
@@ -105,6 +128,10 @@ class Settings(BaseSettings):
                 problems.append("STORAGE_MODE must be supabase in production")
             if self.ML_MODE != "real":
                 problems.append("ML_MODE must be 'real' in production (stubs forbidden)")
+            if self.EMAIL_MODE == "outbox":
+                problems.append("EMAIL_MODE=outbox only writes files; use smtp (or disabled) in production")
+            if self.EMAIL_MODE == "smtp" and not self.PUBLIC_APP_URL.startswith("https://"):
+                problems.append("PUBLIC_APP_URL must be the https address candidates open (reply links)")
             if self.APP_SECRET == DEFAULT_SECRET or len(self.APP_SECRET) < 32:
                 problems.append("APP_SECRET must be a random string of >= 32 characters")
         if problems:

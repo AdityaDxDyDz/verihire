@@ -16,7 +16,8 @@ from docint.stubs import StubEmbedder
 def test_migrations_are_idempotent(db_url):
     assert migrate.migrate(db_url, verbose=False) == []
     assert {n: st for n, st in migrate.status(db_url)} == {
-        "001_init.sql": "applied", "002_hybrid_fn.sql": "applied", "003_lockdown.sql": "applied"}
+        "001_init.sql": "applied", "002_hybrid_fn.sql": "applied", "003_lockdown.sql": "applied",
+        "004_outreach.sql": "applied"}
 
 
 def test_edited_migration_is_refused_but_rerunnable_one_reapplies(db_url, tmp_path):

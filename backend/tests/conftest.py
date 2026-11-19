@@ -30,8 +30,9 @@ from app.main import create_app  # noqa: E402
 from devtools import synthpdf  # noqa: E402
 
 TEST_DB_URL = os.environ.get("TEST_DATABASE_URL", "postgresql://postgres:postgres@localhost:5432/verihire_test")
-TABLES = ["audit_log", "feedback", "analyses", "search_runs", "job_descriptions", "chunks", "candidate_pii",
-          "candidates", "job_documents", "documents", "ingestion_jobs"]
+TABLES = ["interview_replies", "outreach_messages", "outreach_batches", "audit_log", "feedback", "analyses",
+          "search_runs", "job_descriptions", "chunks", "candidate_pii", "candidates", "job_documents", "documents",
+          "ingestion_jobs"]
 
 
 def _db_reachable(url: str) -> str | None:
@@ -80,7 +81,7 @@ def settings_factory(clean_db: str, tmp_path: Path) -> Callable[..., Settings]:
             APP_ENV="test", AUTH_MODE="dev", STORAGE_MODE="local", ML_MODE="stub", DATABASE_URL=clean_db,
             LOCAL_STORAGE_DIR=str(tmp_path / "storage"), INGEST_WORKERS_ENABLED=False, LOG_JSON=False,
             LOG_LEVEL="WARNING", FRONTEND_DIR=str(tmp_path / "no-frontend"), APP_SECRET="test-secret-" + "x" * 32,
-            DB_POOL_MAX=10,
+            DB_POOL_MAX=10, OUTREACH_WORKERS_ENABLED=False, OUTBOX_DIR=str(tmp_path / "outbox"),
         )
         base.update(overrides)
         return Settings(_env_file=None, **base)

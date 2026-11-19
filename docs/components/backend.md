@@ -97,6 +97,12 @@ python scripts/smoke_test.py --base-url http://localhost:8000
 python scripts/seed_demo.py --base-url http://localhost:8000      # ≥ 100 fictional resumes for the demo
 ```
 
+## Outreach e-mails (v1.4)
+
+See `docs/components/outreach.md`: `services/outreach.py` (batch creation, background sender with retries and
+throttle, token-based public reply), `services/mailer.py` (outbox / SMTP, standard library only),
+`routers/outreach.py`, migration `004_outreach.sql`.
+
 ## Known limits
 
 In-memory rate limiter and query cache (one container). No OCR (`needs_ocr`). Exact vector scan is right up to

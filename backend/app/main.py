@@ -26,8 +26,10 @@ from .db import Database
 from .errors import envelope, install_error_handlers
 from .logging_setup import RequestContextMiddleware, setup_logging
 from .ratelimit import RateLimiter
-from .routers import analysis, candidates, documents, health, job_descriptions, me, search
+from .routers import analysis, candidates, documents, health, job_descriptions, me, outreach, search
 from .services.ingestion import IngestionService
+from .services.mailer import Mailer, build_mailer
+from .services.outreach import OutreachService
 from .services.search import SearchService
 from .services.storage import Storage, build_storage
 
@@ -49,7 +51,7 @@ def _run_migrations(url: str) -> list[str]:
 
 
 def create_app(settings: Settings | None = None, *, ml: MLAdapter | None = None, storage: Storage | None = None,
-               authenticator: Authenticator | None = None) -> FastAPI:
+               authenticator: Authenticator | None = None, mailer: Mailer | None = None) -> FastAPI:
     """Build the app. Tests pass their own settings / ML adapter / storage / authenticator."""
     settings = settings or get_settings()
     setup_logging(settings.LOG_LEVEL, settings.LOG_JSON)
@@ -76,11 +78,16 @@ def create_app(settings: Settings | None = None, *, ml: MLAdapter | None = None,
         st.search = SearchService(st.db, st.ml, settings)
         st.ingestion = IngestionService(st.db, st.storage, st.ml, settings)
         await st.ingestion.start()
+        st.outreach_limiter = RateLimiter(settings.OUTREACH_RATE_LIMIT_PER_MIN)
+        st.public_limiter = RateLimiter(settings.PUBLIC_RATE_LIMIT_PER_MIN)
+        st.outreach = OutreachService(st.db, mailer or build_mailer(settings), settings)
+        await st.outreach.start()
         log.info("VeriHire API ready (env=%s auth=%s storage=%s ml=%s components=%s)", settings.APP_ENV,
                  settings.AUTH_MODE, settings.STORAGE_MODE, settings.ML_MODE, st.ml.components)
         try:
             yield
         finally:
+            await st.outreach.stop()
             await st.ingestion.stop()
             await st.auth.close()
             await st.storage.close()
@@ -88,7 +95,8 @@ def create_app(settings: Settings | None = None, *, ml: MLAdapter | None = None,
 
     app = FastAPI(title="VeriHire API", version=API_VERSION, lifespan=lifespan,
                   description="Evidence-verified resume screening. All routes need `Authorization: Bearer <token>` "
-                              "except `/api/v1/health`. In dev use `dev:you@example.com`.",
+                              "except `/api/v1/health` and `/api/v1/public/*` (candidate reply page, token in the URL). "
+                              "In dev use `dev:you@example.com`.",
                   docs_url="/docs", redoc_url=None, openapi_url="/openapi.json")
     app.state.settings = settings
     install_error_handlers(app)
@@ -98,7 +106,7 @@ def create_app(settings: Settings | None = None, *, ml: MLAdapter | None = None,
                            allow_methods=["GET", "POST", "PUT", "DELETE"], allow_headers=["Authorization", "Content-Type"])
 
     api = APIRouter(prefix=API_PREFIX)
-    for r in (health, me, documents, job_descriptions, search, analysis, candidates):
+    for r in (health, me, documents, job_descriptions, search, analysis, candidates, outreach):
         api.include_router(r.router)
 
     @api.api_route("/{path:path}", methods=["GET", "POST", "PUT", "DELETE", "PATCH"], include_in_schema=False)

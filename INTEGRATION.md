@@ -172,3 +172,10 @@ Dry-run category check: 78 % → 90 % after the dictionary change (Accountant 30
 * v1.3.7: dictionary + 21 IT-operations skills (Windows Server, Active Directory, VMware, Hyper-V, Cisco, CCNA, network
   administration, DNS, DHCP, firewalls, VPN, ITIL, help desk, SharePoint, Exchange, SCCM, Intune, backup/DR,
   CompTIA A+, ERP, Salesforce administration) - LiveCareer's INFORMATION-TECHNOLOGY resumes are mostly IT operations.
+
+## 11. v1.4 — interview-availability e-mails (backend; frontend by Kadam)
+New: `POST/GET /api/v1/outreach/interview-requests`, `GET /api/v1/outreach/batches/{id}`, public
+`GET/POST /api/v1/public/interview/{token}`; `services/outreach.py`, `services/mailer.py`, `routers/outreach.py`,
+`db/migrations/004_outreach.sql`, 11 tests, 5 validated example responses. Candidates without an e-mail are skipped
+quietly; recruiters see masked addresses only; audit rows for sends and replies. Production must set `EMAIL_MODE`
+to `smtp` or `disabled`. Contract + UI plan: `docs/components/outreach.md`.

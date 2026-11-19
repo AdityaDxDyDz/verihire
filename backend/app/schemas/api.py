@@ -7,10 +7,10 @@ Imports only *types* from ``docint.contracts`` (never ML implementations).
 
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import date, datetime
 from typing import Literal
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 
 from docint.contracts import JobSpec, ResumeProfile, SkillGapResult
 
@@ -302,3 +302,117 @@ class AuditEntry(_Out):
 
 class AuditListResponse(_Out):
     items: list[AuditEntry]
+
+
+# ------------------------------------------------------------------ outreach: interview-availability e-mails (v1.4)
+OutreachStatus = Literal["queued", "sending", "sent", "failed"]
+
+
+class InterviewRequestCreate(_In):
+    jd_id: str
+    candidate_ids: list[str] = Field(min_length=1, max_length=100, description="the shortlisted candidates")
+    company_name: str | None = Field(default=None, max_length=120)
+    message: str | None = Field(default=None, max_length=2000, description="optional note added to every e-mail")
+    reply_by: date | None = Field(default=None, description="deadline shown in the e-mail; the link lives at least "
+                                                           "until then (default OUTREACH_LINK_TTL_DAYS)")
+    resend: bool = Field(default=False, description="send again to candidates already invited for this JD")
+
+    @field_validator("reply_by")
+    @classmethod
+    def _future(cls, v: date | None) -> date | None:
+        if v is not None and v < date.today():
+            raise ValueError("reply_by must not be in the past")
+        return v
+
+
+class InterviewRequestItem(_Out):
+    candidate_id: str
+    label: str
+    status: Literal["queued", "skipped_no_email", "already_invited"]
+    email_masked: str | None = None  # "p***@gmail.com"; never the full address
+    message_id: str | None = None
+
+
+class InterviewRequestBatchResponse(_Out):
+    batch_id: str
+    jd_id: str
+    queued: int
+    skipped_no_email: int
+    already_invited: int
+    items: list[InterviewRequestItem]
+
+
+class InterviewReplyOut(_Out):
+    slots: list[dict]
+    timezone: str
+    note: str | None = None
+    created_at: datetime
+
+
+class OutreachMessageItem(_Out):
+    message_id: str
+    batch_id: str
+    jd_id: str
+    candidate_id: str
+    label: str
+    email_masked: str
+    status: OutreachStatus
+    attempts: int
+    error: str | None = None
+    sent_at: datetime | None = None
+    expires_at: datetime
+    created_at: datetime
+    reply: InterviewReplyOut | None = None  # latest reply from the candidate, if any
+
+
+class OutreachListResponse(_Out):
+    items: list[OutreachMessageItem]
+
+
+class OutreachBatchResponse(_Out):
+    batch_id: str
+    jd_id: str
+    company_name: str | None = None
+    message: str | None = None
+    reply_by: date | None = None
+    created_at: datetime
+    counts: dict[str, int]
+    done: bool  # nothing queued or sending any more
+    items: list[OutreachMessageItem]
+
+
+class InterviewSlot(_In):
+    start: datetime
+    end: datetime | None = None
+
+    @model_validator(mode="after")
+    def _check(self) -> InterviewSlot:
+        if self.start.tzinfo is None:
+            raise ValueError("start must include a time-zone offset, e.g. 2026-12-03T10:00:00+05:30")
+        if self.end is not None and (self.end.tzinfo is None or self.end <= self.start):
+            raise ValueError("end must be after start and include a time-zone offset")
+        return self
+
+
+class InterviewReplyCreate(_In):
+    slots: list[InterviewSlot] = Field(min_length=1, max_length=5)
+    timezone: str = Field(min_length=1, max_length=64, description="IANA name shown back to the recruiter, "
+                                                                   "e.g. Asia/Kolkata")
+    note: str | None = Field(default=None, max_length=1000)
+
+
+class InterviewReplyResponse(_Out):
+    reply_id: str
+    created_at: datetime
+    slots: list[dict]
+    timezone: str
+
+
+class PublicInvitationResponse(_Out):
+    role_title: str
+    company_name: str | None = None
+    message: str | None = None
+    reply_by: date | None = None
+    expires_at: datetime
+    expired: bool
+    last_reply: InterviewReplyOut | None = None

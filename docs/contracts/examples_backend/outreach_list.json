@@ -1,0 +1,48 @@
+{
+  "items": [
+    {
+      "message_id": "090e3408-829d-43e7-b98e-22fc734f8494",
+      "batch_id": "382fdaab-b1c9-4ede-9119-c32009b4d510",
+      "jd_id": "80b86ade-7800-4a9f-80ff-7cdf5e4bdc6d",
+      "candidate_id": "930924d3-e857-4b36-adeb-44046d301b93",
+      "label": "Candidate 930924",
+      "email_masked": "a***@example.com",
+      "status": "sent",
+      "attempts": 1,
+      "error": null,
+      "sent_at": "2026-11-19T13:02:45.012879Z",
+      "expires_at": "2026-12-03T13:02:44.998287Z",
+      "created_at": "2026-11-19T13:02:44.998500Z",
+      "reply": {
+        "slots": [
+          {
+            "end": "2026-11-25T11:00:00+05:30",
+            "start": "2026-11-25T10:00:00+05:30"
+          },
+          {
+            "end": null,
+            "start": "2026-11-26T15:00:00+05:30"
+          }
+        ],
+        "timezone": "Asia/Kolkata",
+        "note": "Mornings preferred.",
+        "created_at": "2026-11-19T13:02:47.056080Z"
+      }
+    },
+    {
+      "message_id": "7c0f1f48-cb8e-438c-9515-35c68aa849e2",
+      "batch_id": "382fdaab-b1c9-4ede-9119-c32009b4d510",
+      "jd_id": "80b86ade-7800-4a9f-80ff-7cdf5e4bdc6d",
+      "candidate_id": "4a787a3f-4d85-443f-a642-4f722c6b7727",
+      "label": "Candidate 4A787A",
+      "email_masked": "s***@example.com",
+      "status": "sent",
+      "attempts": 1,
+      "error": null,
+      "sent_at": "2026-11-19T13:02:47.020175Z",
+      "expires_at": "2026-12-03T13:02:44.998287Z",
+      "created_at": "2026-11-19T13:02:44.998500Z",
+      "reply": null
+    }
+  ]
+}

@@ -21,7 +21,8 @@ def _s(**kw) -> Settings:
 
 GOOD_PROD = dict(APP_ENV="production", AUTH_MODE="supabase", STORAGE_MODE="supabase", ML_MODE="real",
                  APP_SECRET="s" * 40, SUPABASE_URL="https://x.supabase.co", SUPABASE_ANON_KEY="anon",
-                 SUPABASE_SERVICE_KEY="service")
+                 SUPABASE_SERVICE_KEY="service", EMAIL_MODE="smtp", SMTP_HOST="smtp.example.com",
+                 PUBLIC_APP_URL="https://verihire.example.com")
 
 
 def test_production_config_ok():
@@ -35,6 +36,9 @@ def test_production_config_ok():
     ({"STORAGE_MODE": "local"}, "STORAGE_MODE"),
     ({"APP_SECRET": "change-me"}, "APP_SECRET"),
     ({"APP_SECRET": "short"}, "APP_SECRET"),
+    ({"EMAIL_MODE": "outbox"}, "EMAIL_MODE=outbox"),
+    ({"SMTP_HOST": ""}, "SMTP_HOST"),
+    ({"PUBLIC_APP_URL": "http://verihire.example.com"}, "PUBLIC_APP_URL"),
     ({"SUPABASE_SERVICE_KEY": ""}, "SUPABASE_SERVICE_KEY"),
     ({"EMBEDDING_DIM": 768}, "384"),
 ])
