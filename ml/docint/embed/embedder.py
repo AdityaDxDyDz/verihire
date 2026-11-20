@@ -25,7 +25,8 @@ import numpy as np
 MODEL_NAME = "BAAI/bge-small-en-v1.5"
 EMBEDDING_DIM = 384
 QUERY_PREFIX = "Represent this sentence for searching relevant passages: "
-DEFAULT_BATCH_SIZE = 32
+# smaller batches = lower peak memory (4 keeps the server under 512 MB); default unchanged
+DEFAULT_BATCH_SIZE = max(1, int(os.environ.get("VERIHIRE_EMBED_BATCH", "32") or 32))
 OFFLINE_ENV_VAR = "VERIHIRE_EMBED_OFFLINE"
 CACHE_ENV_VAR = "FASTEMBED_CACHE_PATH"
 

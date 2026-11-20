@@ -1,0 +1,15 @@
+.git
+.venv
+venv
+.env
+*.env
+.data
+.cache
+**/__pycache__
+**/.pytest_cache
+node_modules
+frontend/tests/screens
+frontend/tests/screens_real
+data
+kaggle
+kaggle_report.json
